@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body .header1 {
+  background-color: #00b7ff;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 450px) {
+  body .header1 {
+    padding: 10px;
+  }
+}
+body .header1 .search-product {
+  display: flex;
+  gap: 5px;
+  height: 30px;
+}
+body .header1 .search-product input {
+  padding: 8px;
+  border: none;
+}
+body .header1 .search-product button {
+  height: auto;
+}
+body .header1 nav {
+  display: flex;
+}
+body .header1 nav .user-login {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+body .header1 nav .user-login .login-btn {
+  background-color: transparent;
+  color: white;
+}
+body .header1 nav .user-login .profile {
+  width: 36px;
+  height: 36px;
+  background-color: #0076a3;
+  border-radius: 36px;
+  cursor: pointer;
+}
+body .header1 button {
+  width: 100px;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+}
+body header {
+  background-color: #0076a3;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 450px) {
+  body header {
+    padding: 10px;
+  }
+}
+body header .logo {
+  width: 50px;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  body header .logo {
+    width: 50px;
+  }
+}
+body header .logo img {
+  width: 100%;
+}
+body header nav {
+  display: flex;
+  gap: 30px;
+}
+body header nav ul {
+  display: flex;
+  gap: 30px;
+  max-height: 200px;
+}
+@media (max-width: 450px) {
+  body header nav ul {
+    flex-direction: column;
+    position: fixed;
+    top: 73.5px;
+    right: 0;
+    background-color: white;
+    gap: 0;
+    transform: translateX(100%);
+  }
+}
+body header nav ul a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  body header nav ul a {
+    color: #0076a3;
+    width: 200px;
+    padding: 20px;
+  }
+  body header nav ul a:hover {
+    background-color: #00b7ff;
+    color: white;
+  }
+}
+body header nav ul .has-submenu {
+  position: relative;
+}
+body header nav ul .has-submenu:hover {
+  background-color: none;
+}
+body header nav ul .has-submenu a {
+  display: flex;
+  width: 100%;
+}
+body header nav ul .has-submenu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: white;
+  position: absolute;
+  right: 0;
+  padding-top: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-1rem);
+  transition-property: opacity, visibility, transform;
+  transition-timing-function: ease-in-out;
+}
+@media (max-width: 450px) {
+  body header nav ul .has-submenu ul {
+    padding-top: 0px;
+    top: 0;
+  }
+}
+body header nav ul .has-submenu ul li {
+  padding: 10px;
+  width: 150px;
+  color: #0076a3;
+  list-style: none;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+}
+body header nav ul .has-submenu ul li:hover {
+  background-color: #00b7ff;
+  color: white;
+}
+body header nav ul .has-submenu:hover ul {
+  display: block;
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+body header .burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  body header .burger {
+    display: flex;
+  }
+}
+body header .burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+body header .burger .active:nth-child(1) {
+  transform: translate3d(0, 8px, 0) rotate(45deg);
+}
+body header .burger .active:nth-child(2) {
+  transform: scaleX(0);
+  opacity: 0;
+}
+body header .burger .active:nth-child(3) {
+  transform: translate3d(0, -8px, 0) rotate(-45deg);
+}
+body .hero {
+  height: 50Vh;
+}
+body footer {
+  background-color: #0076a3;
+  padding: 20px;
+}
+@media (max-width: 450px) {
+  body footer {
+    padding: 10px;
+  }
+}
+body footer p {
+  color: white;
+  text-align: center;
+}
+body footer .contact img {
+  width: 50px;
+}
+body footer .contact ul li {
+  color: white;
+  list-style: none;
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,17 @@
+{
+  "name": "tana-tech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npx nodemon server/index.js",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.1"
+  }
+}

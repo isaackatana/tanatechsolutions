@@ -1,0 +1,254 @@
+@mixin mobile() {
+    @media (max-width: 450px) {
+        @content
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+body {
+    .header1 {
+        background-color: #00b7ff;
+        padding: 10px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mobile(){
+            padding: 10px;
+        }
+
+        .search-product {
+            display: flex;
+            gap: 5px;
+            height: 30px;
+            
+            input {
+                padding: 8px;
+                border: none;
+            }
+
+            button {
+                height: auto;
+            }
+        }
+
+        nav {
+            display: flex;
+            
+            .user-login {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .login-btn {
+                    background-color: transparent;
+                    color: white;
+                }
+
+                .profile {
+                    width: 36px;
+                    height: 36px;
+                    background-color: #0076a3;
+                    border-radius: 36px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        button {
+            width: 100px;
+            border: none;
+            cursor: pointer;
+            height: 25px;
+        }
+    }
+
+    header {
+        background-color: #0076a3;
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile(){
+            padding: 10px;
+        }
+
+        .logo {
+            width: 50px;
+            cursor: pointer;
+
+            @include mobile(){
+                width: 50px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+
+            ul {
+                display: flex;
+                gap: 30px;
+                max-height: 200px;
+
+                @include mobile(){
+                    flex-direction: column;
+                    position: fixed;
+                    top: 73.5px;
+                    right: 0;
+                    background-color: white;
+                    gap: 0;
+                    transform: translateX(100%);
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    @include mobile(){
+                        color: #0076a3;
+                        width: 200px;
+                        padding: 20px;
+
+                        &:hover {
+                            background-color: #00b7ff;
+                            color: white;
+                        }
+                    }
+
+                    
+                }
+
+                .has-submenu {
+                    position: relative;
+
+                    &:hover {
+                        background-color: none;
+                    }
+
+                    a {
+                        display: flex;
+                        width: 100%;
+                    }
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0;
+                        color: white;
+                        position: absolute;
+                        right: 0;
+                        padding-top: 10px;
+                        border-radius: 5px;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateX(-1rem);
+                        transition-property: opacity, visibility, transform;
+                        transition-timing-function: ease-in-out;
+
+                        @include mobile(){
+                            padding-top: 0px;
+                            top: 0;
+                        }
+
+                        li {
+                            padding: 10px;
+                            width: 150px;
+                            color: #0076a3;
+                            list-style: none;
+                            font-weight: bold;
+                            background-color: white;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #00b7ff;
+                                color: white;
+                            }
+                        }
+                    }
+
+                    &:hover ul{
+                        display: block;
+                        transform: translateX(0);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+
+            @include mobile(){
+                display: flex;
+                
+            }
+
+            div {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                border-radius: 2px;
+            }
+
+            .active:nth-child(1){
+                transform: translate3d(0, 8px, 0) rotate(45deg);
+            }
+            .active:nth-child(2){
+                transform: scaleX(0);
+                opacity: 0;
+            }
+            .active:nth-child(3){
+                transform: translate3d(0, -8px, 0) rotate(-45deg);
+            }
+        }
+
+    }
+
+    .hero {
+        height: 50Vh;
+    }
+
+    footer {
+        background-color: #0076a3;
+        padding: 20px;
+
+        @include mobile(){
+            padding: 10px;
+        }
+
+        p {
+            color: white;
+            text-align: center;
+        }
+
+        .contact {
+            img {
+                width: 50px;
+            }
+
+            ul {
+                li {
+                    color: white;
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
