@@ -1,22 +1,27 @@
-import React from 'react'
-import Logo from '../assets/Tana-Tech-Logo-(png).png'
+import React, { useState } from 'react'
+import Logo from '../assets/Tana-Tech-Logo-(white-PNG).png'
+import { FaArrowDown, FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa'
+import { Link, NavLink } from 'react-router'
 
 function Header() {
+
   return (
     <>
     <div className='header1'>
         <div className="search-product">
             <input type="text" inputMode='numeric' placeholder='Search Product'/>
-            <button>Search</button>
+            <button><FaSearch/></button>
         </div>
         <nav>
+            <div className="shopping-cart">
+                <FaShoppingCart/>
+                <span>1</span>
+            </div>
             <div className="user-login">
                 <button className='login-btn'>Login</button>
-                <button>Logout</button>
                 <div className="profile">
+                    <FaUser/>
                 </div>
-            </div>
-            <div className="shopping-cart">
             </div>
         </nav>
     </div>
@@ -26,20 +31,18 @@ function Header() {
         </div>
         <nav>
             <ul>
-                <a href='#'>Home</a>
+                <NavLink to='/'>Home</NavLink>
                 <div className="has-submenu">
-                    <a href='#'>Spares & Repairs</a>
+                    <NavLink to='/spares'>Spares & Repairs</NavLink><FaArrowDown/>
                     <ul>
-                        <li>Phone Screens</li>
-                        <li>Laptop Screens</li>
-                        <li>Laptop Buttons</li>
-                        <li>Phone Buttons</li>
-                        <li>Charging systems</li>
+                        <li>Screens</li>
+                        <li>Buttons</li>
+                        <li>Ports</li>
                         <li>Batteries</li>
                     </ul>
                 </div>
                 <div className="has-submenu">
-                    <a href='#'>Computers</a>
+                    <NavLink to='/computers'>Computers</NavLink><FaArrowDown/>
                     <ul>
                         <li>Desktops</li>
                         <li>Laptops</li>
@@ -48,7 +51,7 @@ function Header() {
                     </ul>
                 </div>
                 <div className="has-submenu">
-                    <a href='#'>Phones</a>
+                    <NavLink to='/phones'>Phones</NavLink><FaArrowDown/>
                     <ul>
                         <li>Mini Phones</li>
                         <li>Smart Phones</li>

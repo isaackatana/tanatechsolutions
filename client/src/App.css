@@ -10,6 +10,9 @@ body .header1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 @media (max-width: 450px) {
   body .header1 {
@@ -27,9 +30,33 @@ body .header1 .search-product input {
 }
 body .header1 .search-product button {
   height: auto;
+  color: #0076a3;
 }
 body .header1 nav {
   display: flex;
+}
+body .header1 nav .shopping-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+}
+body .header1 nav .shopping-cart span {
+  background-color: #0076a3;
+  width: 16px;
+  height: 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -13px;
+  top: -3px;
+  font-size: small;
 }
 body .header1 nav .user-login {
   display: flex;
@@ -46,12 +73,21 @@ body .header1 nav .user-login .profile {
   background-color: #0076a3;
   border-radius: 36px;
   cursor: pointer;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  color: white;
 }
 body .header1 button {
   width: 100px;
   border: none;
   cursor: pointer;
   height: 25px;
+}
+@media (max-width: 450px) {
+  body .header1 button {
+    width: 75px;
+  }
 }
 body header {
   background-color: #0076a3;
@@ -116,6 +152,10 @@ body header nav ul a {
 }
 body header nav ul .has-submenu {
   position: relative;
+  display: flex;
+  gap: 5px;
+  color: white;
+  z-index: 1;
 }
 body header nav ul .has-submenu:hover {
   background-color: none;
@@ -138,6 +178,7 @@ body header nav ul .has-submenu ul {
   transform: translateX(-1rem);
   transition-property: opacity, visibility, transform;
   transition-timing-function: ease-in-out;
+  top: 18px;
 }
 @media (max-width: 450px) {
   body header nav ul .has-submenu ul {
@@ -148,15 +189,15 @@ body header nav ul .has-submenu ul {
 body header nav ul .has-submenu ul li {
   padding: 10px;
   width: 150px;
-  color: #0076a3;
+  color: white;
   list-style: none;
   font-weight: bold;
-  background-color: white;
+  background-color: #00b7ff;
   cursor: pointer;
 }
 body header nav ul .has-submenu ul li:hover {
-  background-color: #00b7ff;
-  color: white;
+  background-color: white;
+  color: #0076a3;
 }
 body header nav ul .has-submenu:hover ul {
   display: block;
@@ -194,18 +235,98 @@ body header .burger .active:nth-child(3) {
 body .hero {
   height: 50Vh;
 }
+body .spares .container {
+  padding: 10px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+body .spares .container .wrapper {
+  background-color: #00b7ff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body .spares .container .wrapper img {
+  height: 150px;
+  cursor: pointer;
+}
+body .spares .container .wrapper .detail {
+  background-color: #0076a3;
+  color: white;
+  padding: 10px;
+}
+body .spares .container .wrapper svg {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #00b7ff;
+  font-size: 25px;
+  cursor: pointer;
+}
+body .computers .container {
+  padding: 10px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 450px) {
+  body .computers .container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
+body .computers .container .wrapper {
+  background-color: #00b7ff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body .computers .container .wrapper img {
+  height: 150px;
+  cursor: pointer;
+}
+body .computers .container .wrapper .detail {
+  background-color: #0076a3;
+  color: white;
+  padding: 10px;
+}
+body .computers .container .wrapper svg {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #00b7ff;
+  font-size: 25px;
+  cursor: pointer;
+}
 body footer {
   background-color: #0076a3;
-  padding: 20px;
+  padding: 10px 40px;
+  color: white;
 }
 @media (max-width: 450px) {
   body footer {
     padding: 10px;
   }
 }
+body footer nav {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 450px) {
+  body footer nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+body footer nav li {
+  list-style: none;
+  cursor: pointer;
+}
 body footer p {
-  color: white;
   text-align: center;
+  margin-top: 10px;
+  font-size: small;
 }
 body footer .contact img {
   width: 50px;

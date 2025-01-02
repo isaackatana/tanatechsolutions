@@ -17,6 +17,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1;
 
         @include mobile(){
             padding: 10px;
@@ -34,11 +37,37 @@ body {
 
             button {
                 height: auto;
+                color: #0076a3;
             }
         }
 
         nav {
             display: flex;
+
+            .shopping-cart {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                color: white;
+                gap: 5px;
+                position: relative;
+                cursor: pointer;
+                
+                span {
+                    background-color: #0076a3;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    right: -13px;
+                    top: -3px;
+                    font-size: small;
+                }
+            }
             
             .user-login {
                 display: flex;
@@ -56,6 +85,10 @@ body {
                     background-color: #0076a3;
                     border-radius: 36px;
                     cursor: pointer;
+                    display: flex;
+                    place-items: center;
+                    justify-content: center;
+                    color: white;
                 }
             }
         }
@@ -65,6 +98,10 @@ body {
             border: none;
             cursor: pointer;
             height: 25px;
+
+            @include mobile(){
+                width: 75px;
+            }
         }
     }
 
@@ -133,6 +170,10 @@ body {
 
                 .has-submenu {
                     position: relative;
+                    display: flex;
+                    gap: 5px;
+                    color: white;
+                    z-index: 1;
 
                     &:hover {
                         background-color: none;
@@ -157,6 +198,7 @@ body {
                         transform: translateX(-1rem);
                         transition-property: opacity, visibility, transform;
                         transition-timing-function: ease-in-out;
+                        top: 18px;
 
                         @include mobile(){
                             padding-top: 0px;
@@ -166,15 +208,15 @@ body {
                         li {
                             padding: 10px;
                             width: 150px;
-                            color: #0076a3;
+                            color: white;
                             list-style: none;
                             font-weight: bold;
-                            background-color: white;
+                            background-color: #00b7ff;
                             cursor: pointer;
 
                             &:hover {
-                                background-color: #00b7ff;
-                                color: white;
+                                background-color: white;
+                                color: #0076a3;
                             }
                         }
                     }
@@ -225,17 +267,111 @@ body {
         height: 50Vh;
     }
 
+    .spares {
+        .container {
+            padding: 10px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+
+            .wrapper {
+                background-color: #00b7ff;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    height: 150px;
+                    cursor: pointer;
+                }
+
+                .detail {
+                    background-color: #0076a3;
+                    color: white;
+                    padding: 10px;
+                }
+
+                svg {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    color: #00b7ff;
+                    font-size: 25px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .computers {
+        .container {
+            padding: 10px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+
+            @include mobile(){
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+
+            .wrapper {
+                background-color: #00b7ff;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    height: 150px;
+                    cursor: pointer;
+                }
+
+                .detail {
+                    background-color: #0076a3;
+                    color: white;
+                    padding: 10px;
+                }
+
+                svg {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    color: #00b7ff;
+                    font-size: 25px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
     footer {
         background-color: #0076a3;
-        padding: 20px;
+        padding: 10px 40px;
+        color: white;
 
         @include mobile(){
             padding: 10px;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+
+            @include mobile(){
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            li {
+                list-style: none;
+                cursor: pointer;
+            }
+        }
+
         p {
-            color: white;
             text-align: center;
+            margin-top: 10px;
+            font-size: small;
         }
 
         .contact {
