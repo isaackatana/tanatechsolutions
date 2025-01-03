@@ -5,14 +5,14 @@ import Computer from '../models/Computer.js';
 // GET /api/computers
 router.get('/', async (req, res) => {
   try {
-    const computers = await find();
+    const computers = await Computer.find();
     if (computers.length === 0) {
-      return res.status(404).json({ message: 'No computers found' });
+      return res.status(404).json({ success: false, message: 'No computers found' });
     }
-    res.json(computers);
+    res.json({ success: true, data: computers });
   } catch (err) {
     console.error('Error fetching computers:', err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({ success: false, message: 'Server Error' });
   }
 });
 
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 
     // Validate input
     if (!name || !brand || price === undefined) {
-      return res.status(400).json({ message: 'Name, brand, and price are required' });
+      return res.status(400).json({ success: false, message: 'Name, brand, and price are required' });
     }
 
     // Create a new computer document
@@ -32,10 +32,10 @@ router.post('/', async (req, res) => {
     // Save to database
     const savedComputer = await newComputer.save();
 
-    res.status(201).json(savedComputer);
+    res.status(201).json({ success: true, data: savedComputer });
   } catch (err) {
     console.error('Error adding computer:', err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({ success: false, message: 'Server Error' });
   }
 });
 
@@ -45,16 +45,16 @@ router.delete('/:id', async (req, res) => {
     const { id } = req.params;
 
     // Find and delete the computer
-    const deletedComputer = await findByIdAndDelete(id);
+    const deletedComputer = await Computer.findByIdAndDelete(id);
 
     if (!deletedComputer) {
-      return res.status(404).json({ message: 'Computer not found' });
+      return res.status(404).json({ success: false, message: 'Computer not found' });
     }
 
-    res.json({ message: 'Computer deleted successfully', deletedComputer });
+    res.json({ success: true, message: 'Computer deleted successfully', data: deletedComputer });
   } catch (err) {
     console.error('Error deleting computer:', err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({ success: false, message: 'Server Error' });
   }
 });
 

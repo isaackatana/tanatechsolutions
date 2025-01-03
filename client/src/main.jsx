@@ -7,7 +7,6 @@ import Home from './pages/Home.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Computers from './pages/Computers.jsx'
 import Phones from './pages/Phones.jsx'
-import Spares from './pages/Spares.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,7 +14,6 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       { path: '', element: <Home /> }, 
-      { path: '/spares', element: <Spares /> }, 
       { path: '/computers', element: <Computers /> },
       { path: '/phones', element: <Phones /> }, 
     ],

@@ -1,10 +1,10 @@
-// backend/models/Computers.js
 import { Schema, model } from 'mongoose';
 
-const ComputerSchema = new Schema({
+const computerSchema = new Schema({
   name: { type: String, required: true },
-  thumbnail: { type: String, required: true },
-  duration: { type: String, required: true },
+  brand: { type: String, required: true },
+  price: { type: Number, required: true },
+  specs: { type: Object, default: {} },
 });
 
-export default model('Computer', ComputerSchema);
+export default model('Computer', computerSchema);
