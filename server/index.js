@@ -3,20 +3,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
+import { connectDB } from './database/connectDB.js';
+import computersRoute from './routes/computersRoute.js';
 
 // Middleware
 app.use(json());
 
 // Routes
-import authRoutes from './routes/auth.route.js';
-import computersRoute from './routes/computersRoute.js';
-import { connectDB } from './database/connectDB.js';
-
-app.get('/', (req, res)=>{
-  res.send("Hello world")
-})
-
-app.use('/api/auth', authRoutes);
 app.use('/api/computers', computersRoute);
 
 // Start server

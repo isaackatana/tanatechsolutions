@@ -1,10 +1,13 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const computerSchema = new Schema({
+const computerSchema = new mongoose.Schema({
   name: { type: String, required: true },
   brand: { type: String, required: true },
   price: { type: Number, required: true },
-  specs: { type: Object, default: {} },
+  specs: { type: String, required: false },
+  imageUrl: { type: String, required: false }, // optional image field
 });
 
-export default model('Computer', computerSchema);
+const Computer = mongoose.model('Computer', computerSchema);
+
+export default Computer;

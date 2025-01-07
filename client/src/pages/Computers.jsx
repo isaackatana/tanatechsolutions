@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { FaCartPlus } from 'react-icons/fa'
+import React, { useEffect, useState } from 'react';
+import { FaCartPlus } from 'react-icons/fa';
 import { fetchComputers } from '../services/computerService';
 
 function Computers() {
@@ -13,7 +13,7 @@ function Computers() {
         const data = await fetchComputers();
         setComputers(data);
       } catch (err) {
-        setError(err.message);
+        setError('Failed to load computers, please try again later.');
       } finally {
         setLoading(false);
       }
@@ -23,26 +23,31 @@ function Computers() {
   }, []);
 
   if (loading) return <p>Loading computers...</p>;
-  if (error) return <p>Error: {error}</p>
+  if (error) return <p>{error}</p>;
 
   return (
-    <>
     <div className="computers">
       <div className="container">
-        {computers.map((computer)=>(
-          <div className="wrapper" key={computer.id}>
-            <img src="" alt="" />
+        {computers.map((computer) => (
+          <div className="wrapper" key={computer._id}>
+            {/* Add fallback for image */}
+            <img 
+              src={computer.imageUrl || 'default-image-url.jpg'} 
+              alt={computer.name} 
+              className="computer-image" 
+            />
             <div className="detail">
               <h2>{computer.name}</h2>
               <p>Ksh. {computer.price}</p>
             </div>
-            <FaCartPlus/>
+            <button className="add-to-cart">
+              <FaCartPlus />
+            </button>
           </div>
         ))}
       </div>
     </div>
-    </>
-  )
+  );
 }
 
-export default Computers
+export default Computers;
