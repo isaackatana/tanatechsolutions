@@ -9,7 +9,7 @@ body .header1 {
   padding: 10px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -18,19 +18,6 @@ body .header1 {
   body .header1 {
     padding: 10px;
   }
-}
-body .header1 .search-product {
-  display: flex;
-  gap: 5px;
-  height: 30px;
-}
-body .header1 .search-product input {
-  padding: 8px;
-  border: none;
-}
-body .header1 .search-product button {
-  height: auto;
-  color: #0076a3;
 }
 body .header1 nav {
   display: flex;
@@ -263,6 +250,19 @@ body .spares .container .wrapper svg {
   color: #00b7ff;
   font-size: 25px;
   cursor: pointer;
+}
+body .computers .search-product {
+  display: flex;
+  gap: 5px;
+  height: 30px;
+}
+body .computers .search-product input {
+  padding: 8px;
+  border: none;
+}
+body .computers .search-product button {
+  height: auto;
+  color: #0076a3;
 }
 body .computers .container {
   padding: 10px 40px;

@@ -8,10 +8,6 @@ function Header() {
   return (
     <>
     <div className='header1'>
-        <div className="search-product">
-            <input type="text" inputMode='numeric' placeholder='Search Product'/>
-            <button><FaSearch/></button>
-        </div>
         <nav>
             <div className="shopping-cart">
                 <FaShoppingCart/>
@@ -27,20 +23,11 @@ function Header() {
     </div>
     <header>
         <div className="logo">
-            <img src={Logo} alt="" />
+            <Link to='/'><img src={Logo} alt="" /></Link>
         </div>
         <nav>
             <ul>
                 <NavLink to='/'>Home</NavLink>
-                <div className="has-submenu">
-                    <NavLink to='/spares'>Spares & Repairs</NavLink><FaArrowDown/>
-                    <ul>
-                        <li>Screens</li>
-                        <li>Buttons</li>
-                        <li>Ports</li>
-                        <li>Batteries</li>
-                    </ul>
-                </div>
                 <div className="has-submenu">
                     <NavLink to='/computers'>Computers</NavLink><FaArrowDown/>
                     <ul>

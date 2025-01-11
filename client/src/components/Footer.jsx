@@ -1,13 +1,14 @@
 import React from 'react'
 import Logo from '../assets/Tana-Tech-Logo-(white-PNG).png'
 import {FaEnvelope, FaMapPin, FaPhone } from "react-icons/fa";
+import { Link } from 'react-router';
 function Footer() {
   return (
     <>
     <footer>
       <nav>
         <div className="contact">
-          <img src={Logo} alt="" />
+          <Link to='/'><img src={Logo} alt="" /></Link>
           <ul>
             <li><FaPhone/>+254 100 434 316</li>
             <li><FaPhone/>+254 743 195 701</li>
@@ -18,7 +19,6 @@ function Footer() {
         <div>
           <h3>Quick Links</h3>
           <li>Home</li>
-          <li>Spares & Repairs</li>
           <li>Computers</li>
           <li>Phones</li>
         </div>

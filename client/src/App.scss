@@ -16,29 +16,13 @@ body {
         padding: 10px 40px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: end;
         position: sticky;
         top: 0;
         z-index: 1;
 
         @include mobile(){
             padding: 10px;
-        }
-
-        .search-product {
-            display: flex;
-            gap: 5px;
-            height: 30px;
-            
-            input {
-                padding: 8px;
-                border: none;
-            }
-
-            button {
-                height: auto;
-                color: #0076a3;
-            }
         }
 
         nav {
@@ -304,6 +288,21 @@ body {
     }
 
     .computers {
+        .search-product {
+            display: flex;
+            gap: 5px;
+            height: 30px;
+            
+            input {
+                padding: 8px;
+                border: none;
+            }
+
+            button {
+                height: auto;
+                color: #0076a3;
+            }
+        }
         .container {
             padding: 10px 40px;
             display: grid;

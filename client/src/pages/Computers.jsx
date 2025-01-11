@@ -27,6 +27,10 @@ function Computers() {
 
   return (
     <div className="computers">
+      <div className="search-product">
+          <input type="text" inputMode='numeric' placeholder='Search Product'/>
+          <button><FaSearch/></button>
+      </div>
       <div className="container">
         {computers.map((computer) => (
           <div className="wrapper" key={computer._id}>
