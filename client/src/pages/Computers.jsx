@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FaCartPlus } from 'react-icons/fa';
-import { fetchComputers } from '../services/computerService';
+import { FaCartPlus, FaSearch } from 'react-icons/fa';
+import { fetchComputers } from '../services/computerService.js';
 
 function Computers() {
   const [computers, setComputers] = useState([]);
@@ -27,10 +27,6 @@ function Computers() {
 
   return (
     <div className="computers">
-      <div className="search-product">
-          <input type="text" inputMode='numeric' placeholder='Search Product'/>
-          <button><FaSearch/></button>
-      </div>
       <div className="container">
         {computers.map((computer) => (
           <div className="wrapper" key={computer._id}>

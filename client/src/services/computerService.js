@@ -1,6 +1,6 @@
 // services/computerService.js
 export const fetchComputers = async () => {
-    const API_URL = 'http://localhost:5000/api/computers'; // Update if necessary
+    const API_URL = 'api/computers'; // Update if necessary
     try {
         const response = await fetch(API_URL);
     if (!response.ok) {
