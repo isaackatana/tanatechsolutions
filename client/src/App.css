@@ -6,17 +6,17 @@
 
 body .header1 {
   background-color: #00b7ff;
-  padding: 10px 40px;
+  padding: 5px 40px;
   display: flex;
   align-items: center;
   justify-content: end;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 @media (max-width: 450px) {
   body .header1 {
-    padding: 10px;
+    padding: 5px 10px;
   }
 }
 body .header1 nav {
@@ -78,7 +78,7 @@ body .header1 button {
 }
 body header {
   background-color: #0076a3;
-  padding: 10px 40px;
+  padding: 5px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,13 +89,8 @@ body header {
   }
 }
 body header .logo {
-  width: 50px;
+  width: 40px;
   cursor: pointer;
-}
-@media (max-width: 450px) {
-  body header .logo {
-    width: 50px;
-  }
 }
 body header .logo img {
   width: 100%;
@@ -301,22 +296,18 @@ body .computers .container .wrapper svg {
 }
 body footer {
   background-color: #0076a3;
-  padding: 10px 40px;
   color: white;
-}
-@media (max-width: 450px) {
-  body footer {
-    padding: 10px;
-  }
 }
 body footer nav {
   display: flex;
   justify-content: space-between;
+  padding: 10px 40px;
 }
 @media (max-width: 450px) {
   body footer nav {
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
   }
 }
 body footer nav li {
@@ -325,11 +316,11 @@ body footer nav li {
 }
 body footer p {
   text-align: center;
-  margin-top: 10px;
   font-size: small;
+  padding: 10px 40px;
 }
 body footer .contact img {
-  width: 50px;
+  width: 40px;
 }
 body footer .contact ul li {
   color: white;
