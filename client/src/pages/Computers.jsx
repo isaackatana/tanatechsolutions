@@ -1,51 +1,107 @@
-import React, { useEffect, useState } from 'react';
-import { FaCartPlus, FaSearch } from 'react-icons/fa';
-import { fetchComputers } from '../services/computerService.js';
+import React, { useEffect, useState } from "react";
+import {
+  fetchComputers,
+  createComputer,
+  updateComputer,
+  deleteComputer,
+} from "./api/computers";
 
 function Computers() {
   const [computers, setComputers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [form, setForm] = useState({ name: "", brand: "", price: "", specs: "" });
+  const [editingId, setEditingId] = useState(null);
+
+  const loadComputers = async () => {
+    try {
+      const data = await fetchComputers();
+      setComputers(data.data);
+    } catch (err) {
+      console.error("Error fetching computers", err);
+    }
+  };
 
   useEffect(() => {
-    const loadComputers = async () => {
-      try {
-        const data = await fetchComputers();
-        setComputers(data);
-      } catch (err) {
-        setError('Failed to load computers, please try again later.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
     loadComputers();
   }, []);
 
-  if (loading) return <p>Loading computers...</p>;
-  if (error) return <p>{error}</p>;
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (editingId) {
+        await updateComputer(editingId, form);
+        setEditingId(null);
+      } else {
+        await createComputer(form);
+      }
+      setForm({ name: "", brand: "", price: "", specs: "" });
+      loadComputers();
+    } catch (err) {
+      console.error("Error submitting form", err);
+    }
+  };
+
+  const handleEdit = (computer) => {
+    setForm(computer);
+    setEditingId(computer._id);
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await deleteComputer(id);
+      loadComputers();
+    } catch (err) {
+      console.error("Error deleting computer", err);
+    }
+  };
 
   return (
-    <div className="computers">
-      <div className="container">
+    <div className="Computers">
+      <h1>Computers</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={form.name}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="brand"
+          placeholder="Brand"
+          value={form.brand}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="price"
+          placeholder="Price"
+          value={form.price}
+          onChange={handleChange}
+        />
+        <textarea
+          name="specs"
+          placeholder="Specs"
+          value={form.specs}
+          onChange={handleChange}
+        ></textarea>
+        <button type="submit">{editingId ? "Update" : "Add"} Computer</button>
+      </form>
+
+      <ul>
         {computers.map((computer) => (
-          <div className="wrapper" key={computer._id}>
-            {/* Add fallback for image */}
-            <img 
-              src={computer.imageUrl || 'default-image-url.jpg'} 
-              alt={computer.name} 
-              className="computer-image" 
-            />
-            <div className="detail">
-              <h2>{computer.name}</h2>
-              <p>Ksh. {computer.price}</p>
-            </div>
-            <button className="add-to-cart">
-              <FaCartPlus />
-            </button>
-          </div>
+          <li key={computer._id}>
+            <strong>{computer.name}</strong> - {computer.brand} - ${computer.price}
+            <p>{computer.specs}</p>
+            <button onClick={() => handleEdit(computer)}>Edit</button>
+            <button onClick={() => handleDelete(computer._id)}>Delete</button>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
