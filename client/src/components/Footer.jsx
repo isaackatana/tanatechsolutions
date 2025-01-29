@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../assets/Tana-Tech-Logo-(white-PNG).png'
+import Logo from '../assets/tana-tech-logo (svg).svg'
 import {FaEnvelope, FaMapPin, FaPhone } from "react-icons/fa";
 import { Link } from 'react-router';
 function Footer() {

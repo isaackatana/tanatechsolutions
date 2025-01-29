@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../assets/Tana-Tech-Logo-(white-PNG).png'
+import Logo from '../assets/tana-tech-logo (svg).svg'
 import { FaArrowDown, FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router'
 
