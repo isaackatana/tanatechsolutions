@@ -4,7 +4,7 @@ import {
   createComputer,
   updateComputer,
   deleteComputer,
-} from "./api/computers";
+} from "../";
 
 function Computers() {
   const [computers, setComputers] = useState([]);
