@@ -11,7 +11,7 @@ function Header() {
         <nav>
             <div className="shopping-cart">
                 <FaShoppingCart/>
-                <span>1</span>
+                <span>0</span>
             </div>
             <div className="user-login">
                 <button className='login-btn'>Login</button>

@@ -4,7 +4,8 @@ import {
   createComputer,
   updateComputer,
   deleteComputer,
-} from "../";
+} from "../services/computerService";
+import { FaPlus } from "react-icons/fa";
 
 function Computers() {
   const [computers, setComputers] = useState([]);
@@ -59,49 +60,55 @@ function Computers() {
   };
 
   return (
-    <div className="Computers">
-      <h1>Computers</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="brand"
-          placeholder="Brand"
-          value={form.brand}
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          name="price"
-          placeholder="Price"
-          value={form.price}
-          onChange={handleChange}
-        />
-        <textarea
-          name="specs"
-          placeholder="Specs"
-          value={form.specs}
-          onChange={handleChange}
-        ></textarea>
-        <button type="submit">{editingId ? "Update" : "Add"} Computer</button>
-      </form>
-
-      <ul>
-        {computers.map((computer) => (
-          <li key={computer._id}>
-            <strong>{computer.name}</strong> - {computer.brand} - ${computer.price}
-            <p>{computer.specs}</p>
-            <button onClick={() => handleEdit(computer)}>Edit</button>
-            <button onClick={() => handleDelete(computer._id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+    <div className="computers">
+      <h2>Computers</h2>
+      <div className="container">
+        <ul>
+          {computers.map((computer) => (
+            <li key={computer._id}>
+              <img src={computer.imageUrl} alt="" />
+              <div className="detail">
+                <strong>{computer.name}</strong> - {computer.brand} - ${computer.price}
+                <p>{computer.specs}</p>
+                <button onClick={() => handleEdit(computer)}>Edit</button>
+                <button onClick={() => handleDelete(computer._id)}>Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="new-computer">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={form.name}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="brand"
+              placeholder="Brand"
+              value={form.brand}
+              onChange={handleChange}
+            />
+            <input
+              type="number"
+              name="price"
+              placeholder="Price"
+              value={form.price}
+              onChange={handleChange}
+            />
+            <textarea
+              name="specs"
+              placeholder="Specs"
+              value={form.specs}
+              onChange={handleChange}
+            ></textarea>
+            <button type="submit">{editingId ? "Update" : "Add"} Computer</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

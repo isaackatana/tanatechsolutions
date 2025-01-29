@@ -246,21 +246,10 @@ body .spares .container .wrapper svg {
   font-size: 25px;
   cursor: pointer;
 }
-body .computers .search-product {
-  display: flex;
-  gap: 5px;
-  height: 30px;
-}
-body .computers .search-product input {
-  padding: 8px;
-  border: none;
-}
-body .computers .search-product button {
-  height: auto;
-  color: #0076a3;
+body .computers {
+  padding: 10px 20px;
 }
 body .computers .container {
-  padding: 10px 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
@@ -271,27 +260,55 @@ body .computers .container {
     padding: 10px;
   }
 }
-body .computers .container .wrapper {
+body .computers .container ul {
+  display: flex;
+  gap: 10px;
+}
+body .computers .container ul li {
   background-color: #00b7ff;
   position: relative;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
-body .computers .container .wrapper img {
-  height: 150px;
+body .computers .container ul li img {
+  width: 300px;
   cursor: pointer;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-body .computers .container .wrapper .detail {
+body .computers .container ul li .detail {
   background-color: #0076a3;
   color: white;
   padding: 10px;
+  position: absolute;
+  bottom: 0;
 }
-body .computers .container .wrapper svg {
+body .computers .container ul li svg {
   position: absolute;
   bottom: 10px;
   right: 10px;
   color: #00b7ff;
   font-size: 25px;
+  cursor: pointer;
+}
+body .computers .container .new-computer {
+  width: 300px;
+  padding: 10px;
+}
+body .computers .container .new-computer form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body .computers .container .new-computer form input {
+  padding: 10px;
+}
+body .computers .container .new-computer form textarea {
+  padding: 10px;
+}
+body .computers .container .new-computer form button {
+  padding: 10px;
   cursor: pointer;
 }
 body footer {
