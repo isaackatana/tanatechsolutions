@@ -65,6 +65,23 @@ body .header1 nav .user-login .profile {
   justify-content: center;
   color: white;
 }
+body .header1 nav .userLoginPopup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 183, 255, 0.5);
+}
+body .header1 nav .userLoginPopup form {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 3px;
+}
+body .header1 nav .userLoginPopup form input {
+  padding: 10px;
+}
 body .header1 button {
   width: 100px;
   border: none;
@@ -271,14 +288,15 @@ body .computers .container ul {
   gap: 10px;
 }
 body .computers .container ul li {
+  width: 300px;
   background-color: #00b7ff;
-  position: relative;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 body .computers .container ul li img {
-  width: 300px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   -o-object-fit: cover;
      object-fit: cover;
@@ -286,9 +304,10 @@ body .computers .container ul li img {
 body .computers .container ul li .detail {
   background-color: #0076a3;
   color: white;
-  padding: 10px;
   position: absolute;
   bottom: 0;
+  list-style: none;
+  width: 300px;
 }
 body .computers .container ul li svg {
   position: absolute;

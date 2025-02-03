@@ -78,9 +78,9 @@ function Computers() {
         </ul>
         <div className="new-computer">
           <form onSubmit={handleSubmit}>
-            <input type="file" 
+            <input type="text" 
             name="thumbnail" 
-            placeholder="thumbnail" 
+            placeholder="Image link" 
             value={form.thumbnail}
             onChange={handleChange}
             />
