@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router'
 import UserLogin from './auth/UserLogin'
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -15,12 +16,15 @@ function Header() {
                 <span>0</span>
             </div>
             <div className="user-login">
-                <button className='login-btn'>Login</button>
+                <button className='login-btn' onClick={() => setIsOpen(true)}>Login</button>
                 <div className="profile">
                     <FaUser/>
                 </div>
             </div>
+            {isOpen && (
             <UserLogin/>
+
+            )}
         </nav>
     </div>
     <header>

@@ -73,14 +73,20 @@ body .header1 nav .userLoginPopup {
   justify-content: center;
   background-color: rgba(0, 183, 255, 0.5);
 }
-body .header1 nav .userLoginPopup form {
+body .header1 nav .userLoginPopup .wrapper form {
   display: flex;
   flex-direction: column;
   justify-content: end;
   gap: 3px;
 }
-body .header1 nav .userLoginPopup form input {
+body .header1 nav .userLoginPopup .wrapper form input {
   padding: 10px;
+}
+body .header1 nav .userLoginPopup .wrapper p {
+  padding: 10px;
+  border: solid black 0.1rem;
+  font-size: small;
+  margin-top: 10px;
 }
 body .header1 button {
   width: 100px;

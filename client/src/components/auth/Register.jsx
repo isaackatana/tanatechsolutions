@@ -1,16 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 function Register() {
   return (
     <>
-    <form action="">
-        <input type="text" placeholder='First name' />
-        <input type="text" placeholder='Last name' />
-        <input type="email" placeholder='Email'/>
-        <input type="password" name="Password"/>
-        <input type="password" name="Confirm password"/>
-        <button>Register</button>
-    </form>
+    <div className="wrapper">
+      <form action="">
+          <input type="text" placeholder='First name' />
+          <input type="text" placeholder='Last name' />
+          <input type="email" placeholder='Email'/>
+          <input type="password" name="password" placeholder='Password'/>
+          <input type="password" name="password" placeholder='Confirm password'/>
+          <button>Register</button>
+      </form>
+      <p>Already have an account <Link to='/login'>Login</Link></p>
+    </div>
     </>
   )
 }

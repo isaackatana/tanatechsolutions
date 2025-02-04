@@ -84,14 +84,23 @@ body {
                 justify-content: center;
                 background-color: rgba(0, 183, 255, 0.5);
 
-                form {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: end;
-                    gap: 3px;
+                .wrapper {
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
+                        gap: 3px;
+    
+                        input {
+                            padding: 10px;
+                        }
+                    }
 
-                    input {
+                    p {
                         padding: 10px;
+                        border: solid black 0.1rem;
+                        font-size: small;
+                        margin-top: 10px;
                     }
                 }
             }
