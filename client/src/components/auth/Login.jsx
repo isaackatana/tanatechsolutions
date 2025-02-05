@@ -5,6 +5,7 @@ function Login() {
   return (
     <>
     <div className="wrapper">
+      <h3>Login</h3>
       <form action="">
           <input type="email" placeholder='Email'/>
           <input type="password" name="password" placeholder='Password'/>

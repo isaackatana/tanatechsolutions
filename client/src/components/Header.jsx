@@ -10,22 +10,7 @@ function Header() {
   return (
     <>
     <div className='header1'>
-        <nav>
-            <div className="shopping-cart">
-                <FaShoppingCart/>
-                <span>0</span>
-            </div>
-            <div className="user-login">
-                <button className='login-btn' onClick={() => setIsOpen(true)}>Login</button>
-                <div className="profile">
-                    <FaUser/>
-                </div>
-            </div>
-            {isOpen && (
-            <UserLogin/>
-
-            )}
-        </nav>
+        
     </div>
     <header>
         <div className="logo">
@@ -52,12 +37,28 @@ function Header() {
                     </ul>
                 </div>
             </ul>
+            <div className='userAccount'>
+                <div className="shopping-cart">
+                    <FaShoppingCart/>
+                    <span>0</span>
+                </div>
+                <div className="user-login">
+                    <button className='login-btn' onClick={() => setIsOpen(true)}>Login</button>
+                    <div className="profile">
+                        <FaUser/>
+                    </div>
+                </div>
+                {isOpen && (
+                 <UserLogin/>
+                )}
+            </div>
             <div className="burger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
         </nav>
+        
     </header>
     </>
   )

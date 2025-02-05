@@ -4,9 +4,9 @@ import Register from './Register'
 
 function UserLogin() {
   return (
-    <div className='userLoginPopup' onClick={() => setIsOpen(false)}>
-    <Login/>
-    <Register/>
+    <div className='userLoginPopup'>
+      <Login/>
+      <Register/>
     </div>
   )
 }
