@@ -49,11 +49,11 @@ body {
                 @include mobile(){
                     flex-direction: column;
                     position: fixed;
-                    top: 73.5px;
+                    top: 64px;
                     right: 0;
-                    background-color: white;
+                    background-color: #00b7ff;
                     gap: 0;
-                    transform: translateX(100%);
+                    transform: translateX(0%);
                 }
                 
                 a {
@@ -63,8 +63,7 @@ body {
                     cursor: pointer;
 
                     @include mobile(){
-                        color: #0076a3;
-                        width: 200px;
+                        color: white;
                         padding: 20px;
 
                         &:hover {
@@ -310,8 +309,8 @@ body {
         padding: 10px 20px;
 
         .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 10px;
 
             @include mobile(){
@@ -319,20 +318,24 @@ body {
                 padding: 10px;
             }
 
+            span {
+            display: flex;
+            justify-content: end;
+            }
+
             ul {
-                display: flex;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 gap: 10px;
 
                 li {
-                    width: 300px;
                     background-color: #00b7ff;
                     display: flex;
                     flex-direction: column;
                     position: relative;
                     
-    
                     img {
-                        width: 100%;
+                        width: 300px;
                         height: 100%;
                         cursor: pointer;
                         object-fit: cover;
@@ -345,6 +348,7 @@ body {
                         bottom: 0;
                         list-style: none;
                         width:  300px;
+                        
                     }
     
                     svg {
@@ -358,29 +362,42 @@ body {
                 }
             }
 
-            .new-computer {
-                width: 300px;
-                padding: 10px;
+            .overlay {
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                form {
+                .new-computer {
+                    padding: 10px;
+                    position: absolute;
                     display: flex;
-                    flex-direction: column;
-                    gap: 5px;
+                    align-items: center;
     
-                    input {
-                        padding: 10px;
-                    }
-    
-                    textarea {
-                        padding: 10px;
-                    }
-    
-                    button {
-                        padding: 10px;
-                        cursor: pointer;
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+        
+                        input {
+                            padding: 10px;
+                        }
+        
+                        textarea {
+                            padding: 10px;
+                        }
+        
+                        button {
+                            padding: 10px;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
+
+            
         }
     }
 

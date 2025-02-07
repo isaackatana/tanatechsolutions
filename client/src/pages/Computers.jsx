@@ -5,12 +5,14 @@ import {
   updateComputer,
   deleteComputer,
 } from "../services/computerService";
-import { FaPlus } from "react-icons/fa";
+import { FaCartPlus, FaPlus } from "react-icons/fa";
 
 function Computers() {
   const [computers, setComputers] = useState([]);
   const [form, setForm] = useState({ name: "", brand: "", price: "", specs: "" });
   const [editingId, setEditingId] = useState(null);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const loadComputers = async () => {
     try {
@@ -63,6 +65,9 @@ function Computers() {
     <div className="computers">
       <h2>Computers</h2>
       <div className="container">
+        <span>
+          <button onClick={() => setIsOpen(true)}><FaPlus/> Add post</button>
+        </span>
         <ul>
           {computers.map((computer) => (
             <li key={computer._id}>
@@ -72,48 +77,59 @@ function Computers() {
                 <p>{computer.specs}</p>
                 <button onClick={() => handleEdit(computer)}>Edit</button>
                 <button onClick={() => handleDelete(computer._id)}>Delete</button>
+                <FaCartPlus/>
               </div>
             </li>
           ))}
         </ul>
-        <div className="new-computer">
-          <form onSubmit={handleSubmit}>
-            <input type="text" 
-            name="thumbnail" 
-            placeholder="Image link" 
-            value={form.thumbnail}
-            onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={form.name}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="brand"
-              placeholder="Brand"
-              value={form.brand}
-              onChange={handleChange}
-            />
-            <input
-              type="number"
-              name="price"
-              placeholder="Price"
-              value={form.price}
-              onChange={handleChange}
-            />
-            <textarea
-              name="specs"
-              placeholder="Specs"
-              value={form.specs}
-              onChange={handleChange}
-            ></textarea>
-            <button type="submit">{editingId ? "Update" : "Add"} Computer</button>
-          </form>
-        </div>
+        
+        { isOpen && (
+          <>
+            <div className="overlay" onClick={() => setIsOpen(false)}>
+              <div className="new-computer">
+                <form onSubmit={handleSubmit}>
+                  <input type="text" 
+                  name="imageUrl" 
+                  placeholder="Image link" 
+                  value={form.imageUrl}
+                  onChange={handleChange}
+                  />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={form.name}
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="text"
+                    name="brand"
+                    placeholder="Brand"
+                    value={form.brand}
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="number"
+                    name="price"
+                    placeholder="Price"
+                    value={form.price}
+                    onChange={handleChange}
+                  />
+                  <textarea
+                    name="specs"
+                    placeholder="Specs"
+                    value={form.specs}
+                    onChange={handleChange}
+                  ></textarea>
+                  <button type="submit">{editingId ? "Update" : "Add"} Computer</button>
+                </form>
+              </div>
+            </div>
+            
+          </>
+        )
+        
+        }
       </div>
     </div>
   );

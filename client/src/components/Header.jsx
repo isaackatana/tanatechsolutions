@@ -33,7 +33,6 @@ function Header() {
                     <ul>
                         <li>Mini Phones</li>
                         <li>Smart Phones</li>
-                        <li>Lipa Polepole</li>
                     </ul>
                 </div>
             </ul>

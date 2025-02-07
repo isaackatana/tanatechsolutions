@@ -28,13 +28,13 @@ export const getComputerById = async (req, res) => {
 // Create a new computer
 export const createComputer = async (req, res) => {
   try {
-    const { name, brand, price, specs } = req.body;
+    const {imageUrl, name, brand, price, specs } = req.body;
     if (!name || !brand || price == null)
       return res
         .status(400)
         .json({ success: false, message: "Name, brand, and price are required" });
 
-    const savedComputer = await Computer.create({ name, brand, price, specs });
+    const savedComputer = await Computer.create({ imageUrl,name, brand, price, specs,  });
     res.status(201).json({ success: true, data: savedComputer });
   } catch (err) {
     res.status(500).json({ success: false, message: "Server Error" });
