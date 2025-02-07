@@ -32,7 +32,6 @@ body header nav {
 }
 body header nav ul {
   display: flex;
-  align-items: center;
   gap: 30px;
   max-height: 200px;
 }
@@ -40,6 +39,7 @@ body header nav ul {
   body header nav ul {
     flex-direction: column;
     position: fixed;
+    width: 50%;
     top: 64px;
     right: 0;
     background-color: #00b7ff;
@@ -56,7 +56,6 @@ body header nav ul a {
 @media (max-width: 450px) {
   body header nav ul a {
     color: white;
-    padding: 20px;
   }
   body header nav ul a:hover {
     background-color: #00b7ff;
@@ -66,16 +65,22 @@ body header nav ul a {
 body header nav ul .has-submenu {
   position: relative;
   display: flex;
+  align-items: center;
   gap: 5px;
   color: white;
   z-index: 1;
+}
+@media (max-width: 450px) {
+  body header nav ul .has-submenu {
+    padding: 10px;
+    justify-content: space-between;
+  }
 }
 body header nav ul .has-submenu:hover {
   background-color: none;
 }
 body header nav ul .has-submenu a {
   display: flex;
-  width: 100%;
 }
 body header nav ul .has-submenu ul {
   display: flex;
@@ -107,6 +112,11 @@ body header nav ul .has-submenu ul li {
   font-weight: bold;
   background-color: #00b7ff;
   cursor: pointer;
+}
+@media (max-width: 450px) {
+  body header nav ul .has-submenu ul li {
+    width: auto;
+  }
 }
 body header nav ul .has-submenu ul li:hover {
   background-color: white;
@@ -151,6 +161,7 @@ body header nav .userAccount .user-login button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: white;
 }
 body header nav .userAccount .user-login .profile {
   background-color: #00b7ff;
@@ -200,6 +211,7 @@ body header .burger {
 @media (max-width: 450px) {
   body header .burger {
     display: flex;
+    color: white;
   }
 }
 body header .burger div {
@@ -273,6 +285,11 @@ body .computers .container {
 body .computers .container span {
   display: flex;
   justify-content: end;
+}
+body .computers .container span button {
+  width: 100px;
+  padding: 5px;
+  cursor: pointer;
 }
 body .computers .container ul {
   display: grid;

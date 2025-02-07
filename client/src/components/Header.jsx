@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Logo from '../assets/tana-tech-logo (svg).svg'
-import { FaCaretDown, FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa'
+import { FaBars, FaCaretDown, FaShoppingCart, FaTimes, FaUser, FaXRay } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router'
 import UserLogin from './auth/UserLogin'
 
@@ -18,7 +18,9 @@ function Header() {
         </div>
         <nav>
             <ul>
-                <NavLink to='/'>Home</NavLink>
+                <div className="has-submenu">
+                 <NavLink to='/'>Home</NavLink>
+                </div>
                 <div className="has-submenu">
                     <NavLink to='/computers'>Computers</NavLink><FaCaretDown/>
                     <ul>
@@ -52,9 +54,7 @@ function Header() {
                 )}
             </div>
             <div className="burger">
-                <div></div>
-                <div></div>
-                <div></div>
+                <FaBars/> <FaTimes/>
             </div>
         </nav>
         

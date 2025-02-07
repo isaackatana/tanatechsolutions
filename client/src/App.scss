@@ -42,13 +42,13 @@ body {
 
             ul {
                 display: flex;
-                align-items: center;
                 gap: 30px;
                 max-height: 200px;
 
                 @include mobile(){
                     flex-direction: column;
                     position: fixed;
+                    width: 50%;
                     top: 64px;
                     right: 0;
                     background-color: #00b7ff;
@@ -64,7 +64,6 @@ body {
 
                     @include mobile(){
                         color: white;
-                        padding: 20px;
 
                         &:hover {
                             background-color: #00b7ff;
@@ -76,11 +75,18 @@ body {
                 }
 
                 .has-submenu {
+                    
                     position: relative;
                     display: flex;
+                    align-items: center;
                     gap: 5px;
                     color: white;
                     z-index: 1;
+
+                    @include mobile(){
+                        padding: 10px;
+                        justify-content: space-between;
+                    }
 
                     &:hover {
                         background-color: none;
@@ -88,7 +94,6 @@ body {
 
                     a {
                         display: flex;
-                        width: 100%;
                     }
 
                     ul {
@@ -120,6 +125,10 @@ body {
                             font-weight: bold;
                             background-color: #00b7ff;
                             cursor: pointer;
+
+                            @include mobile(){
+                                width: auto;
+                            }
 
                             &:hover {
                                 background-color: white;
@@ -173,6 +182,7 @@ body {
                         background-color: transparent;
                         border: none;
                         cursor: pointer;
+                        color: white;
                     }
 
                     .profile {
@@ -235,7 +245,7 @@ body {
 
             @include mobile(){
                 display: flex;
-                
+                color: white;
             }
 
             div {
@@ -321,6 +331,13 @@ body {
             span {
             display: flex;
             justify-content: end;
+
+            button {
+                width: 100px;
+                padding: 5px;
+                cursor: pointer;
+            }
+
             }
 
             ul {
