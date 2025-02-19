@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import Logo from '../assets/tana-tech-logo (svg).svg'
-import { FaBars, FaCaretDown, FaShoppingCart, FaTimes, FaUser, FaXRay } from 'react-icons/fa'
+import { FaBars, FaCaretDown, FaShoppingCart, FaTimes, FaUser} from 'react-icons/fa'
 import { Link, NavLink } from 'react-router'
 import UserLogin from './auth/UserLogin'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setMenuIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuIsOpen(!isMenuOpen);
+  };
 
   return (
     <>
@@ -19,7 +24,7 @@ function Header() {
         <nav>
             <ul>
                 <div className="has-submenu">
-                 <NavLink to='/'>Home</NavLink>
+                <NavLink to='/'>Home</NavLink>
                 </div>
                 <div className="has-submenu">
                     <NavLink to='/computers'>Computers</NavLink><FaCaretDown/>
@@ -54,7 +59,7 @@ function Header() {
                 )}
             </div>
             <div className="burger">
-                <FaBars/> <FaTimes/>
+                {isMenuOpen ? <FaTimes onClick={toggleMenu}/> : <FaBars onClick={toggleMenu}/>}
             </div>
         </nav>
         

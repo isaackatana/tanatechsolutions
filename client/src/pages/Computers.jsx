@@ -5,7 +5,7 @@ import {
   updateComputer,
   deleteComputer,
 } from "../services/computerService";
-import { FaCartPlus, FaPlus } from "react-icons/fa";
+import { FaArrowLeft, FaCartPlus, FaList, FaPlus } from "react-icons/fa";
 
 function Computers() {
   const [computers, setComputers] = useState([]);
@@ -66,7 +66,11 @@ function Computers() {
       <h2>Computers</h2>
       <div className="container">
         <span>
-          <button onClick={() => setIsOpen(true)}><FaPlus/> Add post</button>
+          <FaArrowLeft/>
+          <div>
+            <FaList/>
+            <button onClick={() => setIsOpen(true)}><FaPlus/> Add post</button>
+          </div>
         </span>
         <ul>
           {computers.map((computer) => (
