@@ -27,19 +27,17 @@ function Header() {
                 <NavLink to='/'>Home</NavLink>
                 </div>
                 <div className="has-submenu">
-                    <NavLink to='/computers'>Computers</NavLink><FaCaretDown/>
+                    <NavLink to='/computers'>Video</NavLink><FaCaretDown/>
                     <ul>
-                        <li>Desktops</li>
-                        <li>Laptops</li>
-                        <li>Monitors</li>
-                        <li>Storages</li>
+                        <li>Shooting & Editing</li>
+                        <li>Color Correcting & Grading </li>
                     </ul>
                 </div>
                 <div className="has-submenu">
-                    <NavLink to='/phones'>Phones</NavLink><FaCaretDown/>
+                    <NavLink to='/phones'>Audio</NavLink><FaCaretDown/>
                     <ul>
-                        <li>Mini Phones</li>
-                        <li>Smart Phones</li>
+                        <li>Instrumentals</li>
+                        <li>Mixing & Mastering</li>
                     </ul>
                 </div>
             </ul>

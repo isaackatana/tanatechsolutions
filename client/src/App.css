@@ -34,6 +34,7 @@ body header nav ul {
   display: flex;
   gap: 30px;
   max-height: 200px;
+  position: relative;
 }
 @media (max-width: 450px) {
   body header nav ul {
@@ -63,7 +64,6 @@ body header nav ul a {
   }
 }
 body header nav ul .has-submenu {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -97,12 +97,6 @@ body header nav ul .has-submenu ul {
   transition-property: opacity, visibility, transform;
   transition-timing-function: ease-in-out;
   top: 18px;
-}
-@media (max-width: 450px) {
-  body header nav ul .has-submenu ul {
-    padding-top: 0px;
-    top: 0;
-  }
 }
 body header nav ul .has-submenu ul li {
   padding: 10px;
