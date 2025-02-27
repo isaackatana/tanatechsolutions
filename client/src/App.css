@@ -76,6 +76,12 @@ body header nav ul .has-submenu {
     justify-content: space-between;
     position: relative;
   }
+  body header nav ul .has-submenu:hover {
+    background-color: white;
+  }
+  body header nav ul .has-submenu:hovera {
+    color: #0076a3;
+  }
 }
 body header nav ul .has-submenu:hover {
   background-color: none;
@@ -99,6 +105,11 @@ body header nav ul .has-submenu ul {
   transition-timing-function: ease-in-out;
   top: 18px;
   z-index: 1;
+}
+@media (max-width: 450px) {
+  body header nav ul .has-submenu ul {
+    width: 100%;
+  }
 }
 body header nav ul .has-submenu ul li {
   padding: 10px;
