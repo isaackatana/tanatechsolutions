@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaArrowLeft, FaList } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 function Video() {
   const videos = [
@@ -10,6 +12,7 @@ function Video() {
   return (
     <>
     <div className="video">
+      <span><Link to='/'><FaArrowLeft/></Link><FaList/> </span>
         <div className="container">
            {videos.map((video)=>(
             <div className="wrapper">
