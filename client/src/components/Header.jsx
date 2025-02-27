@@ -12,7 +12,7 @@ function Header() {
     setMenuIsOpen(!isMenuOpen);
   };
 
-  return (
+  return ( 
     <>
     <div className='header1'>
         
@@ -22,9 +22,9 @@ function Header() {
             <Link to='/'><img src={Logo} alt="" /></Link>
         </div>
         <nav>
-            <ul>
+            <ul className={`nav-links ${isMenuOpen ? 'active' : 'inactive'}`}>
                 <div className="has-submenu">
-                <NavLink to='/'>Home</NavLink>
+                   <NavLink to='/'>Home</NavLink>
                 </div>
                 <div className="has-submenu">
                     <NavLink to='/video'>Video</NavLink><FaCaretDown/>
@@ -40,7 +40,9 @@ function Header() {
                         <li>Mixing & Mastering</li>
                     </ul>
                 </div>
-                <NavLink to='/contact'>Contact</NavLink>
+                <div className="has-submenu">
+                   <NavLink to='/contact'>Contact</NavLink>
+                </div>
 
             </ul>
             <div className='userAccount'>
