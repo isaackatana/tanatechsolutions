@@ -98,6 +98,11 @@ body header nav ul .has-submenu ul {
   transition-timing-function: ease-in-out;
   top: 18px;
 }
+@media (max-width: 450px) {
+  body header nav ul .has-submenu ul {
+    display: none;
+  }
+}
 body header nav ul .has-submenu ul li {
   padding: 10px;
   width: 150px;
@@ -233,86 +238,61 @@ body .hero img {
   width: 100%;
   height: 100%;
 }
-body .spares .container {
-  padding: 10px 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-}
-body .spares .container .wrapper {
-  background-color: #00b7ff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-body .spares .container .wrapper img {
-  height: 150px;
-  cursor: pointer;
-}
-body .spares .container .wrapper .detail {
-  background-color: #0076a3;
-  color: white;
-  padding: 10px;
-}
-body .spares .container .wrapper svg {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: #00b7ff;
-  font-size: 25px;
-  cursor: pointer;
-}
-body .computers {
+body .video {
   padding: 10px 20px;
 }
 @media (max-width: 450px) {
-  body .computers {
+  body .video {
     padding: 10px;
   }
 }
-body .computers .container {
+body .video .container {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 @media (max-width: 450px) {
-  body .computers .container {
+  body .video .container {
     grid-template-columns: 1fr;
   }
 }
-body .computers .container span {
+body .video .container .wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+body .video .container span {
   display: flex;
   justify-content: space-between;
 }
-body .computers .container span button {
+body .video .container span button {
   width: 100px;
   padding: 5px;
   cursor: pointer;
 }
-body .computers .container ul {
+body .video .container ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
 }
 @media (max-width: 450px) {
-  body .computers .container ul {
+  body .video .container ul {
     grid-template-columns: 1fr;
   }
 }
-body .computers .container ul li {
+body .video .container ul li {
   background-color: #00b7ff;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-body .computers .container ul li img {
+body .video .container ul li img {
   width: 100%;
   height: 100%;
   cursor: pointer;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body .computers .container ul li .detail {
+body .video .container ul li .detail {
   background-color: #0076a3;
   color: white;
   position: absolute;
@@ -321,7 +301,7 @@ body .computers .container ul li .detail {
   right: 0;
   list-style: none;
 }
-body .computers .container ul li svg {
+body .video .container ul li svg {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -329,7 +309,7 @@ body .computers .container ul li svg {
   font-size: 25px;
   cursor: pointer;
 }
-body .computers .container .overlay {
+body .video .container .overlay {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   inset: 0;
@@ -337,24 +317,24 @@ body .computers .container .overlay {
   align-items: center;
   justify-content: center;
 }
-body .computers .container .overlay .new-computer {
+body .video .container .overlay .new-computer {
   padding: 10px;
   position: absolute;
   display: flex;
   align-items: center;
 }
-body .computers .container .overlay .new-computer form {
+body .video .container .overlay .new-computer form {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-body .computers .container .overlay .new-computer form input {
+body .video .container .overlay .new-computer form input {
   padding: 10px;
 }
-body .computers .container .overlay .new-computer form textarea {
+body .video .container .overlay .new-computer form textarea {
   padding: 10px;
 }
-body .computers .container .overlay .new-computer form button {
+body .video .container .overlay .new-computer form button {
   padding: 10px;
   cursor: pointer;
 }

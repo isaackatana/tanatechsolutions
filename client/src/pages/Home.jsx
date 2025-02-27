@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
 
-
 function Home() {
   return (
     <>
     <div className="hero">
-      <img src="https://k2space.imgix.net/app/uploads/2023/06/K2-Criteo-Office-Curator-LARGE-101-scaled.jpg?auto=format&fit=max&w=5000&q=90" alt="" />
+      <img src="https://images.stockcake.com/public/9/a/5/9a5b33df-e8ca-48c5-bc08-789789b47e7f_large/recording-studio-tech-stockcake.jpg" alt="" />
     </div>
     </>
   )

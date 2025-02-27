@@ -8,22 +8,22 @@ function Footer() {
     <footer>
       <nav>
         <div className="contact">
-          <Link to='/'><img src={Logo} alt="" /></Link>
+          <Link to='/'><img src={Logo} alt=""/></Link>
           <ul>
             <li><FaPhone/>+254 100 434 316</li>
             <li><FaPhone/>+254 743 195 701</li>
-            <li><FaEnvelope/> info@tanatech.co.ke</li>
+            <li><FaEnvelope/> info@tanatechstudios.com</li>
             <li><FaMapPin/> Ukunda Diani – Opposite </li>
           </ul>
         </div>
         <div>
           <h3>Quick Links</h3>
           <li>Home</li>
-          <li>Computers</li>
-          <li>Phones</li>
+          <li>Video</li>
+          <li>Audio</li>
         </div>
       </nav>
-        <p>© 2025 Tana Tech Limited - All Rights Reserved</p>
+        <p>© 2025 Tana Tech Studios - All Rights Reserved</p>
     </footer>
     </>
   )

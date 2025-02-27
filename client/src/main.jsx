@@ -5,8 +5,9 @@ import App from './App.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router'
 import Home from './pages/Home.jsx'
 import NotFound from './pages/NotFound.jsx'
-import Computers from './pages/Computers.jsx'
-import Phones from './pages/Phones.jsx'
+import Video from './pages/Video.jsx'
+import Audio from './pages/Audio.jsx'
+import Contact from './pages/Contact.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,8 +15,9 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       { path: '', element: <Home /> }, 
-      { path: '/computers', element: <Computers /> },
-      { path: '/phones', element: <Phones /> }, 
+      { path: '/video', element: <Video /> },
+      { path: '/audio', element: <Audio /> }, 
+      { path: '/contact', element: <Contact /> }, 
     ],
   },
   { path: '*', element: <NotFound /> }, // 404 fallback
