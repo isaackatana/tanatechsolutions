@@ -12,6 +12,7 @@ body header {
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 @media (max-width: 450px) {
   body header {
@@ -47,6 +48,13 @@ body header nav ul {
     background-color: #00b7ff;
     gap: 0;
   }
+  body header nav ul.active {
+    transform: translateX(0%);
+    z-index: 1;
+  }
+  body header nav ul.inactive {
+    transform: translateX(100%);
+  }
 }
 body header nav ul a {
   text-decoration: none;
@@ -72,15 +80,11 @@ body header nav ul .has-submenu {
 }
 @media (max-width: 450px) {
   body header nav ul .has-submenu {
-    padding: 10px;
     justify-content: space-between;
     position: relative;
   }
   body header nav ul .has-submenu:hover {
     background-color: white;
-  }
-  body header nav ul .has-submenu:hovera {
-    color: #0076a3;
   }
 }
 body header nav ul .has-submenu:hover {
@@ -88,6 +92,16 @@ body header nav ul .has-submenu:hover {
 }
 body header nav ul .has-submenu a {
   display: flex;
+}
+body header nav ul .has-submenu a:hover {
+  background-color: white;
+  color: #0076a3;
+}
+@media (max-width: 450px) {
+  body header nav ul .has-submenu a {
+    width: 100%;
+    padding: 10px;
+  }
 }
 body header nav ul .has-submenu ul {
   display: flex;
@@ -130,7 +144,7 @@ body header nav ul .has-submenu ul li:hover {
   color: #0076a3;
 }
 body header nav ul .has-submenu:hover ul {
-  display: block;
+  display: flex;
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
@@ -145,12 +159,6 @@ body header nav ul .has-submenu:hover ul {
     right: 0;
     width: 100%;
   }
-}
-body header nav .active {
-  transform: translateX(0%);
-}
-body header nav .inactive {
-  transform: translateX(100%);
 }
 body header nav .userAccount {
   display: flex;
@@ -281,17 +289,11 @@ body .video .container {
 @media (max-width: 450px) {
   body .video .container {
     grid-template-columns: 1fr;
+    gap: 5px;
   }
 }
 body .video .container .wrapper {
-  width: 75%;
-  height: 500px;
-}
-@media (max-width: 450px) {
-  body .video .container .wrapper {
-    height: auto;
-    width: 100%;
-  }
+  position: relative;
 }
 body .video .container .wrapper iframe {
   width: 100%;

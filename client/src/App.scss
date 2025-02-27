@@ -20,6 +20,7 @@ body {
         align-items: center;
         position: sticky;
         top: 0;
+        z-index: 1;
 
         @include mobile(){
             padding: 10px;
@@ -54,6 +55,15 @@ body {
                     right: 0;
                     background-color: #00b7ff;
                     gap: 0;
+
+                    &.active {
+                        transform: translateX(0%);
+                        z-index: 1;
+                    }
+        
+                    &.inactive {
+                        transform: translateX(100%);
+                    }
                 }
                 
                 a {
@@ -83,14 +93,11 @@ body {
                     z-index: 1;
 
                     @include mobile(){
-                        padding: 10px;
                         justify-content: space-between;
                         position: relative;
                         
                         &:hover {
                             background-color: white;
-                            
-                            
                         }
                     }
 
@@ -100,6 +107,16 @@ body {
 
                     a {
                         display: flex;
+
+                        &:hover {
+                            background-color: white;
+                            color: #0076a3;
+                        }
+
+                        @include mobile(){
+                            width: 100%;
+                            padding: 10px;
+                        }
                     }
 
                     ul {
@@ -144,7 +161,7 @@ body {
                     }
 
                     &:hover ul{
-                        display: block;
+                        display: flex;
                         transform: translateX(0);
                         opacity: 1;
                         visibility: visible;
@@ -160,14 +177,6 @@ body {
                         }
                     }
                 }
-            }
-
-            .active {
-                transform: translateX(0%);
-            }
-
-            .inactive {
-                transform: translateX(100%);
             }
 
             .userAccount {
@@ -319,15 +328,13 @@ body {
 
             @include mobile(){
                 grid-template-columns: 1fr;
+                gap: 5px;
             }
 
             .wrapper {
-                width: 75%;
-                height: 500px;
-
+                position: relative;
+                
                 @include mobile(){
-                    height: auto;
-                    width: 100%;
                 }
 
                 iframe {
@@ -337,14 +344,14 @@ body {
             }
 
             span {
-            display: flex;
-            justify-content: space-between;
+                display: flex;
+                justify-content: space-between;
 
-            button {
-                width: 100px;
-                padding: 5px;
-                cursor: pointer;
-            }
+                button {
+                    width: 100px;
+                    padding: 5px;
+                    cursor: pointer;
+                }
 
             }
 
