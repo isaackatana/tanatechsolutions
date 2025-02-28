@@ -302,10 +302,13 @@ body .video .container {
 }
 body .video .container .wrapper {
   position: relative;
+  width: 80%;
+  height: 500px;
 }
 @media (max-width: 450px) {
   body .video .container .wrapper {
     width: 100%;
+    height: auto;
   }
 }
 body .video .container .wrapper iframe {

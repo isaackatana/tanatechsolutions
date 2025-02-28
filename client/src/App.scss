@@ -344,9 +344,12 @@ body {
 
             .wrapper {
                 position: relative;
+                width: 80%;
+                height: 500px;
                 
                 @include mobile(){
                     width: 100%;
+                    height: auto;
                 }
 
                 iframe {
