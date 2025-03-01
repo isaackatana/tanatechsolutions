@@ -8,6 +8,8 @@ import NotFound from './pages/NotFound.jsx'
 import Video from './pages/Video.jsx'
 import Audio from './pages/Audio.jsx'
 import Contact from './pages/Contact.jsx'
+import Register from './components/auth/Register.jsx'
+import Login from './components/auth/Login.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
       { path: '/contact', element: <Contact /> }, 
     ],
   },
+  { path: '/register', element: <Register /> },
+  { path: '/login', element: <Login /> },
   { path: '*', element: <NotFound /> }, // 404 fallback
 ]);
 

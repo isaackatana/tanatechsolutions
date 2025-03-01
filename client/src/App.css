@@ -88,14 +88,13 @@ body header nav ul .has-submenu {
   }
 }
 body header nav ul .has-submenu:hover {
-  background-color: none;
+  color: white;
 }
 body header nav ul .has-submenu a {
   display: flex;
 }
 body header nav ul .has-submenu a:hover {
-  background-color: white;
-  color: #0076a3;
+  color: #00b7ff;
 }
 @media (max-width: 450px) {
   body header nav ul .has-submenu a {
@@ -215,7 +214,8 @@ body header nav .userAccount .userLoginPopup {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 118, 163, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
 }
 body header nav .userAccount .userLoginPopup .wrapper form {
   display: flex;
@@ -230,9 +230,13 @@ body header nav .userAccount .userLoginPopup .wrapper form button {
 }
 body header nav .userAccount .userLoginPopup .wrapper p {
   padding: 10px;
-  border: solid black 0.1rem;
+  border: solid rgb(255, 255, 255) 0.1rem;
   margin-top: 10px;
   font-size: small;
+  color: white;
+}
+body header nav .userAccount .userLoginPopup .wrapper p a {
+  color: white;
 }
 body header .burger {
   display: none;
@@ -264,12 +268,33 @@ body header .burger .active:nth-child(3) {
 }
 body .hero {
   height: 50Vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 body .hero img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
+}
+body .hero .hero-details {
+  position: absolute;
+  color: white;
+  left: 40px;
+}
+@media (max-width: 450px) {
+  body .hero .hero-details {
+    left: 10px;
+    right: 10px;
+  }
+}
+body .hero .hero-details button {
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
 }
 body .video {
   padding: 10px 20px;

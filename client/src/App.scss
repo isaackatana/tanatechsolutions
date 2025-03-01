@@ -75,7 +75,7 @@ body {
                     @include mobile(){
                         color: white;
 
-                        &:hover {
+                        &:hover  {
                             background-color: #00b7ff;
                             color: white;
                         }
@@ -102,15 +102,14 @@ body {
                     }
 
                     &:hover {
-                        background-color: none;
+                        color: white;
                     }
 
                     a {
                         display: flex;
 
                         &:hover {
-                            background-color: white;
-                            color: #0076a3;
+                            color: #00b7ff;
                         }
 
                         @include mobile(){
@@ -241,7 +240,8 @@ body {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background-color: rgba(0, 118, 163, 0.5);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 3;
 
                     .wrapper {
                         form {
@@ -261,9 +261,14 @@ body {
 
                         p {
                             padding: 10px;
-                            border: solid black 0.1rem;
+                            border: solid rgb(255, 255, 255) 0.1rem;
                             margin-top: 10px;
                             font-size: small;
+                            color: white;
+
+                            a {
+                                color: white;
+                            }
                         }
                     }
                 }
@@ -299,16 +304,37 @@ body {
                 transform: translate3d(0, -8px, 0) rotate(-45deg);
             }
         }
-
     }
 
     .hero {
         height: 50Vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         img {
             object-fit: cover;
             width: 100%;
             height: 100%;
+        }
+
+        .hero-details {
+            position: absolute;
+            color: white;
+            left: 40px;
+
+            @include mobile(){
+                left: 10px;
+                right: 10px;
+            }
+
+            button {
+                padding: 10px;
+                width: 100px;
+                cursor: pointer;
+            }
         }
     }
 

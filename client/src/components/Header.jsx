@@ -14,9 +14,6 @@ function Header() {
 
   return ( 
     <>
-    <div className='header1'>
-        
-    </div>
     <header>
         <div className="logo">
             <Link to='/'><img src={Logo} alt="" /></Link>
