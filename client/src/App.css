@@ -101,6 +101,9 @@ body header nav ul .has-submenu a:hover {
     width: 100%;
     padding: 30px;
   }
+  body header nav ul .has-submenu a:hover {
+    color: white;
+  }
 }
 body header nav ul .has-submenu ul {
   display: flex;
