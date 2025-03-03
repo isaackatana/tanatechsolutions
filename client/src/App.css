@@ -119,11 +119,6 @@ body header nav ul .has-submenu ul {
   top: 18px;
   z-index: 1;
 }
-@media (max-width: 450px) {
-  body header nav ul .has-submenu ul {
-    display: none;
-  }
-}
 body header nav ul .has-submenu ul li {
   padding: 10px;
   width: 150px;
