@@ -40,6 +40,14 @@ function Header() {
                     </ul>
                 </div>
                 <div className="has-submenu">
+                    <NavLink to='/course'>Courses<FaCaretDown/></NavLink>
+                    <ul>
+                        <li>Audio Production</li>
+                        <li>Video Production</li>
+                        <li>Web Design & Development</li>
+                    </ul>
+                </div>
+                <div className="has-submenu">
                    <NavLink to='/contact'>Contact</NavLink>
                 </div>
 

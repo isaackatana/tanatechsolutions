@@ -10,6 +10,7 @@ import Audio from './pages/Audio.jsx'
 import Contact from './pages/Contact.jsx'
 import Register from './components/auth/Register.jsx'
 import Login from './components/auth/Login.jsx'
+import Courses from './pages/Courses.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
       { path: '', element: <Home /> }, 
       { path: '/video', element: <Video /> },
       { path: '/audio', element: <Audio /> }, 
-      { path: '/contact', element: <Contact /> }, 
+      { path: '/contact', element: <Contact /> },
+      { path: '/courses', element: <Courses /> }, 
     ],
   },
   { path: '/register', element: <Register /> },
