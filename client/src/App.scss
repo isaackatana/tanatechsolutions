@@ -564,7 +564,7 @@ body {
         nav {
             display: flex;
             justify-content: space-between;
-            padding: 10px 40px;
+            padding: 10px 20px;
 
             @include mobile(){
                 flex-direction: column;
