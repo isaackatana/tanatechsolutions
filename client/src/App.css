@@ -6,7 +6,7 @@
 
 body header {
   background-color: #0076a3;
-  padding: 5px 40px;
+  padding: 0px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,6 @@ body header nav {
 }
 body header nav .nav-links {
   display: flex;
-  gap: 30px;
   max-height: 200px;
   position: relative;
   transition: 0.3s;
@@ -72,6 +71,9 @@ body header nav .nav-links a {
     background-color: #00b7ff;
     color: white;
   }
+}
+body header nav .nav-links .active {
+  background-color: #00b7ff;
 }
 body header nav .nav-links .has-submenu:hover {
   color: white;
@@ -200,6 +202,14 @@ body header nav .userAccount .userLoginPopup {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 3;
+}
+body header nav .userAccount .userLoginPopup .wrapper {
+  background-color: #00b7ff;
+  padding: 10px;
+}
+body header nav .userAccount .userLoginPopup .wrapper h3 {
+  color: white;
+  margin-bottom: 5px;
 }
 body header nav .userAccount .userLoginPopup .wrapper form {
   display: flex;
@@ -331,13 +341,13 @@ body .video .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
-  padding: 0px 20px;
+  padding: 10px 20px;
 }
 @media (max-width: 450px) {
   body .video .container {
     grid-template-columns: 1fr;
     gap: 5px;
-    padding: 0;
+    padding: 0px 0px 10px;
   }
 }
 body .video .container .wrapper {
