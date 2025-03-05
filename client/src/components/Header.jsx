@@ -20,37 +20,10 @@ function Header() {
         </div>
         <nav>
             <ul className={`nav-links ${isMenuOpen ? 'active' : 'inactive'}`}>
-                <div className="has-submenu">
-                   <NavLink to='/'>Home</NavLink>
-                </div>
-                <div className="has-submenu">
-                    <NavLink to='/video'>Video<FaCaretDown/></NavLink>
-                    <ul>
-                        <li>Music Videos</li>
-                        <li>Short Films</li>
-                        <li>Adverts</li>
-                    </ul>
-                </div>
-                <div className="has-submenu">
-                    <NavLink to='/audio'>Audio<FaCaretDown/></NavLink>
-                    <ul>
-                        <li>Songs</li>
-                        <li>Instrumentals</li>
-                        <li>Voice Overs</li>
-                    </ul>
-                </div>
-                <div className="has-submenu">
-                    <NavLink to='/course'>Courses<FaCaretDown/></NavLink>
-                    <ul>
-                        <li>Audio Production</li>
-                        <li>Video Production</li>
-                        <li>Web Design & Development</li>
-                    </ul>
-                </div>
-                <div className="has-submenu">
-                   <NavLink to='/contact'>Contact</NavLink>
-                </div>
-
+                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/portfolio'>Portfolio</NavLink>
+                <NavLink to='/courses'>Courses</NavLink>
+                <NavLink to='/contact'>Contact</NavLink>
             </ul>
             <div className='userAccount'>
                 <div className="shopping-cart">

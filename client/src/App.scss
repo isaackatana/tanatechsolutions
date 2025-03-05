@@ -40,7 +40,7 @@ body {
             align-items: center;
             gap: 30px;
 
-            ul {
+            .nav-links {
                 display: flex;
                 gap: 30px;
                 max-height: 200px;
@@ -51,6 +51,7 @@ body {
                     flex-direction: column;
                     position: fixed;
                     width: 50%;
+                    height: 100vh;
                     top: 64px;
                     right: 0;
                     gap: 0;
@@ -71,6 +72,7 @@ body {
                     font-weight: bold;
                     cursor: pointer;
                     background-color: #0076a3;
+                    padding: 20px;
 
 
                     @include mobile(){
@@ -85,21 +87,7 @@ body {
                 }
 
                 .has-submenu {
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
-                    color: white;
-                    z-index: 1;
-
-                    @include mobile(){
-                        justify-content: space-between;
-                        position: relative;
-                        
-                        &:hover {
-                            background-color: white;
-                        }
-                    }
-
+                    
                     &:hover {
                         color: white;
                     }
@@ -350,20 +338,15 @@ body {
     }
 
     .video {
-        padding: 10px 20px;
-
-        @include mobile(){
-            padding: 5px 10px;
-        }
-        
         span {
             display: flex;
             align-items: center;
             overflow-x: hidden;
             gap: 5px;
-            margin-bottom: 5px;
+            padding: 10px 20px;
 
             @include mobile(){
+                padding: 5px 10px;
             }
 
             a {
@@ -406,10 +389,12 @@ body {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 10px;
+            padding: 0px 20px;
 
             @include mobile(){
                 grid-template-columns: 1fr;
                 gap: 5px;
+                padding: 0;
             }
 
             .wrapper {
@@ -508,6 +493,55 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    .courses {
+        span {
+            display: flex;
+            align-items: center;
+            overflow-x: hidden;
+            gap: 5px;
+            padding: 10px 20px;
+
+            @include mobile(){
+                padding: 5px 10px;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #00b7ff;
+                border-radius: 5px;
+
+                svg {
+                    cursor: pointer;
+                    padding: 10px;
+                    color: white;
+
+                }
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                button {
+                    width: 150px;
+                    padding: 10px;
+                    cursor: pointer;
+                    background-color: #0076a3;
+                    color: white;
+                    border-radius: 5px;
+                    border: none;
+                    font-weight: bold;
+                }
+            }
+
+            
+
         }
     }
 

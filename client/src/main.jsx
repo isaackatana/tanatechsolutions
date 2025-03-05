@@ -5,12 +5,13 @@ import App from './App.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router'
 import Home from './pages/Home.jsx'
 import NotFound from './pages/NotFound.jsx'
-import Video from './pages/Video.jsx'
+import Video from './pages/Portfolio.jsx'
 import Audio from './pages/Audio.jsx'
 import Contact from './pages/Contact.jsx'
 import Register from './components/auth/Register.jsx'
 import Login from './components/auth/Login.jsx'
 import Courses from './pages/Courses.jsx'
+import Portfolio from './pages/Portfolio.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,7 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       { path: '', element: <Home /> }, 
-      { path: '/video', element: <Video /> },
-      { path: '/audio', element: <Audio /> }, 
+      { path: '/portfolio', element: <Portfolio /> },
       { path: '/contact', element: <Contact /> },
       { path: '/courses', element: <Courses /> }, 
     ],

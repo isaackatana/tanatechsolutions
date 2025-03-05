@@ -31,7 +31,7 @@ body header nav {
   align-items: center;
   gap: 30px;
 }
-body header nav ul {
+body header nav .nav-links {
   display: flex;
   gap: 30px;
   max-height: 200px;
@@ -39,73 +39,59 @@ body header nav ul {
   transition: 0.3s;
 }
 @media (max-width: 450px) {
-  body header nav ul {
+  body header nav .nav-links {
     flex-direction: column;
     position: fixed;
     width: 50%;
+    height: 100vh;
     top: 64px;
     right: 0;
     gap: 0;
   }
-  body header nav ul.active {
+  body header nav .nav-links.active {
     transform: translateX(0%);
     z-index: 1;
   }
-  body header nav ul.inactive {
+  body header nav .nav-links.inactive {
     transform: translateX(100%);
   }
 }
-body header nav ul a {
+body header nav .nav-links a {
   text-decoration: none;
   color: white;
   font-weight: bold;
   cursor: pointer;
   background-color: #0076a3;
+  padding: 20px;
 }
 @media (max-width: 450px) {
-  body header nav ul a {
+  body header nav .nav-links a {
     color: white;
   }
-  body header nav ul a:hover {
+  body header nav .nav-links a:hover {
     background-color: #00b7ff;
     color: white;
   }
 }
-body header nav ul .has-submenu {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: white;
-  z-index: 1;
-}
-@media (max-width: 450px) {
-  body header nav ul .has-submenu {
-    justify-content: space-between;
-    position: relative;
-  }
-  body header nav ul .has-submenu:hover {
-    background-color: white;
-  }
-}
-body header nav ul .has-submenu:hover {
+body header nav .nav-links .has-submenu:hover {
   color: white;
 }
-body header nav ul .has-submenu a {
+body header nav .nav-links .has-submenu a {
   display: flex;
 }
-body header nav ul .has-submenu a:hover {
+body header nav .nav-links .has-submenu a:hover {
   color: #00b7ff;
 }
 @media (max-width: 450px) {
-  body header nav ul .has-submenu a {
+  body header nav .nav-links .has-submenu a {
     width: 100%;
     padding: 30px;
   }
-  body header nav ul .has-submenu a:hover {
+  body header nav .nav-links .has-submenu a:hover {
     color: white;
   }
 }
-body header nav ul .has-submenu ul {
+body header nav .nav-links .has-submenu ul {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -122,7 +108,7 @@ body header nav ul .has-submenu ul {
   top: 18px;
   z-index: 1;
 }
-body header nav ul .has-submenu ul li {
+body header nav .nav-links .has-submenu ul li {
   padding: 10px;
   width: 150px;
   color: white;
@@ -132,22 +118,22 @@ body header nav ul .has-submenu ul li {
   cursor: pointer;
 }
 @media (max-width: 450px) {
-  body header nav ul .has-submenu ul li {
+  body header nav .nav-links .has-submenu ul li {
     width: auto;
   }
 }
-body header nav ul .has-submenu ul li:hover {
+body header nav .nav-links .has-submenu ul li:hover {
   background-color: white;
   color: #0076a3;
 }
-body header nav ul .has-submenu:hover ul {
+body header nav .nav-links .has-submenu:hover ul {
   display: flex;
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
 }
 @media (max-width: 450px) {
-  body header nav ul .has-submenu:hover ul {
+  body header nav .nav-links .has-submenu:hover ul {
     transform: translateX(-100%);
     position: absolute;
     opacity: 1;
@@ -302,20 +288,17 @@ body .hero .hero-details button {
   color: white;
   margin-top: 5px;
 }
-body .video {
-  padding: 10px 20px;
-}
-@media (max-width: 450px) {
-  body .video {
-    padding: 5px 10px;
-  }
-}
 body .video span {
   display: flex;
   align-items: center;
   overflow-x: hidden;
   gap: 5px;
-  margin-bottom: 5px;
+  padding: 10px 20px;
+}
+@media (max-width: 450px) {
+  body .video span {
+    padding: 5px 10px;
+  }
 }
 body .video span a {
   display: flex;
@@ -348,11 +331,13 @@ body .video .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
+  padding: 0px 20px;
 }
 @media (max-width: 450px) {
   body .video .container {
     grid-template-columns: 1fr;
     gap: 5px;
+    padding: 0;
   }
 }
 body .video .container .wrapper {
@@ -441,6 +426,45 @@ body .video .container .overlay .new-computer form textarea {
 body .video .container .overlay .new-computer form button {
   padding: 10px;
   cursor: pointer;
+}
+body .courses span {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  gap: 5px;
+  padding: 10px 20px;
+}
+@media (max-width: 450px) {
+  body .courses span {
+    padding: 5px 10px;
+  }
+}
+body .courses span a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00b7ff;
+  border-radius: 5px;
+}
+body .courses span a svg {
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+}
+body .courses span div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+body .courses span div button {
+  width: 150px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #0076a3;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
 }
 body footer {
   background-color: #0076a3;
