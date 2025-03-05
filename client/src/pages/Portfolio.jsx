@@ -13,7 +13,14 @@ function Portfolio() {
   return (
     <>
     <div className="video">
-      <span><Link to='/'><FaArrowLeft/></Link><div><button>Music Videos</button><button>Short Films</button><button>Adverts</button></div></span>
+      <span><Link to='/'><FaArrowLeft/></Link>
+      <div>
+        <button>Photos</button>
+        <button>Music Videos</button>
+        <button>Films</button>
+        <button>Adverts</button>
+      </div>
+      </span>
       <div className="container">
           {videos.map((video)=>(
           <div className="wrapper">
