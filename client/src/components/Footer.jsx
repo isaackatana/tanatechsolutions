@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../assets/tana-tech-logo (svg).svg'
 import {FaEnvelope, FaMapPin, FaPhone } from "react-icons/fa";
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 function Footer() {
   return (
     <>
@@ -16,11 +16,12 @@ function Footer() {
             <li><FaMapPin/> Ukunda Diani – Opposite </li>
           </ul>
         </div>
-        <div>
+        <div className='quick-links'>
           <h3>Quick Links</h3>
-          <li>Home</li>
-          <li>Video</li>
-          <li>Audio</li>
+          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/portfolio'>Portfolio</NavLink>
+          <NavLink to='/course'>Courses</NavLink>
+          <NavLink to='/contact'>Contact</NavLink>
         </div>
       </nav>
         <p>© 2025 Tana Tech Studios - All Rights Reserved</p>

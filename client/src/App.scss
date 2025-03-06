@@ -387,9 +387,17 @@ body {
                     cursor: pointer;
                     background-color: #0076a3;
                     color: white;
-                    border-radius: 5px;
+                    border-radius: 20px;
                     border: none;
                     font-weight: bold;
+
+                    &:hover {
+                        background-color: #00b7ff;
+                    }
+                }
+
+                .active {
+                    background-color: #00b7ff;
                 }
             }
 
@@ -546,9 +554,17 @@ body {
                     cursor: pointer;
                     background-color: #0076a3;
                     color: white;
-                    border-radius: 5px;
+                    border-radius: 20px;
                     border: none;
                     font-weight: bold;
+
+                    &:hover {
+                        background-color: #00b7ff;
+                    }
+                }
+
+                .active {
+                    background-color: #00b7ff;
                 }
             }
 
@@ -572,7 +588,7 @@ body {
                 padding: 10px;
             }
 
-            li {
+            a {
                 list-style: none;
                 cursor: pointer;
             }
@@ -594,6 +610,15 @@ body {
                     color: white;
                     list-style: none;
                 }
+            }
+        }
+
+        .quick-links {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                color: white;
             }
         }
     }

@@ -333,9 +333,15 @@ body .video span div button {
   cursor: pointer;
   background-color: #0076a3;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   border: none;
   font-weight: bold;
+}
+body .video span div button:hover {
+  background-color: #00b7ff;
+}
+body .video span div .active {
+  background-color: #00b7ff;
 }
 body .video .container {
   display: grid;
@@ -472,9 +478,15 @@ body .courses span div button {
   cursor: pointer;
   background-color: #0076a3;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   border: none;
   font-weight: bold;
+}
+body .courses span div button:hover {
+  background-color: #00b7ff;
+}
+body .courses span div .active {
+  background-color: #00b7ff;
 }
 body footer {
   background-color: #0076a3;
@@ -492,7 +504,7 @@ body footer nav {
     padding: 10px;
   }
 }
-body footer nav li {
+body footer nav a {
   list-style: none;
   cursor: pointer;
 }
@@ -507,4 +519,11 @@ body footer .contact img {
 body footer .contact ul li {
   color: white;
   list-style: none;
+}
+body footer .quick-links {
+  display: flex;
+  flex-direction: column;
+}
+body footer .quick-links a {
+  color: white;
 }/*# sourceMappingURL=App.css.map */
