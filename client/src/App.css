@@ -490,11 +490,6 @@ body .courses span div button:hover {
   background-color: white;
   color: #0076a3;
 }
-@media (max-width: 450px) {
-  body .courses span div button {
-    width: 130px;
-  }
-}
 body .courses span div .active {
   background-color: #00b7ff;
 }
