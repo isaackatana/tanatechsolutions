@@ -565,6 +565,10 @@ body {
                         background-color: white;
                         color: #0076a3;
                     }
+
+                    @include mobile(){
+                       width: 130px;
+                    }
                 }
 
                 .active {
