@@ -303,7 +303,8 @@ body .video span {
   align-items: center;
   overflow-x: hidden;
   gap: 5px;
-  padding: 10px 20px;
+  padding: 5px 20px;
+  background-color: #00b7ff;
 }
 @media (max-width: 450px) {
   body .video span {
@@ -314,13 +315,13 @@ body .video span a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00b7ff;
+  background-color: white;
   border-radius: 5px;
 }
 body .video span a svg {
   cursor: pointer;
   padding: 5px;
-  color: white;
+  color: #0076a3;
 }
 body .video span div {
   display: flex;
@@ -337,7 +338,8 @@ body .video span div button {
   font-weight: bold;
 }
 body .video span div button:hover {
-  background-color: #00b7ff;
+  background-color: white;
+  color: #0076a3;
 }
 body .video span div .active {
   background-color: #00b7ff;
@@ -445,9 +447,11 @@ body .video .container .overlay .new-computer form button {
 body .courses span {
   display: flex;
   align-items: center;
-  overflow-x: hidden;
+  justify-content: start;
   gap: 5px;
-  padding: 10px 20px;
+  padding: 5px 20px;
+  background-color: #00b7ff;
+  overflow-x: hidden;
 }
 @media (max-width: 450px) {
   body .courses span {
@@ -458,20 +462,22 @@ body .courses span a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00b7ff;
+  background-color: white;
   border-radius: 5px;
 }
 body .courses span a svg {
   cursor: pointer;
   padding: 5px;
-  color: white;
+  color: #0076a3;
 }
 body .courses span div {
   display: flex;
-  align-items: center;
+  grid-template-columns: 1fr;
   gap: 5px;
+  overflow-x: hidden;
 }
 body .courses span div button {
+  display: flex;
   padding: 5px 10px;
   cursor: pointer;
   background-color: #0076a3;
@@ -481,7 +487,8 @@ body .courses span div button {
   font-weight: bold;
 }
 body .courses span div button:hover {
-  background-color: #00b7ff;
+  background-color: white;
+  color: #0076a3;
 }
 body .courses span div .active {
   background-color: #00b7ff;

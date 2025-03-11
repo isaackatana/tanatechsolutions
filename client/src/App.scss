@@ -355,7 +355,8 @@ body {
             align-items: center;
             overflow-x: hidden;
             gap: 5px;
-            padding: 10px 20px;
+            padding: 5px 20px;
+            background-color: #00b7ff;
 
             @include mobile(){
                 padding: 5px 10px;
@@ -365,13 +366,13 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: #00b7ff;
+                background-color: white;
                 border-radius: 5px;
 
                 svg {
                     cursor: pointer;
                     padding: 5px;
-                    color: white;
+                    color: #0076a3;
 
                 }
             }
@@ -391,7 +392,8 @@ body {
                     font-weight: bold;
 
                     &:hover {
-                        background-color: #00b7ff;
+                        background-color: white;
+                        color: #0076a3;
                     }
                 }
 
@@ -519,9 +521,11 @@ body {
         span {
             display: flex;
             align-items: center;
-            overflow-x: hidden;
+            justify-content: start;
             gap: 5px;
-            padding: 10px 20px;
+            padding: 5px 20px;
+            background-color: #00b7ff;
+            overflow-x: hidden;
 
             @include mobile(){
                 padding: 5px 10px;
@@ -531,23 +535,24 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: #00b7ff;
+                background-color: white;
                 border-radius: 5px;
 
                 svg {
                     cursor: pointer;
                     padding: 5px;
-                    color: white;
-
+                    color: #0076a3;
                 }
             }
 
             div {
                 display: flex;
-                align-items: center;
+                grid-template-columns: 1fr;
                 gap: 5px;
+                overflow-x: hidden;
 
                 button {
+                    display: flex;
                     padding: 5px 10px;
                     cursor: pointer;
                     background-color: #0076a3;
@@ -557,7 +562,8 @@ body {
                     font-weight: bold;
 
                     &:hover {
-                        background-color: #00b7ff;
+                        background-color: white;
+                        color: #0076a3;
                     }
                 }
 
@@ -565,8 +571,6 @@ body {
                     background-color: #00b7ff;
                 }
             }
-
-            
 
         }
     }
