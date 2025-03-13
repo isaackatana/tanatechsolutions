@@ -194,7 +194,7 @@ body header nav .userAccount .user-login .profile svg {
   font-size: 15px;
   color: white;
 }
-body header nav .userAccount .userLoginPopup {
+body header nav .userAccount .auth-overlay {
   position: fixed;
   inset: 0;
   display: flex;
@@ -202,34 +202,38 @@ body header nav .userAccount .userLoginPopup {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 3;
+  cursor: pointer;
 }
-body header nav .userAccount .userLoginPopup .wrapper {
+body header nav .userAccount .wrapper {
   background-color: #00b7ff;
   padding: 10px;
+  border-radius: 8px;
 }
-body header nav .userAccount .userLoginPopup .wrapper h3 {
+body header nav .userAccount .wrapper h3 {
   color: white;
   margin-bottom: 5px;
 }
-body header nav .userAccount .userLoginPopup .wrapper form {
+body header nav .userAccount .wrapper form {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
-body header nav .userAccount .userLoginPopup .wrapper form input {
+body header nav .userAccount .wrapper form input {
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+body header nav .userAccount .wrapper form button {
   padding: 10px;
 }
-body header nav .userAccount .userLoginPopup .wrapper form button {
-  padding: 10px;
-}
-body header nav .userAccount .userLoginPopup .wrapper p {
+body header nav .userAccount .wrapper p {
   padding: 10px;
   border: solid rgb(255, 255, 255) 0.1rem;
   margin-top: 10px;
   font-size: small;
   color: white;
 }
-body header nav .userAccount .userLoginPopup .wrapper p a {
+body header nav .userAccount .wrapper p a {
   color: white;
 }
 body header .burger {
@@ -504,10 +508,36 @@ body .courses .container {
     padding: 5px 10px;
   }
 }
+body .courses .container .wrapper {
+  width: 300px;
+}
+@media (max-width: 450px) {
+  body .courses .container .wrapper {
+    width: 100%;
+  }
+}
 body .courses .container .wrapper img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+body .courses .container .wrapper h2 {
+  margin-bottom: 5px;
+}
+body .courses .container .wrapper p {
+  margin-bottom: 5px;
+}
+body .courses .container .wrapper a {
+  text-decoration: none;
+  color: white;
+}
+body .courses .container .wrapper a span {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+body .courses .container .wrapper a span:hover {
+  background-color: #0076a3;
 }
 body .course-details .container {
   display: grid;
@@ -521,6 +551,27 @@ body .course-details .container {
     padding: 0;
   }
 }
+body .course-details .container .wrapper2 iframe {
+  width: 100%;
+}
+body .course-details .container .wrapper2 div {
+  display: flex;
+}
+body .course-details .container .wrapper2 div button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #00b7ff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+body .course-details .container .wrapper2 div button:hover {
+  background-color: #0076a3;
+  color: white;
+}
 body .course-details .container .wrapper1 {
   display: flex;
   flex-direction: column;
@@ -533,7 +584,7 @@ body .course-details .container .wrapper1 {
 }
 body .course-details .container .wrapper1 span {
   background-color: #00b7ff;
-  padding: 5px 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -542,16 +593,6 @@ body .course-details .container .wrapper1 span:hover {
   background-color: #0076a3;
   color: white;
   cursor: pointer;
-}
-body .course-details .container .wrapper2 iframe {
-  width: 100%;
-}
-body .course-details .container .wrapper2 button {
-  width: 100%;
-  padding: 5px 20px;
-  cursor: pointer;
-  background-color: #00b7ff;
-  border: none;
 }
 body footer {
   background-color: #0076a3;

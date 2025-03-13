@@ -229,7 +229,7 @@ body {
 
                 // .....Login pop up
 
-                .userLoginPopup{
+                .auth-overlay{
                     position: fixed;
                     inset: 0;
                     display: flex;
@@ -237,40 +237,45 @@ body {
                     justify-content: center;
                     background-color: rgba(0, 0, 0, 0.5);
                     z-index: 3;
+                    cursor: pointer;
 
-                    .wrapper {
-                        background-color: #00b7ff;
-                        padding: 10px;
+                }
 
-                        h3 {
-                            color: white;
-                            margin-bottom: 5px;
-                        }
-                        form {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 3px;
+                .wrapper {
+                    background-color: #00b7ff;
+                    padding: 10px;
+                    border-radius: 8px;
 
-                            input {
-                                padding: 10px;
-                            }
+                    h3 {
+                        color: white;
+                        margin-bottom: 5px;
+                    }
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
 
-                            button {
-                                padding: 10px;
-                            }
-                            
-                        }
-
-                        p {
+                        input {
                             padding: 10px;
-                            border: solid rgb(255, 255, 255) 0.1rem;
-                            margin-top: 10px;
-                            font-size: small;
-                            color: white;
+                            background-color: white;
+                            border: none;
+                        }
 
-                            a {
-                                color: white;
-                            }
+                        button {
+                            padding: 10px;
+                        }
+                        
+                    }
+
+                    p {
+                        padding: 10px;
+                        border: solid rgb(255, 255, 255) 0.1rem;
+                        margin-top: 10px;
+                        font-size: small;
+                        color: white;
+
+                        a {
+                            color: white;
                         }
                     }
                 }
@@ -584,9 +589,40 @@ body {
             }
 
             .wrapper {
+                width: 300px;
+
+                @include mobile(){
+                    width: 100%;
+                }
+
                 img {
                     width: 100%;
                     object-fit: cover;
+                }
+
+                h2 {
+                    margin-bottom: 5px;
+
+                }
+
+                p {
+                    margin-bottom: 5px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: white;
+
+                    span {
+                        padding: 10px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        &:hover {
+                            background-color: #0076a3;
+                        }
+                        
+                    }
                 }
             }
         }
@@ -604,6 +640,32 @@ body {
                 padding: 0;
             }
 
+            .wrapper2 {
+                iframe {
+                    width: 100%;
+                }
+                
+                div {
+                    display: flex;
+                    button {
+                        width: 100%;
+                        padding: 10px;
+                        cursor: pointer;
+                        background-color: #00b7ff;
+                        border: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+    
+                        &:hover {
+                            background-color: #0076a3;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
             .wrapper1 {
                 display: flex;
                 flex-direction: column;
@@ -615,7 +677,7 @@ body {
 
                 span {
                     background-color: #00b7ff;
-                    padding: 5px 20px;
+                    padding: 10px;
                     display: flex;
                     align-items: center;
                     gap: 10px;
@@ -625,19 +687,6 @@ body {
                         color: white;
                         cursor: pointer;
                     }
-                }
-            }
-            .wrapper2 {
-                iframe {
-                    width: 100%;
-                }
-                
-                button {
-                    width: 100%;
-                    padding: 5px 20px;
-                    cursor: pointer;
-                    background-color: #00b7ff;
-                    border: none;
                 }
             }
         }

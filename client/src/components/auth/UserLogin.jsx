@@ -10,7 +10,8 @@ function UserLogin() {
   };
 
   return (
-    <div className='userLoginPopup' onClick={() => setIsOpen(false)}>
+    <div className='auth-overlay' onClick={() => setIsOpen(false) }>
+      <img src="" alt="" />
       {isMenuOpen ? <Login/> : <Register/>}
     </div>
   )
