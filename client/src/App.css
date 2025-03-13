@@ -472,9 +472,9 @@ body .courses span a svg {
 }
 body .courses span div {
   display: flex;
-  grid-template-columns: 1fr;
+  align-items: center;
   gap: 5px;
-  overflow-x: hidden;
+  width: 100%;
 }
 body .courses span div button {
   display: flex;
@@ -492,6 +492,66 @@ body .courses span div button:hover {
 }
 body .courses span div .active {
   background-color: #00b7ff;
+}
+body .courses .container {
+  display: flex;
+  gap: 10px;
+  padding: 5px 20px;
+}
+@media (max-width: 450px) {
+  body .courses .container {
+    flex-direction: column;
+    padding: 5px 10px;
+  }
+}
+body .courses .container .wrapper img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .course-details .container {
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  gap: 10px;
+  padding: 5px 20px;
+}
+@media (max-width: 450px) {
+  body .course-details .container {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+body .course-details .container .wrapper1 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media (max-width: 450px) {
+  body .course-details .container .wrapper1 {
+    padding: 5px 10px;
+  }
+}
+body .course-details .container .wrapper1 span {
+  background-color: #00b7ff;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body .course-details .container .wrapper1 span:hover {
+  background-color: #0076a3;
+  color: white;
+  cursor: pointer;
+}
+body .course-details .container .wrapper2 iframe {
+  width: 100%;
+}
+body .course-details .container .wrapper2 button {
+  width: 100%;
+  padding: 5px 20px;
+  cursor: pointer;
+  background-color: #00b7ff;
+  border: none;
 }
 body footer {
   background-color: #0076a3;

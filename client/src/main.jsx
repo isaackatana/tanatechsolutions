@@ -12,6 +12,7 @@ import Register from './components/auth/Register.jsx'
 import Login from './components/auth/Login.jsx'
 import Courses from './pages/Courses.jsx'
 import Portfolio from './pages/Portfolio.jsx'
+import CourseDetails from './pages/CourseDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
       { path: '', element: <Home /> }, 
       { path: '/portfolio', element: <Portfolio /> },
       { path: '/contact', element: <Contact /> },
-      { path: '/courses', element: <Courses /> }, 
+      { path: '/courses', element: <Courses /> },
+      { path: '/course-details', element: <CourseDetails /> },  
     ],
   },
   { path: '/register', element: <Register /> },

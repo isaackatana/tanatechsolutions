@@ -13,7 +13,7 @@ function Portfolio() {
   return (
     <>
     <div className="video">
-      <span><Link to='/'><FaArrowLeft/></Link>
+      <span>
       <div>
         <button>Photos</button>
         <button>Music Videos</button>
