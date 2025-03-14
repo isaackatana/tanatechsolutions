@@ -189,9 +189,26 @@ body header nav .userAccount .user-login .profile {
   justify-content: center;
   border-radius: 15px;
   cursor: pointer;
+  position: relative;
 }
 body header nav .userAccount .user-login .profile svg {
   font-size: 15px;
+  color: white;
+}
+body header nav .userAccount .user-login .profile ul {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: #00b7ff;
+  width: 150px;
+  border-radius: 5px;
+}
+body header nav .userAccount .user-login .profile ul li {
+  padding: 10px;
+  list-style: none;
+}
+body header nav .userAccount .user-login .profile ul li:hover {
+  background-color: #0076a3;
   color: white;
 }
 body header nav .userAccount .auth-overlay {
@@ -556,6 +573,7 @@ body .course-details .container .wrapper2 iframe {
 }
 body .course-details .container .wrapper2 div {
   display: flex;
+  gap: 3px;
 }
 body .course-details .container .wrapper2 div button {
   width: 100%;

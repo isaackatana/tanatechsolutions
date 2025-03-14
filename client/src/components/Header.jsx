@@ -34,6 +34,11 @@ function Header() {
                     <button className='login-btn' onClick={() => setIsOpen(true)}>Login</button>
                     <div className="profile">
                         <FaUser/>
+                        <ul>
+                            <li>Profile</li>
+                            <li>My Courses</li>
+                            <li>Log Out</li>
+                        </ul>
                     </div>
                 </div>
                 {isOpen && (

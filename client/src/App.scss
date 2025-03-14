@@ -218,10 +218,30 @@ body {
                         justify-content: center;
                         border-radius: 15px;
                         cursor: pointer;
+                        position: relative;
 
                         svg {
                             font-size: 15px;
                             color: white;
+                        }
+
+                        ul {
+                            position: absolute;
+                            top: 35px;
+                            right: 0;
+                            background-color: #00b7ff;
+                            width: 150px;
+                            border-radius: 5px;
+
+                            li {
+                                padding: 10px;
+                                list-style: none;
+                                
+                                &:hover {
+                                    background-color: #0076a3;
+                                    color: white;
+                                }
+                            }
                         }
                     }
                 }
@@ -647,6 +667,8 @@ body {
                 
                 div {
                     display: flex;
+                    gap: 3px;
+
                     button {
                         width: 100%;
                         padding: 10px;

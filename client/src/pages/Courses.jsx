@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { FaAngleLeft, FaAngleRight, FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { Link } from 'react-router'
 
 function Courses() {
@@ -24,31 +24,7 @@ function Courses() {
             <h2>Graphics Design Full Course</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eum asperiores sint reiciendis, in voluptas distinctio! Saepe doloremque, </p>
             <Link to='/course-details'>
-            <span>Open Course<FaArrowRight/></span>
-            </Link>
-          </div>
-          <div className="wrapper">
-            <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/04/106032482.jpeg?auto=format&q=60&fit=max&w=930" alt="" />
-            <h2>Graphics Design Full Course</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eum asperiores sint reiciendis, in voluptas distinctio! Saepe doloremque, </p>
-            <Link to='/course-details'>
-            <span>Open Course<FaArrowRight/></span>
-            </Link>
-          </div>
-          <div className="wrapper">
-            <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/04/106032482.jpeg?auto=format&q=60&fit=max&w=930" alt="" />
-            <h2>Graphics Design Full Course</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eum asperiores sint reiciendis, in voluptas distinctio! Saepe doloremque, </p>
-            <Link to='/course-details'>
-            <span>Open Course<FaArrowRight/></span>
-            </Link>
-          </div>
-          <div className="wrapper">
-            <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/04/106032482.jpeg?auto=format&q=60&fit=max&w=930" alt="" />
-            <h2>Graphics Design Full Course</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio eum asperiores sint reiciendis, in voluptas distinctio! Saepe doloremque, </p>
-            <Link to='/course-details'>
-            <span>Open Course<FaArrowRight/></span>
+            <span>Open Course<FaAngleRight/></span>
             </Link>
           </div>
           
