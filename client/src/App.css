@@ -6,8 +6,6 @@
 
 body {
   /* Auth Modal */
-  /* Auth Modal */
-  /* Auth Modal */
   /* Sticky Header */
   /* Auth Modal */
   /* To prevent content from being hidden under the fixed header */
@@ -26,8 +24,13 @@ body header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   /* Smooth Transition for Mobile Menu */
 }
+@media (max-width: 768px) {
+  body header {
+    padding: 10px;
+  }
+}
 body header .logo img {
-  width: 50px;
+  width: 25px;
 }
 body header nav {
   display: flex;
@@ -44,6 +47,14 @@ body header nav .nav-links a {
   transition: 0.3s;
   font-size: 16px;
 }
+@media (max-width: 768px) {
+  body header nav .nav-links a {
+    padding: 20px;
+  }
+  body header nav .nav-links a:hover {
+    background-color: #00b7ff;
+  }
+}
 body header nav .nav-links a:hover {
   color: #00d4ff;
 }
@@ -54,6 +65,7 @@ body header .userAccount {
 }
 body header .userAccount .shopping-cart {
   position: relative;
+  display: flex;
   cursor: pointer;
 }
 body header .userAccount .shopping-cart span {
@@ -72,14 +84,14 @@ body header .userAccount .shopping-cart span {
 }
 body header .userAccount .user-login {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 body header .userAccount .user-login .login-btn,
 body header .userAccount .user-login .register-btn {
   background: #00d4ff;
   border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
   color: white;
   cursor: pointer;
   transition: 0.3s;
@@ -116,11 +128,14 @@ body header .userAccount .user-login .profile:hover ul {
 }
 body header .burger {
   display: none;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  font-size: x-large;
 }
 @media (max-width: 768px) {
   body header .burger {
-    display: block;
+    display: flex;
   }
 }
 @media (max-width: 768px) {
@@ -133,7 +148,6 @@ body header .burger {
     background: #0076a3;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap: 20px;
     transition: left 0.5s ease-in-out;
@@ -147,60 +161,6 @@ body header .burger {
     padding: 10px;
     color: white;
   }
-}
-body .auth-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-body .auth-modal {
-  background: white;
-  padding: 20px;
-  width: 300px;
-  border-radius: 5px;
-  position: relative;
-  text-align: center;
-}
-body .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 18px;
-  cursor: pointer;
-}
-body .auth-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-body .auth-modal {
-  background: white;
-  padding: 20px;
-  width: 300px;
-  border-radius: 5px;
-  position: relative;
-  text-align: center;
-}
-body .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 18px;
-  cursor: pointer;
 }
 body .auth-overlay {
   position: fixed;
@@ -484,24 +444,40 @@ body .video .container .overlay .new-computer form button {
   cursor: pointer;
 }
 body .courses-page {
-  padding: 20px;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 768px) {
+  body .courses-page .courses-page {
+    padding: 10px;
+  }
 }
 body .courses-page .category-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 5px;
+  padding: 5px 20px;
+}
+@media (max-width: 768px) {
+  body .courses-page .category-buttons {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px 10px;
+  }
+  body .courses-page .category-buttons button {
+    flex-shrink: 0;
+  }
 }
 body .courses-page .category-buttons button {
-  padding: 10px 15px;
+  padding: 5px 10px;
   border: none;
   background: #ddd;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s ease;
+  border-radius: 20px;
 }
 body .courses-page .category-buttons button:hover {
   background: #00b7ff;
@@ -515,8 +491,8 @@ body .courses-page .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  width: 100%;
   max-width: 1200px;
+  padding: 5px 20px;
 }
 body .courses-page .courses-grid .course-card {
   background: white;
@@ -558,23 +534,8 @@ body .courses-page .courses-grid .course-card a:hover {
   background: #0076a3;
 }
 @media (max-width: 768px) {
-  body .courses-page .courses-page {
-    padding: 10px;
-  }
-  body .courses-page .category-buttons {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-  body .courses-page .category-buttons button {
-    flex-shrink: 0;
-  }
   body .courses-page .courses-grid {
     grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 768px) {
-  body .courses-page {
     padding: 10px;
   }
 }
@@ -591,7 +552,7 @@ body .course-details {
 }
 body .course-details .container {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 @media (max-width: 768px) {
   body .course-details .container {
@@ -606,17 +567,28 @@ body .course-details .container .video-wrapper {
 }
 body .course-details .container .video-wrapper iframe {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: 350px;
+}
+@media (max-width: 768px) {
+  body .course-details .container .video-wrapper iframe {
+    height: auto;
+  }
 }
 body .course-details .container .video-wrapper .locked-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 350px;
   background: #ddd;
   border-radius: 10px;
   color: #555;
   text-align: center;
+}
+@media (max-width: 768px) {
+  body .course-details .container .video-wrapper .locked-content {
+    height: auto;
+  }
 }
 body .course-details .container .video-wrapper .locked-content svg {
   color: #0076a3;
@@ -626,6 +598,12 @@ body .course-details .container .video-wrapper .video-navigation {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  gap: 5px;
+}
+@media (max-width: 768px) {
+  body .course-details .container .video-wrapper .video-navigation {
+    padding: 10px;
+  }
 }
 body .course-details .container .video-wrapper .video-navigation button {
   background: #00b7ff;
@@ -637,6 +615,7 @@ body .course-details .container .video-wrapper .video-navigation button {
   align-items: center;
   gap: 5px;
   border-radius: 5px;
+  width: 100%;
 }
 body .course-details .container .video-wrapper .video-navigation button:hover {
   background: #005f81;
@@ -650,6 +629,11 @@ body .course-details .container .lesson-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+@media (max-width: 768px) {
+  body .course-details .container .lesson-list {
+    padding: 10px;
+  }
 }
 body .course-details .container .lesson-list .lesson-item {
   display: flex;
@@ -672,7 +656,7 @@ body .course-details .container .lesson-list .lesson-item:hover {
   color: white;
 }
 body .course-details .container .lesson-list .lesson-item.active {
-  background: #005f81;
+  background: #00b7ff;
   color: white;
 }
 body footer {
@@ -680,9 +664,19 @@ body footer {
   color: white;
   padding: 30px 20px;
 }
+@media (max-width: 768px) {
+  body footer {
+    padding: 10px;
+  }
+}
 body footer .footer-container {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  body footer .footer-container {
+    flex-direction: column;
+  }
 }
 body footer .footer-container div {
   width: 100%;
@@ -710,7 +704,7 @@ body footer .contact {
   gap: 10px;
 }
 body footer .contact img {
-  width: 60px;
+  width: 40px;
   margin-bottom: 15px;
 }
 body footer .contact ul {

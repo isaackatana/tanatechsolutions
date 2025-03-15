@@ -40,8 +40,6 @@ function CourseDetails({ isLoggedIn }) {
         <div className="video-wrapper">
           {currentVideo === 1 || isLoggedIn ? (
             <iframe
-              width="100%"
-              height="400px"
               src={courseVideos[currentVideo - 1].url}
               title="Course Video"
               frameBorder="0"
