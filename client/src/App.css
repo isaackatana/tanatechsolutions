@@ -46,6 +46,8 @@ body header nav .nav-links a {
   text-decoration: none;
   transition: 0.3s;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   body header nav .nav-links a {
@@ -571,7 +573,7 @@ body .course-details .container .video-wrapper iframe {
 }
 @media (max-width: 768px) {
   body .course-details .container .video-wrapper iframe {
-    height: auto;
+    height: 200px;
   }
 }
 body .course-details .container .video-wrapper .locked-content {

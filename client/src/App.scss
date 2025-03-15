@@ -45,6 +45,8 @@ body {
           text-decoration: none;
           transition: 0.3s;
           font-size: 16px;
+          display: flex;
+          justify-content: center;
 
           @media (max-width: 768px) {
 
@@ -176,6 +178,7 @@ body {
           font-size: 18px;
           padding: 10px;
           color: white;
+
         }
       }
     }
@@ -650,7 +653,7 @@ body {
           height: 350px;
 
           @media (max-width: 768px) {
-            height: auto;
+            height: 200px;
           }
         }
 
