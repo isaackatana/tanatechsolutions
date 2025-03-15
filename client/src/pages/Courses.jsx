@@ -8,14 +8,14 @@ function Courses() {
       <div className="courses">
         <span>
           <div>
-            <button>Graphics Design</button>
-            <button>Video Editing</button>
-            <button>Web Design</button>
-            <button>Web Development</button>
-            <button>Social Media Marketing</button>
-            <button>Content Creation</button>
-            <button>Cyber Security</button>
-            <button>IT Support</button>
+            <button>Graphics&nbsp;Design</button>
+            <button>Video&nbsp;Editing</button>
+            <button>Web&nbsp;Design</button>
+            <button>Web&nbsp;Development</button>
+            <button>Social&nbsp;Media&nbsp;Marketing</button>
+            <button>ContentCreation</button>
+            <button>CyberSecurity</button>
+            <button>ITSupport</button>
           </div>
         </span>
         <div className="container">
