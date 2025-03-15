@@ -466,21 +466,22 @@ body {
       button {
         padding: 5px 10px;
         border: none;
-        background: #ddd;
+        background: #0076a3;
         cursor: pointer;
         border-radius: 5px;
         font-weight: bold;
         transition: background 0.3s ease;
         border-radius: 20px;
+        color: white;
 
         &:hover {
-          background: #0076a3;
-          color: white;
+          background: white;
+          color: black;
         }
 
         &.active {
-          background: #0076a3;
-          color: white;
+          background: white;
+          color:  #0076a3;
         }
       }
     }

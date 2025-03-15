@@ -409,20 +409,21 @@ body .courses-page .category-buttons {
 body .courses-page .category-buttons button {
   padding: 5px 10px;
   border: none;
-  background: #ddd;
+  background: #0076a3;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s ease;
   border-radius: 20px;
+  color: white;
 }
 body .courses-page .category-buttons button:hover {
-  background: #0076a3;
-  color: white;
+  background: white;
+  color: black;
 }
 body .courses-page .category-buttons button.active {
-  background: #0076a3;
-  color: white;
+  background: white;
+  color: #0076a3;
 }
 body .courses-page .courses-grid {
   display: grid;
