@@ -188,6 +188,7 @@ body header .burger {
     gap: 20px;
     transition: left 0.5s ease-in-out;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
   }
   body header .nav-links.active {
     left: 0;
@@ -519,13 +520,12 @@ body .course-details .container .video-wrapper .locked-content {
   justify-content: center;
   height: 350px;
   background: #ddd;
-  border-radius: 10px;
   color: #555;
   text-align: center;
 }
 @media (max-width: 768px) {
   body .course-details .container .video-wrapper .locked-content {
-    height: auto;
+    height: 200px;
   }
 }
 body .course-details .container .video-wrapper .locked-content svg {
