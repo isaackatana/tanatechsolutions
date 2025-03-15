@@ -13,9 +13,9 @@ function Courses() {
             <button>Web&nbsp;Design</button>
             <button>Web&nbsp;Development</button>
             <button>Social&nbsp;Media&nbsp;Marketing</button>
-            <button>ContentCreation</button>
-            <button>CyberSecurity</button>
-            <button>ITSupport</button>
+            <button>Content&nbsp;Creation</button>
+            <button>Cyber&nbsp;Security</button>
+            <button>IT&nbsp;Support</button>
           </div>
         </span>
         <div className="container">

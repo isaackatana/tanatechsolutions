@@ -16,7 +16,7 @@ function Portfolio() {
       <span>
       <div>
         <button>Photos</button>
-        <button>Music Videos</button>
+        <button>Music&nbsp;Videos</button>
         <button>Films</button>
         <button>Adverts</button>
       </div>
