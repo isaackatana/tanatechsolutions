@@ -5,14 +5,14 @@ import App from './App.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router'
 import Home from './pages/Home.jsx'
 import NotFound from './pages/NotFound.jsx'
-import Video from './pages/Portfolio.jsx'
-import Audio from './pages/Audio.jsx'
 import Contact from './pages/Contact.jsx'
 import Register from './components/auth/Register.jsx'
 import Login from './components/auth/Login.jsx'
 import Courses from './pages/Courses.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import CourseDetails from './pages/CourseDetails.jsx'
+import EnrollmentPage from './pages/EnrollmentPage.jsx'
+import PaymentConfirmation from './pages/PaymentConfirmation.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,9 @@ const router = createBrowserRouter([
       { path: '/portfolio', element: <Portfolio /> },
       { path: '/contact', element: <Contact /> },
       { path: '/courses', element: <Courses /> },
-      { path: '/course-details', element: <CourseDetails /> },  
+      { path: '/course/:courseId', element: <CourseDetails /> },
+      { path: '/enroll/:courseId', element: <EnrollmentPage /> },
+      {path:"/payment-confirmation", element: <PaymentConfirmation />},    
     ],
   },
   { path: '/register', element: <Register /> },

@@ -1,81 +1,90 @@
-import React, { useState, useEffect } from 'react';
-import { FaArrowLeft, FaArrowRight, FaPlay, FaLock } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { FaLock, FaPlay } from 'react-icons/fa';
 
-function CourseDetails({ isLoggedIn }) {
-  const courseVideos = [
-    { id: 1, title: 'Introduction', url: 'https://www.youtube.com/embed/876aSEUA_8c?si=peyJD9C5ePTlzHNR' },
-    { id: 2, title: 'Lesson 1 - Basics', url: 'https://www.youtube.com/embed/abcd1234' },
-    { id: 3, title: 'Lesson 2 - Intermediate', url: 'https://www.youtube.com/embed/wxyz5678' },
-    { id: 4, title: 'Lesson 3 - Advanced', url: 'https://www.youtube.com/embed/efgh9101' }
-  ];
+const coursesData = [
+  {
+    id: 1,
+    title: "Graphics Design Full Course",
+    category: "Graphics Design",
+    price: "$49",
+    duration: "10 Hours",
+    level: "Beginner",
+    image: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/04/106032482.jpeg?auto=format&q=60&fit=max&w=930",
+    lessons: [
+      { id: 1, title: "Introduction to Graphics Design", duration: "10 min", url: "https://www.youtube.com/embed/876aSEUA_8c" },
+      { id: 2, title: "Basic Tools & Techniques", duration: "20 min", url: "https://www.youtube.com/embed/abcd1234" },
+      { id: 3, title: "Color Theory", duration: "15 min", url: "https://www.youtube.com/embed/wxyz5678" },
+      { id: 4, title: "Typography Basics", duration: "25 min", url: "https://www.youtube.com/embed/efgh9101" }
+    ]
+  }
+];
 
-  const [currentVideo, setCurrentVideo] = useState(1);
+// Simulated User Authentication & Payment Status
+const isLoggedIn = false;  // Change to true if user is logged in
+const hasPaid = false;  // Change to true if user has purchased the course
 
-  useEffect(() => {
-    const savedProgress = localStorage.getItem('lastWatched');
-    if (savedProgress) {
-      setCurrentVideo(parseInt(savedProgress));
-    }
-  }, []);
+function CourseDetails() {
+  const { courseId } = useParams();
+  const navigate = useNavigate();
+  const course = coursesData.find((c) => c.id === parseInt(courseId));
 
-  useEffect(() => {
-    localStorage.setItem('lastWatched', currentVideo);
-  }, [currentVideo]);
+  const [currentVideo, setCurrentVideo] = useState(course?.lessons[0]?.url);
 
-  const nextVideo = () => {
-    if (currentVideo < courseVideos.length) {
-      setCurrentVideo(currentVideo + 1);
-    }
-  };
+  if (!course) return <h2>Course not found</h2>;
 
-  const prevVideo = () => {
-    if (currentVideo > 1) {
-      setCurrentVideo(currentVideo - 1);
+  const handleLessonClick = (lesson) => {
+    if (lesson.id === 1 || (isLoggedIn && hasPaid)) {
+      setCurrentVideo(lesson.url);
+    } else {
+      alert("Please log in and purchase the course to access this lesson.");
+      navigate(`/enroll/${course.id}`);
     }
   };
 
   return (
     <div className="course-details">
-      <div className="container">
-        <div className="video-wrapper">
-          {currentVideo === 1 || isLoggedIn ? (
-            <iframe
-              src={courseVideos[currentVideo - 1].url}
-              title="Course Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          ) : (
-            <div className="locked-content">
-              <FaLock size={50} />
-              <p>Please log in to access this video.</p>
-            </div>
-          )}
-          <div className="video-navigation">
-            <button onClick={prevVideo} disabled={currentVideo === 1}>
-              <FaArrowLeft /> Previous
-            </button>
-            <button onClick={nextVideo} disabled={currentVideo === courseVideos.length}>
-              Next <FaArrowRight />
-            </button>
-          </div>
-        </div>
-
-        <div className="lesson-list">
-          {courseVideos.map((video) => (
-            <div
-              key={video.id}
-              className={`lesson-item ${currentVideo === video.id ? 'active' : ''}`}
-              onClick={() => isLoggedIn || video.id === 1 ? setCurrentVideo(video.id) : null}
-            >
-              <FaPlay />
-              <span>{video.title}</span>
-              {video.id !== 1 && !isLoggedIn && <FaLock className="lock-icon" />}
-            </div>
-          ))}
+      {/* Course Header */}
+      <div className="course-header">
+        <img src={course.image} alt={course.title} />
+        <div className="course-info">
+          <h1>{course.title}</h1>
+          <p>Category: {course.category}</p>
+          <p>Price: {course.price}</p>
+          <p>Duration: {course.duration}</p>
+          <p>Level: {course.level}</p>
+          <button onClick={() => navigate(`/enroll/${course.id}`)}>Enroll Now</button>
         </div>
       </div>
+
+      {/* Video Player */}
+      <div className="video-preview">
+        <h2>🎥 Video Player</h2>
+        <iframe
+          src={currentVideo}
+          title="Course Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      {/* Course Lessons */}
+      <div className="lessons-list">
+        <h2>📚 Course Lessons</h2>
+        <ul>
+          {course.lessons.map((lesson) => (
+            <li key={lesson.id} className={`lesson-item ${currentVideo === lesson.url ? 'active' : ''}`} onClick={() => handleLessonClick(lesson)}>
+              <FaPlay />
+              <span>{lesson.title} - ⏱️ {lesson.duration}</span>
+              {lesson.id !== 1 && (!isLoggedIn || !hasPaid) && <FaLock className="lock-icon" />}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <br />
+      <Link to="/courses">← Back to Courses</Link>
     </div>
   );
 }
