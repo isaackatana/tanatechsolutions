@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/tana-tech-logo (svg).svg";
+import Logo from "../assets/TTS-logo.png";
 import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import UserLogin from "./auth/UserLogin";
