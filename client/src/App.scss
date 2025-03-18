@@ -272,12 +272,15 @@ body {
     padding: 5px 20px;
     display: flex;
     gap: 5px;
+    overflow-x: scroll;
     button {
       padding: 5px 10px;
       background-color: #0076a3;
       border: none;
       color: white;
       cursor: pointer;
+      flex-shrink: 0;
+      border-radius: 20px;
     }
 
     .active {
@@ -289,6 +292,10 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
     padding: 5px 20px;
+
+    @include mobile(){
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -307,6 +314,11 @@ body {
       display: flex;
       gap: 5px;
       padding: 5px 20px;
+      overflow-x: scroll;
+
+      @include mobile(){
+
+      }
 
       button {
         padding: 5px 10px;
@@ -314,6 +326,8 @@ body {
         color: white;
         border: none;
         cursor: pointer;
+        flex-shrink: 0;
+        border-radius: 20px;
 
         &:hover {
           background-color: #00b7ff;

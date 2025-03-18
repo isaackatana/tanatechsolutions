@@ -238,6 +238,7 @@ body .portfolio-page .video-categories {
   padding: 5px 20px;
   display: flex;
   gap: 5px;
+  overflow-x: scroll;
 }
 body .portfolio-page .video-categories button {
   padding: 5px 10px;
@@ -245,6 +246,8 @@ body .portfolio-page .video-categories button {
   border: none;
   color: white;
   cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 20px;
 }
 body .portfolio-page .video-categories .active {
   background-color: #00b7ff;
@@ -254,6 +257,11 @@ body .portfolio-page .video-grid {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
   padding: 5px 20px;
+}
+@media (max-width: 450px) {
+  body .portfolio-page .video-grid {
+    grid-template-columns: 1fr;
+  }
 }
 body .courses-page {
   display: flex;
@@ -268,6 +276,7 @@ body .courses-page .category-filter {
   display: flex;
   gap: 5px;
   padding: 5px 20px;
+  overflow-x: scroll;
 }
 body .courses-page .category-filter button {
   padding: 5px 10px;
@@ -275,6 +284,8 @@ body .courses-page .category-filter button {
   color: white;
   border: none;
   cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 20px;
 }
 body .courses-page .category-filter button:hover {
   background-color: #00b7ff;
