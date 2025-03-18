@@ -234,151 +234,26 @@ body .hero .hero-details button {
   color: white;
   margin-top: 5px;
 }
-body .video span {
+body .portfolio-page .video-categories {
+  padding: 5px 20px;
   display: flex;
-  align-items: center;
-  overflow-x: hidden;
+  gap: 5px;
+}
+body .portfolio-page .video-categories button {
+  padding: 5px 10px;
+  background-color: #0076a3;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+body .portfolio-page .video-categories .active {
+  background-color: #00b7ff;
+}
+body .portfolio-page .video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
   padding: 5px 20px;
-  background-color: #00b7ff;
-}
-@media (max-width: 450px) {
-  body .video span {
-    padding: 5px 10px;
-  }
-}
-body .video span a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border-radius: 5px;
-}
-body .video span a svg {
-  cursor: pointer;
-  padding: 5px;
-  color: #0076a3;
-}
-body .video span div {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-body .video span div button {
-  padding: 5px 10px;
-  cursor: pointer;
-  background-color: #0076a3;
-  color: white;
-  border-radius: 20px;
-  border: none;
-  font-weight: bold;
-}
-body .video span div button:hover {
-  background-color: white;
-  color: #0076a3;
-}
-body .video span div .active {
-  background-color: #00b7ff;
-}
-body .video .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-  padding: 10px 20px;
-}
-@media (max-width: 450px) {
-  body .video .container {
-    grid-template-columns: 1fr;
-    gap: 5px;
-    padding: 0px 0px 10px;
-  }
-}
-body .video .container .wrapper {
-  position: relative;
-}
-@media (max-width: 450px) {
-  body .video .container .wrapper {
-    width: 100%;
-    height: auto;
-  }
-}
-body .video .container .wrapper iframe {
-  width: 100%;
-  height: 100%;
-}
-@media (max-width: 450px) {
-  body .video .container .wrapper iframe {
-    width: 100%;
-  }
-}
-body .video .container ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-}
-@media (max-width: 450px) {
-  body .video .container ul {
-    grid-template-columns: 1fr;
-  }
-}
-body .video .container ul li {
-  background-color: #00b7ff;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-body .video .container ul li img {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-body .video .container ul li .detail {
-  background-color: #0076a3;
-  color: white;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  list-style: none;
-}
-body .video .container ul li svg {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: #00b7ff;
-  font-size: 25px;
-  cursor: pointer;
-}
-body .video .container .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .video .container .overlay .new-computer {
-  padding: 10px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
-body .video .container .overlay .new-computer form {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-body .video .container .overlay .new-computer form input {
-  padding: 10px;
-}
-body .video .container .overlay .new-computer form textarea {
-  padding: 10px;
-}
-body .video .container .overlay .new-computer form button {
-  padding: 10px;
-  cursor: pointer;
 }
 body .courses-page {
   display: flex;
@@ -388,6 +263,24 @@ body .courses-page {
   body .courses-page .courses-page {
     padding: 10px;
   }
+}
+body .courses-page .category-filter {
+  display: flex;
+  gap: 5px;
+  padding: 5px 20px;
+}
+body .courses-page .category-filter button {
+  padding: 5px 10px;
+  background-color: #0076a3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+body .courses-page .category-filter button:hover {
+  background-color: #00b7ff;
+}
+body .courses-page .category-filter .active {
+  background-color: #00b7ff;
 }
 body .courses-page .category-buttons {
   display: flex;

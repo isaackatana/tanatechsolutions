@@ -28,7 +28,8 @@ function Portfolio() {
 
   return (
     <>
-      {/* Header with Navigation Buttons */}
+      <div className="portfolio-page">
+        {/* Header with Navigation Buttons */}
       <div className="portfolio-header">
         <Link to="/" className="back-button">
           <FaArrowLeft /> Back
@@ -65,6 +66,7 @@ function Portfolio() {
             <p>{video.title}</p>
           </div>
         ))}
+      </div>
       </div>
     </>
   );
