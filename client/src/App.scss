@@ -73,7 +73,7 @@ body {
     }
 
     .logo img {
-      width: 100px;
+      width: 60px;
     }
 
     nav {
@@ -220,53 +220,10 @@ body {
           left: 0;
         }
 
-<<<<<<< HEAD
-            a {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: white;
-                border-radius: 5px;
-
-                svg {
-                    cursor: pointer;
-                    padding: 5px;
-                    color: #0076a3;
-                }
-            }
-
-            div {
-                display: flex;
-                grid-template-columns: 1fr;
-                gap: 5px;
-                overflow-x: hidden;
-
-                button {
-                    display: flex;
-                    padding: 5px 10px;
-                    cursor: pointer;
-                    background-color: #0076a3;
-                    color: white;
-                    border-radius: 20px;
-                    border: none;
-                    text-wrap: flex;
-
-                    &:hover {
-                        background-color: white;
-                        color: #0076a3;
-                    }
-                }
-
-                .active {
-                    background-color: #00b7ff;
-                }
-            }
-=======
         a {
           font-size: 18px;
           padding: 10px;
           color: white;
->>>>>>> 4bbda77fff807b949c934935d3bbe88da67c1a8e
 
         }
       }

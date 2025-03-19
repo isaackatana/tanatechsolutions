@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-=======
 import React, { useState } from 'react';
 import { FaAngleRight, FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -13,7 +10,6 @@ const coursesData = [
   { id: 3, title: "Responsive Web Design", category: "Web Design", image: "https://www.pixelproductionsinc.com/wp-content/uploads/2022/03/web-design-trends.jpg" },
   { id: 4, title: "Full-Stack Web Development", category: "Web Development", image: "https://miro.medium.com/v2/resize:fit:1200/1*dsD8XAJn4b6H5SDwEwqH3g.jpeg" },
 ];
->>>>>>> 4bbda77fff807b949c934935d3bbe88da67c1a8e
 
 function Courses() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -24,29 +20,11 @@ function Courses() {
     : coursesData.filter(course => course.category === selectedCategory);
 
   return (
-<<<<<<< HEAD
-    <>
-      <div className="courses">
-        <span>
-        <div>
-          <button>Graphics Design</button>
-          <button>Video Editing</button>
-          <button>Web Design</button>
-          <button>Web Development</button>
-          <button>Social Media Marketing</button>
-          <button>Content Creation</button>
-          <button>Cyber Security</button>
-          <button>IT Support</button>
-        </div></span>
-        <div className="container">
-        </div>
-=======
     <div className="courses-page">
       <div className="portfolio-header">
         <Link to="/" className="back-button">
           <FaArrowLeft /> Back
         </Link>
->>>>>>> 4bbda77fff807b949c934935d3bbe88da67c1a8e
       </div>
       
       {/* Category Filter */}

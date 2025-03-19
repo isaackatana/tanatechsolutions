@@ -64,7 +64,7 @@ body header {
   }
 }
 body header .logo img {
-  width: 100px;
+  width: 60px;
 }
 body header nav {
   display: flex;
@@ -451,9 +451,6 @@ body .course-details .container .video-wrapper .video-navigation button {
   background: #00b7ff;
   color: white;
   border: none;
-<<<<<<< HEAD
-  text-wrap: flex;
-=======
   padding: 10px 15px;
   cursor: pointer;
   display: flex;
@@ -461,7 +458,6 @@ body .course-details .container .video-wrapper .video-navigation button {
   gap: 5px;
   border-radius: 5px;
   width: 100%;
->>>>>>> 4bbda77fff807b949c934935d3bbe88da67c1a8e
 }
 body .course-details .container .video-wrapper .video-navigation button:hover {
   background: #005f81;

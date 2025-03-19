@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/TTS-logo.png';
+import Logo from '../assets/TTS-logo-white.png';
 import { FaEnvelope, FaMapPin, FaPhone } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom'; 
 
