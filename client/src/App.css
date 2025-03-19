@@ -4,264 +4,200 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  /* Auth Modal */
+  /* Sticky Header */
+  /* To prevent content from being hidden under the fixed header */
+}
+body .auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+body .auth-modal {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+}
+body .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+body .sticky-header {
+  position: sticky;
+  top: 0;
+  background: #0076a3;
+  transition: 0.3s;
+}
+body body {
+  padding-top: 70px;
+}
 body header {
-  background-color: #0076a3;
-  padding: 0px 20px;
+  position: sticky;
+  top: 0;
+  background: #0076a3;
+  color: white;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* Smooth Transition for Mobile Menu */
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   body header {
     padding: 10px;
   }
 }
-body header .logo {
-  width: 40px;
-  cursor: pointer;
-}
 body header .logo img {
-  width: 100%;
+  width: 100px;
 }
 body header nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 body header nav .nav-links {
   display: flex;
-  max-height: 200px;
-  position: relative;
-  transition: 0.3s;
-}
-@media (max-width: 450px) {
-  body header nav .nav-links {
-    flex-direction: column;
-    position: fixed;
-    width: 50%;
-    height: 100vh;
-    top: 64px;
-    right: 0;
-    gap: 0;
-  }
-  body header nav .nav-links.active {
-    transform: translateX(0%);
-    z-index: 1;
-  }
-  body header nav .nav-links.inactive {
-    transform: translateX(100%);
-  }
+  gap: 20px;
 }
 body header nav .nav-links a {
-  text-decoration: none;
   color: white;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #0076a3;
-  padding: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   body header nav .nav-links a {
-    color: white;
+    padding: 20px;
   }
   body header nav .nav-links a:hover {
     background-color: #00b7ff;
-    color: white;
   }
 }
-body header nav .nav-links .active {
-  background-color: #00b7ff;
+body header nav .nav-links a:hover {
+  color: #00d4ff;
 }
-body header nav .nav-links .has-submenu:hover {
-  color: white;
-}
-body header nav .nav-links .has-submenu a {
+body header .userAccount {
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
-body header nav .nav-links .has-submenu a:hover {
-  color: #00b7ff;
-}
-@media (max-width: 450px) {
-  body header nav .nav-links .has-submenu a {
-    width: 100%;
-    padding: 30px;
-  }
-  body header nav .nav-links .has-submenu a:hover {
-    color: white;
-  }
-}
-body header nav .nav-links .has-submenu ul {
+body header .userAccount .shopping-cart {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 0;
-  color: white;
-  position: absolute;
-  right: 0;
-  padding-top: 10px;
-  border-radius: 5px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-1rem);
-  transition-property: opacity, visibility, transform;
-  transition-timing-function: ease-in-out;
-  top: 18px;
-  z-index: 1;
-}
-body header nav .nav-links .has-submenu ul li {
-  padding: 10px;
-  width: 150px;
-  color: white;
-  list-style: none;
-  font-weight: bold;
-  background-color: #00b7ff;
   cursor: pointer;
 }
-@media (max-width: 450px) {
-  body header nav .nav-links .has-submenu ul li {
-    width: auto;
-  }
-}
-body header nav .nav-links .has-submenu ul li:hover {
-  background-color: white;
-  color: #0076a3;
-}
-body header nav .nav-links .has-submenu:hover ul {
-  display: flex;
-  transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-}
-@media (max-width: 450px) {
-  body header nav .nav-links .has-submenu:hover ul {
-    transform: translateX(-100%);
-    position: absolute;
-    opacity: 1;
-    visibility: visible;
-    top: 0;
-    right: 0;
-    width: 100%;
-  }
-}
-body header nav .userAccount {
-  display: flex;
-}
-body header nav .userAccount .shopping-cart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-body header nav .userAccount .shopping-cart svg {
-  font-size: 20px;
-  color: white;
-}
-body header nav .userAccount .shopping-cart span {
-  background-color: #00b7ff;
-  width: 15px;
-  height: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body header .userAccount .shopping-cart span {
   position: absolute;
   top: -5px;
-  left: 15px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
-body header nav .userAccount .user-login {
+body header .userAccount .user-login {
   display: flex;
   gap: 5px;
 }
-body header nav .userAccount .user-login button {
-  width: 100px;
-  background-color: transparent;
+body header .userAccount .user-login .login-btn,
+body header .userAccount .user-login .register-btn {
+  background: #00d4ff;
   border: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
   cursor: pointer;
-  color: white;
+  transition: 0.3s;
 }
-body header nav .userAccount .user-login .profile {
-  background-color: #00b7ff;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
+body header .userAccount .user-login .login-btn:hover,
+body header .userAccount .user-login .register-btn:hover {
+  background: #005f81;
+}
+body header .userAccount .user-login .profile {
+  position: relative;
   cursor: pointer;
 }
-body header nav .userAccount .user-login .profile svg {
-  font-size: 15px;
-  color: white;
-}
-body header nav .userAccount .userLoginPopup {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 3;
-}
-body header nav .userAccount .userLoginPopup .wrapper {
-  background-color: #00b7ff;
+body header .userAccount .user-login .profile ul {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  list-style: none;
   padding: 10px;
+  top: 30px;
+  right: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 }
-body header nav .userAccount .userLoginPopup .wrapper h3 {
-  color: white;
-  margin-bottom: 5px;
+body header .userAccount .user-login .profile ul li {
+  padding: 5px;
+  cursor: pointer;
 }
-body header nav .userAccount .userLoginPopup .wrapper form {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+body header .userAccount .user-login .profile ul li:hover {
+  color: #0076a3;
 }
-body header nav .userAccount .userLoginPopup .wrapper form input {
-  padding: 10px;
-}
-body header nav .userAccount .userLoginPopup .wrapper form button {
-  padding: 10px;
-}
-body header nav .userAccount .userLoginPopup .wrapper p {
-  padding: 10px;
-  border: solid rgb(255, 255, 255) 0.1rem;
-  margin-top: 10px;
-  font-size: small;
-  color: white;
-}
-body header nav .userAccount .userLoginPopup .wrapper p a {
-  color: white;
+body header .userAccount .user-login .profile:hover ul {
+  display: block;
 }
 body header .burger {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  font-size: x-large;
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   body header .burger {
     display: flex;
-    color: white;
   }
 }
-body header .burger svg {
-  font-size: larger;
-}
-body header .burger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-}
-body header .burger .active:nth-child(1) {
-  transform: translate3d(0, 8px, 0) rotate(45deg);
-}
-body header .burger .active:nth-child(2) {
-  transform: scaleX(0);
-  opacity: 0;
-}
-body header .burger .active:nth-child(3) {
-  transform: translate3d(0, -8px, 0) rotate(-45deg);
+@media (max-width: 768px) {
+  body header .nav-links {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #0076a3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    transition: left 0.5s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  body header .nav-links.active {
+    left: 0;
+  }
+  body header .nav-links a {
+    font-size: 18px;
+    padding: 10px;
+    color: white;
+  }
 }
 body .hero {
   height: 50Vh;
@@ -298,237 +234,363 @@ body .hero .hero-details button {
   color: white;
   margin-top: 5px;
 }
-body .video span {
+body .portfolio-page .video-categories {
+  padding: 5px 20px;
   display: flex;
-  align-items: center;
-  overflow-x: hidden;
+  gap: 5px;
+  overflow-x: scroll;
+}
+body .portfolio-page .video-categories button {
+  padding: 5px 10px;
+  background-color: #0076a3;
+  border: none;
+  color: white;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 20px;
+}
+body .portfolio-page .video-categories .active {
+  background-color: #00b7ff;
+}
+body .portfolio-page .video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  padding: 5px 20px;
+}
+@media (max-width: 450px) {
+  body .portfolio-page .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+body .courses-page {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  body .courses-page .courses-page {
+    padding: 10px;
+  }
+}
+body .courses-page .category-filter {
+  display: flex;
+  gap: 5px;
+  padding: 5px 20px;
+  overflow-x: scroll;
+}
+body .courses-page .category-filter button {
+  padding: 5px 10px;
+  background-color: #0076a3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 20px;
+}
+body .courses-page .category-filter button:hover {
+  background-color: #00b7ff;
+}
+body .courses-page .category-filter .active {
+  background-color: #00b7ff;
+}
+body .courses-page .category-buttons {
+  display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   padding: 5px 20px;
   background-color: #00b7ff;
 }
-@media (max-width: 450px) {
-  body .video span {
+@media (max-width: 768px) {
+  body .courses-page .category-buttons {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
     padding: 5px 10px;
   }
+  body .courses-page .category-buttons button {
+    flex-shrink: 0;
+  }
 }
-body .video span a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border-radius: 5px;
-}
-body .video span a svg {
-  cursor: pointer;
-  padding: 5px;
-  color: #0076a3;
-}
-body .video span div {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-body .video span div button {
+body .courses-page .category-buttons button {
   padding: 5px 10px;
-  cursor: pointer;
-  background-color: #0076a3;
-  color: white;
-  border-radius: 20px;
   border: none;
+  background: #0076a3;
+  cursor: pointer;
+  border-radius: 5px;
   font-weight: bold;
+  transition: background 0.3s ease;
+  border-radius: 20px;
+  color: white;
 }
-body .video span div button:hover {
-  background-color: white;
+body .courses-page .category-buttons button:hover {
+  background: white;
+  color: black;
+}
+body .courses-page .category-buttons button.active {
+  background: white;
   color: #0076a3;
 }
-body .video span div .active {
-  background-color: #00b7ff;
-}
-body .video .container {
+body .courses-page .courses-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-  padding: 10px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  padding: 5px 20px;
 }
-@media (max-width: 450px) {
-  body .video .container {
-    grid-template-columns: 1fr;
-    gap: 5px;
-    padding: 0px 0px 10px;
-  }
-}
-body .video .container .wrapper {
-  position: relative;
-}
-@media (max-width: 450px) {
-  body .video .container .wrapper {
-    width: 100%;
-    height: auto;
-  }
-}
-body .video .container .wrapper iframe {
-  width: 100%;
-  height: 100%;
-}
-@media (max-width: 450px) {
-  body .video .container .wrapper iframe {
-    width: 100%;
-  }
-}
-body .video .container ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-}
-@media (max-width: 450px) {
-  body .video .container ul {
-    grid-template-columns: 1fr;
-  }
-}
-body .video .container ul li {
-  background-color: #00b7ff;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-body .video .container ul li img {
-  width: 100%;
-  height: 100%;
+body .courses-page .courses-grid .course-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+}
+body .courses-page .courses-grid .course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+body .courses-page .courses-grid .course-card img {
+  width: 100%;
+  height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body .video .container ul li .detail {
-  background-color: #0076a3;
+body .courses-page .courses-grid .course-card h3 {
+  margin: 10px;
+  font-size: 18px;
+}
+body .courses-page .courses-grid .course-card p {
+  margin: 0 10px 10px;
+  color: gray;
+}
+body .courses-page .courses-grid .course-card a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: #00b7ff;
   color: white;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  list-style: none;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
-body .video .container ul li svg {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: #00b7ff;
-  font-size: 25px;
-  cursor: pointer;
+body .courses-page .courses-grid .course-card a:hover {
+  background: #0076a3;
 }
-body .video .container .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body .video .container .overlay .new-computer {
-  padding: 10px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
-body .video .container .overlay .new-computer form {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-body .video .container .overlay .new-computer form input {
-  padding: 10px;
-}
-body .video .container .overlay .new-computer form textarea {
-  padding: 10px;
-}
-body .video .container .overlay .new-computer form button {
-  padding: 10px;
-  cursor: pointer;
-}
-body .courses span {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
-  padding: 5px 20px;
-  background-color: #00b7ff;
-  overflow-x: hidden;
-}
-@media (max-width: 450px) {
-  body .courses span {
-    padding: 5px 10px;
+@media (max-width: 768px) {
+  body .courses-page .courses-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
   }
 }
-body .courses span a {
+body .course-details {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  background: #f9f9f9;
+}
+@media (max-width: 768px) {
+  body .course-details {
+    padding: 0;
+  }
+}
+body .course-details .container {
   display: flex;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  body .course-details .container {
+    flex-direction: column;
+  }
+}
+body .course-details .container .video-wrapper {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .course-details .container .video-wrapper iframe {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: 350px;
+}
+@media (max-width: 768px) {
+  body .course-details .container .video-wrapper iframe {
+    height: 200px;
+  }
+}
+body .course-details .container .video-wrapper .locked-content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  border-radius: 5px;
+  height: 350px;
+  background: #ddd;
+  color: #555;
+  text-align: center;
 }
-body .courses span a svg {
-  cursor: pointer;
-  padding: 5px;
+@media (max-width: 768px) {
+  body .course-details .container .video-wrapper .locked-content {
+    height: 200px;
+  }
+}
+body .course-details .container .video-wrapper .locked-content svg {
   color: #0076a3;
+  margin-bottom: 10px;
 }
-body .courses span div {
+body .course-details .container .video-wrapper .video-navigation {
   display: flex;
-  grid-template-columns: 1fr;
+  justify-content: space-between;
+  margin-top: 10px;
   gap: 5px;
-  overflow-x: hidden;
 }
-body .courses span div button {
-  display: flex;
-  padding: 5px 10px;
-  cursor: pointer;
-  background-color: #0076a3;
+@media (max-width: 768px) {
+  body .course-details .container .video-wrapper .video-navigation {
+    padding: 10px;
+  }
+}
+body .course-details .container .video-wrapper .video-navigation button {
+  background: #00b7ff;
   color: white;
-  border-radius: 20px;
   border: none;
+<<<<<<< HEAD
   text-wrap: flex;
+=======
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  width: 100%;
+>>>>>>> 4bbda77fff807b949c934935d3bbe88da67c1a8e
 }
-body .courses span div button:hover {
-  background-color: white;
-  color: #0076a3;
+body .course-details .container .video-wrapper .video-navigation button:hover {
+  background: #005f81;
 }
-body .courses span div .active {
-  background-color: #00b7ff;
+body .course-details .container .video-wrapper .video-navigation button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+body .course-details .container .lesson-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  body .course-details .container .lesson-list {
+    padding: 10px;
+  }
+}
+body .course-details .container .lesson-list .lesson-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+body .course-details .container .lesson-list .lesson-item svg {
+  margin-right: 10px;
+}
+body .course-details .container .lesson-list .lesson-item .lock-icon {
+  margin-left: auto;
+  color: red;
+}
+body .course-details .container .lesson-list .lesson-item:hover {
+  background: #0076a3;
+  color: white;
+}
+body .course-details .container .lesson-list .lesson-item.active {
+  background: #00b7ff;
+  color: white;
 }
 body footer {
   background-color: #0076a3;
   color: white;
+  padding: 30px 20px;
+}
+@media (max-width: 768px) {
+  body footer {
+    padding: 10px;
+  }
+}
+body footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  body footer .footer-container {
+    flex-direction: column;
+  }
+}
+body footer .footer-container div {
+  width: 100%;
 }
 body footer nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   body footer nav {
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 15px;
   }
 }
-body footer nav a {
-  list-style: none;
-  cursor: pointer;
-}
-body footer p {
-  text-align: center;
-  font-size: small;
-  padding: 10px 40px;
+body footer .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 body footer .contact img {
-  width: 40px;
+  width: 75px;
+  margin-bottom: 15px;
+}
+body footer .contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 body footer .contact ul li {
-  color: white;
-  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+body footer .contact ul li svg {
+  color: #00d4ff;
 }
 body footer .quick-links {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+body footer .quick-links h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
 }
 body footer .quick-links a {
   color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px 0;
+  transition: color 0.3s ease-in-out;
+}
+body footer .quick-links a:hover {
+  color: #00d4ff;
+}
+body footer p {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 25px;
+  padding: 10px 0;
+  opacity: 0.8;
 }/*# sourceMappingURL=App.css.map */
