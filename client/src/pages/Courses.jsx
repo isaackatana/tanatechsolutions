@@ -1,12 +1,10 @@
 import React from 'react'
-import { FaArrowLeft } from 'react-icons/fa'
-import { Link } from 'react-router'
 
 function Courses() {
   return (
     <>
       <div className="courses">
-        <span><Link to='/'><FaArrowLeft/></Link>
+        <span>
         <div>
           <button>Graphics Design</button>
           <button>Video Editing</button>
