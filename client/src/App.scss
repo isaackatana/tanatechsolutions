@@ -73,7 +73,7 @@ body {
     }
 
     .logo img {
-      width: 60px;
+      width: 50px;
     }
 
     nav {
@@ -295,6 +295,7 @@ body {
 
     @include mobile(){
       grid-template-columns: 1fr;
+      padding: 10px;
     }
   }
 }
@@ -420,14 +421,14 @@ body {
           display: block;
           text-align: center;
           padding: 10px;
-          background: #00b7ff;
+          background: #0076a3;
           color: white;
           font-weight: bold;
           text-decoration: none;
           transition: background 0.3s ease;
 
           &:hover {
-            background: #0076a3;
+            background: #00b7ff;
           }
         }
       }
@@ -621,7 +622,7 @@ body {
       gap: 10px; // Adds spacing between elements
 
       img {
-        width: 75px; // Larger logo for better visibility
+        width: 50px; // Larger logo for better visibility
         margin-bottom: 15px;
       }
 

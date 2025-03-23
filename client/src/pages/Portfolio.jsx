@@ -75,6 +75,7 @@ function Portfolio() {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <button className="close-button" onClick={() => setSelectedVideo(null)}>✖</button>
               <iframe
+              
                 width="100%"
                 height="500"
                 src={selectedVideo.src}

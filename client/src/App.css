@@ -64,7 +64,7 @@ body header {
   }
 }
 body header .logo img {
-  width: 60px;
+  width: 50px;
 }
 body header nav {
   display: flex;
@@ -261,6 +261,7 @@ body .portfolio-page .video-grid {
 @media (max-width: 450px) {
   body .portfolio-page .video-grid {
     grid-template-columns: 1fr;
+    padding: 10px;
   }
 }
 body .courses-page {
@@ -367,14 +368,14 @@ body .courses-page .courses-grid .course-card a {
   display: block;
   text-align: center;
   padding: 10px;
-  background: #00b7ff;
+  background: #0076a3;
   color: white;
   font-weight: bold;
   text-decoration: none;
   transition: background 0.3s ease;
 }
 body .courses-page .courses-grid .course-card a:hover {
-  background: #0076a3;
+  background: #00b7ff;
 }
 @media (max-width: 768px) {
   body .courses-page .courses-grid {
@@ -546,7 +547,7 @@ body footer .contact {
   gap: 10px;
 }
 body footer .contact img {
-  width: 75px;
+  width: 50px;
   margin-bottom: 15px;
 }
 body footer .contact ul {
