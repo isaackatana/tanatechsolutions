@@ -234,11 +234,29 @@ body .hero .hero-details button {
   color: white;
   margin-top: 5px;
 }
+body .portfolio-page .portfolio-header {
+  display: flex;
+}
+body .portfolio-page .portfolio-header a {
+  text-decoration: none;
+  color: #0076a3;
+  padding: 5px 20px;
+}
+@media (max-width: 450px) {
+  body .portfolio-page .portfolio-header a {
+    padding: 10px;
+  }
+}
 body .portfolio-page .video-categories {
   padding: 5px 20px;
   display: flex;
   gap: 5px;
   overflow-x: scroll;
+}
+@media (max-width: 450px) {
+  body .portfolio-page .video-categories {
+    padding: 10px;
+  }
 }
 body .portfolio-page .video-categories button {
   padding: 5px 10px;

@@ -268,11 +268,27 @@ body {
   }
 
   .portfolio-page {
+    .portfolio-header {
+      display: flex;
+      a{
+        text-decoration: none;
+        color: #0076a3;
+      padding: 5px 20px;
+
+      @include mobile(){
+        padding: 10px;
+      }
+      }
+    }
   .video-categories {
     padding: 5px 20px;
     display: flex;
     gap: 5px;
     overflow-x: scroll;
+    @include mobile(){
+      padding: 10px;
+    }
+
     button {
       padding: 5px 10px;
       background-color: #0076a3;
