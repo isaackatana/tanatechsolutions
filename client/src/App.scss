@@ -145,7 +145,7 @@ body {
           border: none;
           padding: 5px 10px;
           border-radius: 20px;
-          color: white;
+          color: rgb(20, 6, 6);
           cursor: pointer;
           transition: 0.3s;
 
@@ -159,7 +159,6 @@ body {
           cursor: pointer;
 
           ul {
-            display: none;
             position: absolute;
             background: white;
             color: black;
@@ -270,14 +269,15 @@ body {
   .portfolio-page {
     .portfolio-header {
       display: flex;
+
       a{
         text-decoration: none;
         color: #0076a3;
-      padding: 5px 20px;
+        padding: 5px 20px;
 
-      @include mobile(){
-        padding: 10px;
-      }
+        @include mobile(){
+          padding: 5px;
+        }
       }
     }
   .video-categories {
@@ -285,12 +285,13 @@ body {
     display: flex;
     gap: 5px;
     overflow-x: scroll;
+
     @include mobile(){
-      padding: 10px;
+      padding: 5px;
     }
 
     button {
-      padding: 5px 10px;
+      padding: 7px 10px;
       background-color: #0076a3;
       border: none;
       color: white;
@@ -311,7 +312,7 @@ body {
 
     @include mobile(){
       grid-template-columns: 1fr;
-      padding: 10px;
+      padding: 5px;
     }
   }
 }
@@ -327,6 +328,16 @@ body {
       }
     }
 
+    .courses-header {
+      padding: 5px 20px;
+      color: #00b7ff;
+
+      a {
+        text-decoration: none;
+        color: #0076a3;
+      }
+    }
+
     .category-filter {
       display: flex;
       gap: 5px;
@@ -338,7 +349,7 @@ body {
       }
 
       button {
-        padding: 5px 10px;
+        padding: 7px 10px;
         background-color: #0076a3;
         color: white;
         border: none;

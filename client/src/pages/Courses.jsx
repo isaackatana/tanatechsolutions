@@ -21,7 +21,7 @@ function Courses() {
 
   return (
     <div className="courses-page">
-      <div className="portfolio-header">
+      <div className="courses-header">
         <Link to="/" className="back-button">
           <FaArrowLeft /> Back
         </Link>

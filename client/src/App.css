@@ -128,7 +128,7 @@ body header .userAccount .user-login .register-btn {
   border: none;
   padding: 5px 10px;
   border-radius: 20px;
-  color: white;
+  color: rgb(20, 6, 6);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -141,7 +141,6 @@ body header .userAccount .user-login .profile {
   cursor: pointer;
 }
 body header .userAccount .user-login .profile ul {
-  display: none;
   position: absolute;
   background: white;
   color: black;
@@ -244,7 +243,7 @@ body .portfolio-page .portfolio-header a {
 }
 @media (max-width: 450px) {
   body .portfolio-page .portfolio-header a {
-    padding: 10px;
+    padding: 5px;
   }
 }
 body .portfolio-page .video-categories {
@@ -255,11 +254,11 @@ body .portfolio-page .video-categories {
 }
 @media (max-width: 450px) {
   body .portfolio-page .video-categories {
-    padding: 10px;
+    padding: 5px;
   }
 }
 body .portfolio-page .video-categories button {
-  padding: 5px 10px;
+  padding: 7px 10px;
   background-color: #0076a3;
   border: none;
   color: white;
@@ -279,7 +278,7 @@ body .portfolio-page .video-grid {
 @media (max-width: 450px) {
   body .portfolio-page .video-grid {
     grid-template-columns: 1fr;
-    padding: 10px;
+    padding: 5px;
   }
 }
 body .courses-page {
@@ -291,6 +290,14 @@ body .courses-page {
     padding: 10px;
   }
 }
+body .courses-page .courses-header {
+  padding: 5px 20px;
+  color: #00b7ff;
+}
+body .courses-page .courses-header a {
+  text-decoration: none;
+  color: #0076a3;
+}
 body .courses-page .category-filter {
   display: flex;
   gap: 5px;
@@ -298,7 +305,7 @@ body .courses-page .category-filter {
   overflow-x: scroll;
 }
 body .courses-page .category-filter button {
-  padding: 5px 10px;
+  padding: 7px 10px;
   background-color: #0076a3;
   color: white;
   border: none;
