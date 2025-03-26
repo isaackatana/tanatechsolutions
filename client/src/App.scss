@@ -332,6 +332,12 @@ body {
       padding: 5px 20px;
       color: #00b7ff;
 
+
+
+    @media (max-width: 768px) {
+        padding: 5px;
+    }
+
       a {
         text-decoration: none;
         color: #0076a3;
@@ -345,7 +351,7 @@ body {
       overflow-x: scroll;
 
       @include mobile(){
-
+        padding: 5px;
       }
 
       button {
@@ -415,6 +421,11 @@ body {
       max-width: 1200px;
       padding: 5px 20px;
 
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        padding: 5px;
+      }
+
       .course-card {
         background: white;
         border-radius: 10px;
@@ -458,14 +469,6 @@ body {
             background: #00b7ff;
           }
         }
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      .courses-grid {
-        grid-template-columns: 1fr;
-        padding: 10px;
       }
     }
   }
