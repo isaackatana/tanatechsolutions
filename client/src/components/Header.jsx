@@ -51,10 +51,6 @@ function Header() {
             <NavLink to="/contact" onClick={() => setMenuIsOpen(false)}>Contact</NavLink>
           </ul>
           <div className="userAccount">
-            <div className="shopping-cart">
-              <FaShoppingCart />
-              <span>0</span>
-            </div>
             <div className="user-login">
               {!isLoggedIn ? (
                 <>
