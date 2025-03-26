@@ -18,7 +18,7 @@ const videos = [
   { id: 6, src: "https://www.youtube.com/embed/example123", title: "Advert 2", category: "Adverts" }
 ];
 
-function Portfolio() {
+function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -141,4 +141,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default Projects;

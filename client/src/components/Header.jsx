@@ -46,7 +46,7 @@ function Header() {
         <nav>
           <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
             <NavLink to="/" onClick={() => setMenuIsOpen(false)}>Home</NavLink>
-            <NavLink to="/portfolio" onClick={() => setMenuIsOpen(false)}>Portfolio</NavLink>
+            <NavLink to="/projects" onClick={() => setMenuIsOpen(false)}>Projects</NavLink>
             <NavLink to="/courses" onClick={() => setMenuIsOpen(false)}>Courses</NavLink>
             <NavLink to="/contact" onClick={() => setMenuIsOpen(false)}>Contact</NavLink>
           </ul>
