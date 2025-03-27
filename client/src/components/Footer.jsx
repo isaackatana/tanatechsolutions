@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="quick-links">
           <h3>Quick Links</h3>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/portfolio">Portfolio</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/courses">Courses</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </div>

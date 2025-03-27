@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 const videoCategories = [
   { name: "All" },
   { name: "Music Videos" },
+  { name: "Music Visualizers" },
   { name: "Songs" },
-  { name: "Adverts" }
+  { name: "Adverts" },
 ];
 
 const videos = [
@@ -14,8 +15,9 @@ const videos = [
   { id: 2, src: "https://www.youtube.com/embed/a5xMtNkjz-0", title: "Music Video 2", category: "Music Videos" },
   { id: 3, src: "https://www.youtube.com/embed/VyVVl_d2yZI", title: "Song 1", category: "Songs" },
   { id: 4, src: "https://www.youtube.com/embed/GNioxp0RCmk", title: "Song 2", category: "Songs" },
-  { id: 5, src: "https://www.youtube.com/embed/LxcmF_Kk0Ho", title: "Advert 1", category: "Adverts" },
-  { id: 6, src: "https://www.youtube.com/embed/example123", title: "Advert 2", category: "Adverts" }
+  { id: 5, src: "https://www.youtube.com/embed/LxcmF_Kk0Ho", title: "Music Videos 3", category: "Music Videos" },
+  { id: 6, src: "https://www.youtube.com/embed/example123", title: "Music Videos 4", category: "Music Videos" },
+  { id: 7, src: "https://www.youtube.com/embed/IKpuPkl-hv4?si=mBx-xriSBELWeQ7-", title: "Advert 2", category: "Adverts" }
 ];
 
 function Projects() {
