@@ -423,7 +423,7 @@ body .course-details {
   margin: auto;
   background: #f9f9f9;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 @media (max-width: 768px) {
   body .course-details {
@@ -431,22 +431,40 @@ body .course-details {
     grid-template-columns: 1fr;
   }
 }
+body .course-details section {
+  display: flex;
+}
+@media (max-width: 768px) {
+  body .course-details section {
+    flex-direction: column;
+  }
+}
+body .course-details section div {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  body .course-details section div {
+    width: auto;
+  }
+}
+body .course-details section div iframe {
+  width: 100%;
+  height: 250px;
+}
 body .course-details .course-header {
   padding: 10px;
 }
 body .course-details .course-header img {
   width: 100%;
-}
-body .course-details .video-preview {
-  padding: 10px;
-  height: 280px;
-}
-body .course-details .video-preview iframe {
-  width: 100%;
-  height: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 body .course-details .lessons-list {
   padding: 10px;
+}
+body .course-details .lessons-list h2 {
+  margin-bottom: 10px;
 }
 body .course-details .lessons-list ul {
   display: flex;
@@ -472,6 +490,19 @@ body .course-details .lessons-list ul li div {
 body .course-details .lessons-list ul li div svg {
   margin-right: 5px;
 }
+body .course-details button {
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
+  background-color: #0076a3;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+body .course-details button:hover {
+  background-color: #00b7ff;
+}
 body .course-details .course-info {
   padding: 10px;
   display: flex;
@@ -482,19 +513,6 @@ body .course-details .course-info {
   body .course-details .course-info {
     padding: 5px;
   }
-}
-body .course-details .course-info button {
-  padding: 10px;
-  width: 150px;
-  cursor: pointer;
-  background-color: #0076a3;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  margin-top: 5px;
-}
-body .course-details .course-info button:hover {
-  background-color: #00b7ff;
 }
 body .course-details .container {
   display: flex;

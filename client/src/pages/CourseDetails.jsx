@@ -47,29 +47,33 @@ function CourseDetails() {
       {/* Course Header */}
       <div className="course-header">
         <img src={course.image} alt={course.title} />
-        <div className="course-info">
+      </div>
+
+      <section>
+
+      
+
+        {/* Video Player */}
+        <div className="video-preview"><div className="course-info">
           <h1>{course.title}</h1>
           <p>Category: {course.category}</p>
           <p>Price: {course.price}</p>
           <p>Duration: {course.duration}</p>
           <p>Level: {course.level}</p>
-          <button onClick={() => navigate(`/enroll/${course.id}`)}>Enroll Now</button>
         </div>
-      </div>
 
-      <div>
-        {/* Video Player */}
-        <div className="video-preview">
-          <iframe
+        </div>
+
+        <div>
+
+        <iframe
             src={currentVideo}
             title="Course Video"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
-
-        {/* Course Lessons */}
+          {/* Course Lessons */}
         <div className="lessons-list">
           <h2>📚 Lessons</h2>
           <ul>
@@ -84,10 +88,13 @@ function CourseDetails() {
             ))}
           </ul>
         </div>
-
+        <button onClick={() => navigate(`/enroll/${course.id}`)}>Enroll Now</button>
         <br />
         <Link to="/courses">← Back to Courses</Link>
-      </div>
+        </div>
+
+
+      </section>
       
     </div>
   );
