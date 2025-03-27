@@ -57,34 +57,38 @@ function CourseDetails() {
         </div>
       </div>
 
-      {/* Video Player */}
-      <div className="video-preview">
-        <h2>🎥 Video Player</h2>
-        <iframe
-          src={currentVideo}
-          title="Course Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
+      <div>
+        {/* Video Player */}
+        <div className="video-preview">
+          <iframe
+            src={currentVideo}
+            title="Course Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
 
-      {/* Course Lessons */}
-      <div className="lessons-list">
-        <h2>📚 Course Lessons</h2>
-        <ul>
-          {course.lessons.map((lesson) => (
-            <li key={lesson.id} className={`lesson-item ${currentVideo === lesson.url ? 'active' : ''}`} onClick={() => handleLessonClick(lesson)}>
-              <FaPlay />
-              <span>{lesson.title} - ⏱️ {lesson.duration}</span>
-              {lesson.id !== 1 && (!isLoggedIn || !hasPaid) && <FaLock className="lock-icon" />}
-            </li>
-          ))}
-        </ul>
-      </div>
+        {/* Course Lessons */}
+        <div className="lessons-list">
+          <h2>📚 Lessons</h2>
+          <ul>
+            {course.lessons.map((lesson) => (
+              <li key={lesson.id} className={`lesson-item ${currentVideo === lesson.url ? 'active' : ''}`} onClick={() => handleLessonClick(lesson)}>
+                <div>
+                  <FaPlay />
+                  <span>{lesson.title} - ⏱️ {lesson.duration}</span>
+                </div>
+                {lesson.id !== 1 && (!isLoggedIn || !hasPaid) && <FaLock className="lock-icon" />}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <br />
-      <Link to="/courses">← Back to Courses</Link>
+        <br />
+        <Link to="/courses">← Back to Courses</Link>
+      </div>
+      
     </div>
   );
 }

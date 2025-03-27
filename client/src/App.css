@@ -419,15 +419,82 @@ body .courses-page .courses-grid .course-card a:hover {
   background: #00b7ff;
 }
 body .course-details {
-  padding: 20px;
   max-width: 1000px;
   margin: auto;
   background: #f9f9f9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 @media (max-width: 768px) {
   body .course-details {
     padding: 0;
+    grid-template-columns: 1fr;
   }
+}
+body .course-details .course-header {
+  padding: 10px;
+}
+body .course-details .course-header img {
+  width: 100%;
+}
+body .course-details .video-preview {
+  padding: 10px;
+  height: 280px;
+}
+body .course-details .video-preview iframe {
+  width: 100%;
+  height: 100%;
+}
+body .course-details .lessons-list {
+  padding: 10px;
+}
+body .course-details .lessons-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body .course-details .lessons-list ul li {
+  padding: 5px;
+  background-color: #0076a3;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+body .course-details .lessons-list ul li:hover {
+  background-color: #00b7ff;
+}
+body .course-details .lessons-list ul li div {
+  display: flex;
+  align-items: center;
+}
+body .course-details .lessons-list ul li div svg {
+  margin-right: 5px;
+}
+body .course-details .course-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media (max-width: 768px) {
+  body .course-details .course-info {
+    padding: 5px;
+  }
+}
+body .course-details .course-info button {
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
+  background-color: #0076a3;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+body .course-details .course-info button:hover {
+  background-color: #00b7ff;
 }
 body .course-details .container {
   display: flex;
@@ -536,6 +603,33 @@ body .course-details .container .lesson-list .lesson-item:hover {
 body .course-details .container .lesson-list .lesson-item.active {
   background: #00b7ff;
   color: white;
+}
+body .enrollment-page {
+  max-width: 1000px;
+  margin: auto;
+  background: #f9f9f9;
+}
+body .enrollment-page form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+body .enrollment-page form input {
+  padding: 10px;
+}
+body .enrollment-page form select {
+  padding: 5px;
+}
+body .enrollment-page form button {
+  padding: 10px;
+  background-color: #0076a3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+body .enrollment-page form button:hover {
+  background-color: #00d4ff;
 }
 body footer {
   background-color: #0076a3;

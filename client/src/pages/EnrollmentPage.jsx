@@ -52,7 +52,7 @@ function EnrollmentPage() {
       </form>
 
       <br />
-      <Link to="/">← Back to Courses</Link>
+      <Link to="/courses">← Back to Courses</Link>
     </div>
   );
 }

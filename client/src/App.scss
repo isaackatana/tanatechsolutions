@@ -476,13 +476,92 @@ body {
   @media (max-width: 768px) {}
 
   .course-details {
-    padding: 20px;
     max-width: 1000px;
     margin: auto;
     background: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     @media (max-width: 768px) {
       padding: 0;
+      grid-template-columns: 1fr;
+    }
+
+    .course-header {
+      padding: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .video-preview {
+      padding: 10px;
+      height: 280px;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .lessons-list {
+      padding: 10px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+        li {
+          padding: 5px;
+          background-color: #0076a3;
+          border-radius: 5px;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #00b7ff;
+          }
+
+          div {
+            display: flex;
+            align-items: center;
+            
+            svg {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .course-info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px ;
+
+      @media (max-width: 768px) {
+        padding: 5px;
+      }
+
+      button {
+        padding: 10px;
+        width:  150px;
+        cursor: pointer;
+        background-color: #0076a3;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        margin-top: 5px;
+
+        &:hover {
+          background-color: #00b7ff;
+        }
+      }
     }
 
     .container {
@@ -603,6 +682,40 @@ body {
       
 
     }
+  }
+
+  .enrollment-page {
+    max-width: 1000px;
+    margin: auto;
+    background: #f9f9f9;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+
+      input {
+        padding: 10px;
+      }
+
+      select {
+        padding: 5px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #0076a3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 5px;
+
+        &:hover {
+          background-color: #00d4ff;
+        }
+      }
+    }
+
   }
 
   // Footer Styling
