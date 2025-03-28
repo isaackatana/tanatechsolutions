@@ -281,6 +281,11 @@ body .portfolio-page .video-grid {
     padding: 5px;
   }
 }
+@media (max-width: 768px) {
+  body .portfolio-page .video-grid .video-item iframe {
+    height: 182px;
+  }
+}
 body .courses-page {
   display: flex;
   flex-direction: column;
@@ -456,6 +461,11 @@ body .course-details .course-header img {
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 768px) {
+  body .course-details .course-header img {
+    height: 110px;
+  }
 }
 body .course-details .lessons-list {
   padding: 10px;

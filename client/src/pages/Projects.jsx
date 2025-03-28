@@ -11,35 +11,32 @@ const videoCategories = [
 ];
 
 const videos = [
-  { id: 1, src: "https://www.youtube.com/embed/YI3vEw3Xzwo", title: "Music Video 1", category: "Music Videos" },
-  { id: 2, src: "https://www.youtube.com/embed/a5xMtNkjz-0", title: "Music Video 2", category: "Music Videos" },
-  { id: 3, src: "https://www.youtube.com/embed/VyVVl_d2yZI", title: "Song 1", category: "Songs" },
-  { id: 4, src: "https://www.youtube.com/embed/GNioxp0RCmk", title: "Song 2", category: "Songs" },
-  { id: 5, src: "https://www.youtube.com/embed/LxcmF_Kk0Ho", title: "Music Videos 3", category: "Music Videos" },
-  { id: 6, src: "https://www.youtube.com/embed/example123", title: "Music Videos 4", category: "Music Videos" },
-  { id: 7, src: "https://www.youtube.com/embed/IKpuPkl-hv4?si=mBx-xriSBELWeQ7-", title: "Advert 2", category: "Adverts" }
+  { id: 1, src: "YI3vEw3Xzwo", title: "Music Video 1", category: "Music Videos" },
+  { id: 2, src: "a5xMtNkjz-0", title: "Music Video 2", category: "Music Videos" },
+  { id: 3, src: "VyVVl_d2yZI", title: "Song 1", category: "Songs" },
+  { id: 4, src: "GNioxp0RCmk", title: "Song 2", category: "Songs" },
+  { id: 5, src: "LxcmF_Kk0Ho", title: "Music Video 3", category: "Music Videos" },
+  { id: 6, src: "example123", title: "Music Video 4", category: "Music Videos" },
+  { id: 7, src: "IKpuPkl-hv4", title: "Advert 2", category: "Adverts" }
 ];
 
 function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // Filter videos based on selected category
-  const filteredVideos = selectedCategory === "All"
-    ? videos
+  const filteredVideos = selectedCategory === "All" 
+    ? videos 
     : videos.filter(video => video.category === selectedCategory);
 
   return (
     <>
       <div className="portfolio-page">
-        {/* Header with Navigation Buttons */}
         <div className="portfolio-header">
           <Link to="/" className="back-button">
             <FaArrowLeft /> Back
           </Link>
         </div>
 
-        {/* Video Category Filter */}
         <div className="video-categories">
           {videoCategories.map((category, index) => (
             <button
@@ -52,35 +49,27 @@ function Projects() {
           ))}
         </div>
 
-        {/* Video List */}
         <div className="video-grid">
           {filteredVideos.map((video) => (
             <div key={video.id} className="video-item" onClick={() => setSelectedVideo(video)}>
-              <iframe
-                width="100%"
-                height="250"
-                src={video.src}
-                title={video.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
+              <img
+                src={`https://img.youtube.com/vi/${video.src}/hqdefault.jpg`}
+                alt={video.title}
+                className="video-thumbnail"
+              />
               <p>{video.title}</p>
             </div>
           ))}
         </div>
 
-        {/* Video Modal */}
         {selectedVideo && (
           <div className="modal-overlay" onClick={() => setSelectedVideo(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <button className="close-button" onClick={() => setSelectedVideo(null)}>✖</button>
               <iframe
-              
                 width="100%"
                 height="500"
-                src={selectedVideo.src}
+                src={`https://www.youtube.com/embed/${selectedVideo.src}`}
                 title={selectedVideo.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -93,7 +82,6 @@ function Projects() {
         )}
       </div>
 
-      {/* Styles */}
       <style>{`
         .video-grid {
           display: flex;
@@ -106,6 +94,11 @@ function Projects() {
         }
         .video-item:hover {
           transform: scale(1.05);
+        }
+        .video-thumbnail {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
         }
         .modal-overlay {
           position: fixed;
@@ -137,6 +130,10 @@ function Projects() {
           cursor: pointer;
           padding: 5px 10px;
           border-radius: 50%;
+        }
+
+        .modal-content iframe {
+        
         }
       `}</style>
     </>

@@ -5,7 +5,7 @@ import { FaLock, FaPlay } from 'react-icons/fa';
 const coursesData = [
   {
     id: 1,
-    title: "Graphics Design Full Course",
+    title: "Graphics Design",
     category: "Graphics Design",
     price: "$49",
     duration: "10 Hours",
