@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { FaAngleRight, FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -20,6 +21,42 @@ function Courses() {
     : coursesData.filter(course => course.category === selectedCategory);
 
   return (
+    <>
+    <Helmet>
+      {/* Meta Title */}
+      <title>Tech Courses | Tana Tech Studios – Learn & Upskill</title>
+
+      {/* Meta Description */}
+      <meta
+        name="description"
+        content="Explore expert-led tech courses at Tana Tech Studios. Learn web development, AI, software engineering, and more to advance your career."
+      />
+
+      {/* Meta Keywords */}
+      <meta
+        name="keywords"
+        content="Tana Tech Studios courses, tech training, web development courses, AI learning, software development, coding bootcamp, upskill in tech"
+      />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:title" content="Tech Courses | Tana Tech Studios – Learn & Upskill" />
+      <meta
+        property="og:description"
+        content="Join Tana Tech Studios to learn the latest in web development, AI, and software engineering. Upskill and grow your tech career today."
+      />
+      <meta property="og:image" content="https://yourwebsite.com/courses-og-image.jpg" />
+      <meta property="og:url" content="https://yourwebsite.com/courses" />
+      <meta property="og:type" content="website" />
+
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Tech Courses | Tana Tech Studios – Learn & Upskill" />
+      <meta
+        name="twitter:description"
+        content="Master in-demand tech skills with our expert-led courses in AI, web development, and software engineering."
+      />
+      <meta name="twitter:image" content="https://yourwebsite.com/courses-twitter-image.jpg" />
+    </Helmet>
     <div className="courses-page">
       <div className="courses-header">
         <Link to="/" className="back-button">
@@ -54,6 +91,7 @@ function Courses() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 

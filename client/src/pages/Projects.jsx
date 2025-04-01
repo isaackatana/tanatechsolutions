@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -30,6 +31,41 @@ function Projects() {
 
   return (
     <>
+      <Helmet>
+        {/* Meta Title */}
+        <title>Our Work | Tana Tech Studios – Innovative Tech Projects</title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Explore our portfolio of cutting-edge projects at Tana Tech Studios. From web and app development to AI-powered solutions, see how we transform ideas into reality."
+        />
+
+        {/* Meta Keywords */}
+        <meta
+          name="keywords"
+          content="Tana Tech Studios projects, tech portfolio, software development, AI solutions, web apps, mobile apps, digital transformation, case studies"
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Our Work | Tana Tech Studios – Innovative Tech Projects" />
+        <meta
+          property="og:description"
+          content="Discover our latest projects in software development, AI, and digital transformation. See how we bring innovation to life."
+        />
+        <meta property="og:image" content="https://yourwebsite.com/projects-og-image.jpg" />
+        <meta property="og:url" content="https://yourwebsite.com/projects" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Work | Tana Tech Studios – Innovative Tech Projects" />
+        <meta
+          name="twitter:description"
+          content="Explore our portfolio of web, mobile, and AI-driven projects. See how we create impactful digital solutions."
+        />
+        <meta name="twitter:image" content="https://yourwebsite.com/projects-twitter-image.jpg" />
+      </Helmet>
       <div className="portfolio-page">
         <div className="portfolio-header">
           <Link to="/" className="back-button">
@@ -114,9 +150,7 @@ function Projects() {
         }
         .modal-content {
           background: white;
-          padding: 20px;
           border-radius: 10px;
-          max-width: 80%;
           text-align: center;
           position: relative;
         }
