@@ -50,7 +50,7 @@ function Home() {
         <div className="hero-details">
           <h1>Elevate Your Digital Presence</h1>
           <p>Expert Tech Solutions & Professional Content Production</p>
-          <button>Enroll Now</button>
+          <button>Join Now</button>
         </div>
       </section>
 
@@ -59,16 +59,26 @@ function Home() {
         <h2>Our Services</h2>
         <div className="service-list">
           <div className="service-item">
+            <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F91polur10vt0b2jkbvuh.jpg" alt="" />
+            <div>
             <h3>Web & App Development</h3>
             <p>Custom-built software solutions to take your business to the next level.</p>
+            </div>
+            
           </div>
           <div className="service-item">
+          <img src="https://now.digital/wp-content/uploads/2024/08/DALL%C2%B7E-2024-08-07-10.31.59-A-professional-office-environment-with-a-team-of-consultants-working-on-AI-data-technology-implementation.-The-scene-includes-a-large-digital-screen-d.webp" alt="" />
+            <div>
             <h3>AI & Tech Consultancy</h3>
             <p>Leverage AI and cutting-edge technology for automation and efficiency.</p>
+            </div>
           </div>
           <div className="service-item">
+          <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F91polur10vt0b2jkbvuh.jpg" alt="" />
+          <div>
             <h3>Audio & Video Production</h3>
             <p>High-quality recording, editing, and production services for content creators.</p>
+          </div>
           </div>
         </div>
       </section>
