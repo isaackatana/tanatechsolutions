@@ -74,7 +74,7 @@ function Home() {
             </div>
           </div>
           <div className="service-item">
-          <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F91polur10vt0b2jkbvuh.jpg" alt="" />
+          <img src="https://www.casualfilms.com/hubfs/Audio%20mix.png" alt="" />
           <div>
             <h3>Audio & Video Production</h3>
             <p>High-quality recording, editing, and production services for content creators.</p>
