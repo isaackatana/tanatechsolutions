@@ -251,7 +251,7 @@ body .services .service-list {
 }
 @media (max-width: 768px) {
   body .services .service-list {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 body .services .service-list .service-item {
