@@ -50,7 +50,7 @@ function Home() {
         <div className="hero-details">
           <h1>Elevate Your Digital Presence</h1>
           <p>Expert Tech Solutions & Professional Content Production</p>
-          <button>Join Now</button>
+          <button>Get in Touch</button>
         </div>
       </section>
 

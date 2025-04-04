@@ -10,9 +10,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
 
-}
 
 /* Auth Modal */
 .auth-overlay {
@@ -263,6 +261,16 @@ header {
   }
 }
 
+.services {
+  .service-list {
+    .service-item {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
 .portfolio-page {
   .portfolio-header {
     display: flex;
@@ -355,6 +363,7 @@ header {
   .modal-content {
     width: 600px;
     height: 350px;
+    border-radius: 0;
 
     @include mobile(){
       width: 100%;
@@ -380,12 +389,12 @@ header {
   }
 
 .container {
-display: flex;
-align-items: center;
-gap: 5px;
-    padding: 5px 20px;
-    position: sticky;
-    top: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 20px;
+  position: sticky;
+  top: 0;
 
   .back-button {
     padding: 5px 10px;
@@ -923,7 +932,7 @@ footer {
     gap: 10px; // Adds spacing between elements
 
     img {
-      width: 50px; // Larger logo for better visibility
+      width: 75px; // Larger logo for better visibility
       margin-bottom: 15px;
     }
 

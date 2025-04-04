@@ -233,6 +233,10 @@ header .burger {
   margin-top: 5px;
 }
 
+.services .service-list .service-item img {
+  width: 100%;
+}
+
 .portfolio-page .portfolio-header {
   display: flex;
 }
@@ -311,6 +315,7 @@ header .burger {
 .portfolio-page .modal-overlay .modal-content {
   width: 600px;
   height: 350px;
+  border-radius: 0;
 }
 @media (max-width: 450px) {
   .portfolio-page .modal-overlay .modal-content {
@@ -811,7 +816,7 @@ footer .contact {
   gap: 10px;
 }
 footer .contact img {
-  width: 50px;
+  width: 75px;
   margin-bottom: 15px;
 }
 footer .contact ul {
