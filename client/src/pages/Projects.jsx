@@ -68,21 +68,26 @@ function Projects() {
       </Helmet>
       <div className="portfolio-page">
         <div className="portfolio-header">
-          <Link to="/" className="back-button">
-            <FaArrowLeft /> Back
-          </Link>
+          
         </div>
 
         <div className="video-categories">
-          {videoCategories.map((category, index) => (
-            <button
-              key={index}
-              className={selectedCategory === category.name ? "active" : ""}
-              onClick={() => setSelectedCategory(category.name)}
-            >
-              {category.name}
-            </button>
-          ))}
+          <div className="container">
+          <Link to="/" className="back-button">
+            <FaArrowLeft /> Back
+          </Link>
+          <div className="wrapper">
+            {videoCategories.map((category, index) => (
+              <button
+                key={index}
+                className={selectedCategory === category.name ? "active" : ""}
+                onClick={() => setSelectedCategory(category.name)}
+              >
+                {category.name}                 
+              </button>
+            ))}
+          </div>
+          </div>
         </div>
 
         <div className="video-grid">
