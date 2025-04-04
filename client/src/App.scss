@@ -297,8 +297,8 @@ header {
       align-items: center;
       gap: 1rem;
       text-decoration: none;
-      color: #00b7ff;
-      border: #00b7ff  2px solid;
+      color: #0076a3;
+      border: #0076a3  2px solid;
       border-radius: 5px;
     }
 
@@ -307,6 +307,9 @@ header {
       align-items: center;
       gap: 5px;
       overflow-x: scroll;
+
+      scrollbar-width: none; 
+    	-ms-overflow-style: none;
 
       button {
         padding: 5px 10px;
@@ -368,7 +371,6 @@ header {
 .courses-page {
   display: flex;
   flex-direction: column;
-  padding: 5px;
 
   @media (max-width: 768px) {
 
@@ -378,9 +380,12 @@ header {
   }
 
 .container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+display: flex;
+align-items: center;
+gap: 5px;
+    padding: 5px 20px;
+    position: sticky;
+    top: 0;
 
   .back-button {
     padding: 5px 10px;
@@ -388,8 +393,8 @@ header {
     align-items: center;
     gap: 1rem;
     text-decoration: none;
-    color: #00b7ff;
-    border: #00b7ff 2px solid;
+    color: #0076a3;
+    border: #0076a3 2px solid;
     border-radius: 5px;
   }
 
@@ -397,12 +402,13 @@ header {
     display: flex;
     align-items: center;
     gap: 5px;
-    overflow-x: scroll;
 
     .category-filter {
       display: flex;
       gap: 5px;
       overflow-x: scroll;
+      scrollbar-width: none; 
+    	-ms-overflow-style: none;
 
       button {
         padding: 5px 10px;

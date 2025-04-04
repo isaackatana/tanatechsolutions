@@ -267,8 +267,8 @@ header .burger {
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: #00b7ff;
-  border: #00b7ff 2px solid;
+  color: #0076a3;
+  border: #0076a3 2px solid;
   border-radius: 5px;
 }
 .portfolio-page .video-categories .container .wrapper {
@@ -276,6 +276,8 @@ header .burger {
   align-items: center;
   gap: 5px;
   overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .portfolio-page .video-categories .container .wrapper button {
   padding: 5px 10px;
@@ -323,7 +325,6 @@ header .burger {
 .courses-page {
   display: flex;
   flex-direction: column;
-  padding: 5px;
 }
 @media (max-width: 768px) {
   .courses-page .courses-page {
@@ -334,6 +335,9 @@ header .burger {
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 5px 20px;
+  position: sticky;
+  top: 0;
 }
 .courses-page .container .back-button {
   padding: 5px 10px;
@@ -341,20 +345,21 @@ header .burger {
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: #00b7ff;
-  border: #00b7ff 2px solid;
+  color: #0076a3;
+  border: #0076a3 2px solid;
   border-radius: 5px;
 }
 .courses-page .container .wrapper {
   display: flex;
   align-items: center;
   gap: 5px;
-  overflow-x: scroll;
 }
 .courses-page .container .wrapper .category-filter {
   display: flex;
   gap: 5px;
   overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .courses-page .container .wrapper .category-filter button {
   padding: 5px 10px;

@@ -16,8 +16,8 @@ const videos = [
   { id: 2, src: "a5xMtNkjz-0", title: "Music Video 2", category: "Music Videos" },
   { id: 3, src: "VyVVl_d2yZI", title: "Song 1", category: "Songs" },
   { id: 4, src: "GNioxp0RCmk", title: "Song 2", category: "Songs" },
-  { id: 5, src: "LxcmF_Kk0Ho", title: "Music Video 3", category: "Music Videos" },
-  { id: 6, src: "example123", title: "Music Video 4", category: "Music Videos" },
+  { id: 5, src: "YHESmYsFkrE", title: "Music Video 3", category: "Music Videos" },
+  { id: 6, src: "IKpuPkl-hv4", title: "Music Video 4", category: "Music Videos" },
   { id: 7, src: "IKpuPkl-hv4", title: "Advert 2", category: "Adverts" }
 ];
 
