@@ -58,23 +58,24 @@ function Courses() {
       <meta name="twitter:image" content="https://yourwebsite.com/courses-twitter-image.jpg" />
     </Helmet>
     <div className="courses-page">
-      <div className="courses-header">
-        <Link to="/" className="back-button">
+      <div className="container">
+      <Link to="/" className="back-button">
           <FaArrowLeft /> Back
         </Link>
-      </div>
-      
       {/* Category Filter */}
-      <div className="category-filter">
-        {categories.map((category, index) => (
-          <button 
-            key={index} 
-            className={selectedCategory === category ? "active" : ""}
-            onClick={() => setSelectedCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
+      <div className="wrapper">
+        <div className="category-filter">
+          {categories.map((category, index) => (
+            <button 
+              key={index} 
+              className={selectedCategory === category ? "active" : ""}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
       </div>
 
       {/* Course Cards */}
