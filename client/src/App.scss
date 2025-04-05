@@ -262,10 +262,52 @@ header {
 }
 
 .services {
+  padding: 5px 20px;
+
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 5px;
+    }
+  }
   .service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
     .service-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 250px;
+
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      div {
+        width: 519px;
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 0 10px 10px 0;
+
+        @media (max-width: 768px) {
+          padding: 10px;
+          width: 200px;
+        }
       }
     }
   }
@@ -285,96 +327,98 @@ header {
       }
     }
   }
-.video-categories {
-  padding: 5px 20px;
-  position: sticky;
-  top: 0;
 
-  @include mobile(){
-    padding: 5px;
-  }
+  .video-categories {
+    padding: 5px 20px;
+    position: sticky;
+    top: 0;
 
-  .container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    .back-button {
-      padding: 5px 10px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-      color: #0076a3;
-      border: #0076a3  2px solid;
-      border-radius: 5px;
+    @include mobile(){
+      padding: 5px;
     }
 
-    .wrapper {
+    .container {
       display: flex;
       align-items: center;
       gap: 5px;
-      overflow-x: scroll;
 
-      scrollbar-width: none; 
-    	-ms-overflow-style: none;
-
-      button {
+      .back-button {
         padding: 5px 10px;
-        background-color: #0076a3;
-        border: none;
-        color: white;
-        cursor: pointer;
-        flex-shrink: 0;
-        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: #0076a3;
+        border: #0076a3  2px solid;
+        border-radius: 5px;
       }
 
-      .active {
-        background-color: #00b7ff;
-      }
+      .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        overflow-x: scroll;
 
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+
+        button {
+          padding: 5px 10px;
+          background-color: #0076a3;
+          border: none;
+          color: white;
+          cursor: pointer;
+          flex-shrink: 0;
+          border-radius: 20px;
+        }
+
+        .active {
+          background-color: #00b7ff;
+        }
+
+      }
     }
+
+    
   }
 
-  
-}
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 5px;
-  padding: 5px 20px;
-
-  @include mobile(){
-    grid-template-columns: 1fr;
-    padding: 5px;
-  }
-
-  .video-item {
-    iframe {
-      @media (max-width: 768px) {
-        height: 182px;
-
-      }
-    }
-  }
-}
-
-.modal-overlay {
-  .modal-content {
-    width: 600px;
-    height: 350px;
-    border-radius: 0;
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    padding: 5px 20px;
 
     @include mobile(){
-      width: 100%;
-      height: 250px;
+      grid-template-columns: 1fr;
+      padding: 5px;
     }
 
-    iframe {
-      height: 100%;
+    .video-item {
+      iframe {
+        @media (max-width: 768px) {
+          height: 182px;
+
+        }
+      }
     }
   }
-}
+
+  .modal-overlay {
+    .modal-content {
+      width: 600px;
+      height: 350px;
+      border-radius: 0;
+
+      @include mobile(){
+        width: 100%;
+        height: 250px;
+      }
+
+      iframe {
+        height: 100%;
+      }
+    }
+  }
 }
 
 .courses-page {
@@ -388,37 +432,56 @@ header {
     }
   }
 
-.container {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 20px;
-  position: sticky;
-  top: 0;
-
-  .back-button {
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: #0076a3;
-    border: #0076a3 2px solid;
-    border-radius: 5px;
-  }
-
-  .wrapper {
+  .container {
     display: flex;
     align-items: center;
     gap: 5px;
+    padding: 5px 20px;
+    position: sticky;
+    top: 0;
 
-    .category-filter {
+    .back-button {
+      padding: 5px 10px;
       display: flex;
-      gap: 5px;
-      overflow-x: scroll;
-      scrollbar-width: none; 
-    	-ms-overflow-style: none;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: #0076a3;
+      border: #0076a3 2px solid;
+      border-radius: 5px;
+    }
 
+    .wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      .category-filter {
+        display: flex;
+        gap: 5px;
+        overflow-x: scroll;
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+
+        button {
+          padding: 5px 10px;
+          background-color: #0076a3;
+          border: none;
+          color: white;
+          cursor: pointer;
+          flex-shrink: 0;
+          border-radius: 20px;
+    
+          &:hover {
+            background-color: #00b7ff;
+          }
+        }
+    
+        .active {
+          background-color: #00b7ff;
+        }
+      }
+      
       button {
         padding: 5px 10px;
         background-color: #0076a3;
@@ -427,28 +490,9 @@ header {
         cursor: pointer;
         flex-shrink: 0;
         border-radius: 20px;
-  
-        &:hover {
-          background-color: #00b7ff;
-        }
       }
-  
-      .active {
-        background-color: #00b7ff;
-      }
-    }
-    
-     button {
-      padding: 5px 10px;
-      background-color: #0076a3;
-      border: none;
-      color: white;
-      cursor: pointer;
-      flex-shrink: 0;
-      border-radius: 20px;
     }
   }
-}
 
   .video-categories {
     padding: 5px 20px;
@@ -514,8 +558,6 @@ header {
       color: #0076a3;
     }
   }
-
-  
 
   .category-buttons {
     display: flex;
@@ -883,6 +925,25 @@ header {
     }
   }
 
+}
+
+.cta {
+  padding: 5px 20px;
+
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
+
+  button {
+    padding: 10px;
+    width: 125px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    background-color: #00b7ff;
+    color: white;
+    margin-top: 5px;
+  }
 }
 
 // Footer Styling

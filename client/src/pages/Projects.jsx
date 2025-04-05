@@ -155,7 +155,6 @@ function Projects() {
         }
         .modal-content {
           background: white;
-          border-radius: 10px;
           text-align: center;
           position: relative;
         }
