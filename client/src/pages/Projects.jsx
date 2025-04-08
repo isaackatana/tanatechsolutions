@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const videoCategories = [
   { name: "All" },
   { name: "Music Videos" },
-  { name: "Music Visualizers" },
   { name: "Songs" },
   { name: "Adverts" },
 ];

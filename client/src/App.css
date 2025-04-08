@@ -259,6 +259,12 @@ header .burger {
   align-items: center;
   position: relative;
   height: 250px;
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .services .service-list .service-item {
+    width: 100%;
+  }
 }
 .services .service-list .service-item img {
   width: 100%;
@@ -268,21 +274,14 @@ header .burger {
   border-radius: 10px;
 }
 .services .service-list .service-item div {
-  width: 519px;
   padding: 10px;
   position: absolute;
-  right: 0;
-  top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  border-radius: 0 10px 10px 0;
-}
-@media (max-width: 768px) {
-  .services .service-list .service-item div {
-    padding: 10px;
-    width: 200px;
-  }
+  border-radius: 0 0 10px 10px;
 }
 
 .portfolio-page .portfolio-header {
@@ -379,11 +378,6 @@ header .burger {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 768px) {
-  .courses-page .courses-page {
-    padding: 10px;
-  }
-}
 .courses-page .container {
   display: flex;
   align-items: center;
@@ -391,6 +385,11 @@ header .burger {
   padding: 5px 20px;
   position: sticky;
   top: 0;
+}
+@media (max-width: 768px) {
+  .courses-page .container {
+    padding: 5px;
+  }
 }
 .courses-page .container .back-button {
   padding: 5px 10px;
