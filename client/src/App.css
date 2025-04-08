@@ -823,7 +823,7 @@ header .burger {
 }
 @media (max-width: 768px) {
   .cta {
-    padding: 5px;
+    padding: 10px;
   }
 }
 .cta button {
