@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../assets/TTS-logo-white.png';
 import { FaEnvelope, FaMapPin, FaPhone } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom'; 
+import { Link, NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -24,8 +24,10 @@ const Footer = () => {
         <div className="quick-links">
           <h3>Quick Links</h3>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/courses">Courses</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/portfolio">Portfolio</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </div>
       </div>
