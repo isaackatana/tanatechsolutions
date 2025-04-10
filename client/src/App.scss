@@ -85,6 +85,157 @@
     }
   }
 }
+.auth-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.4rem 0.8rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.signup {
+    background: #00bcd4;
+    border: none;
+    color: #fff;
+  }
+
+  &.logout {
+    border-color: red;
+    color: red;
+  }
+
+  &:hover {
+    background: white;
+    color: black;
+  }
+}
+
+.auth-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.auth-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+  }
+
+  button {
+    padding: 0.7rem;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3rem;
+
+    &:hover {
+      background: #009cb3;
+    }
+  }
+
+  .forgot-password {
+    color: #0077cc;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-align: right;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.user-icon a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  transition: 0.2s;
+
+  &:hover {
+    color: #00bcd4;
+  }
+}
+
+
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  .auth-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      input {
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 0.6rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:first-of-type {
+          background-color: #2563eb;
+          color: white;
+        }
+
+        &:last-of-type {
+          background-color: #ef4444;
+          color: white;
+        }
+      }
+    }
+  }
+}
 
 .hero {
   position: relative;

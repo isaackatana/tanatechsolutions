@@ -14,6 +14,7 @@ import CourseDetails from './pages/CourseDetails.jsx'
 import EnrollmentPage from './pages/EnrollmentPage.jsx'
 import PaymentConfirmation from './pages/PaymentConfirmation.jsx'
 import Projects from './pages/Projects.jsx'
+import BookingPage from './pages/BookingPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,9 @@ const router = createBrowserRouter([
       { path: '/courses', element: <Courses /> },
       { path: '/course/:courseId', element: <CourseDetails /> },
       { path: '/enroll/:courseId', element: <EnrollmentPage /> },
-      {path:"/payment-confirmation", element: <PaymentConfirmation />},    
+      {path:"/payment-confirmation", element: <PaymentConfirmation />},
+      
+  { path: '/book', element: <BookingPage/> },    
     ],
   },
   { path: '/register', element: <Register /> },

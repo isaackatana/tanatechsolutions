@@ -12,7 +12,8 @@ function Home() {
       title: "Innovative Digital Solutions",
       subtitle:
         "We provide cutting-edge web, app, and AI solutions that transform your business.",
-      button: "Discover More",
+      buttonText: "Discover More",
+      buttonLink: "/services",
     },
     {
       image:
@@ -20,21 +21,21 @@ function Home() {
       title: "Professional Content Production",
       subtitle:
         "From high-quality audio production to video content creation, we help bring your vision to life.",
-      button: "Book a Session",
+      buttonText: "Book a Session",
+      buttonLink: "/book",
     },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
     <>
       <Helmet>
-        {/* Meta Tags */}
         <title>Tana Tech Studios | Tech & Production Solutions</title>
         <meta
           name="description"
@@ -44,7 +45,6 @@ function Home() {
           name="keywords"
           content="Tana Tech Studios, web development, app development, AI solutions, custom software, audio production, video production, recording studio, tech consultancy"
         />
-        {/* Open Graph / Facebook */}
         <meta property="og:title" content="Tana Tech Studios | Tech & Production Solutions" />
         <meta
           property="og:description"
@@ -56,7 +56,6 @@ function Home() {
         />
         <meta property="og:url" content="https://yourwebsite.com" />
         <meta property="og:type" content="website" />
-        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Tana Tech Studios | Tech & Production Solutions" />
         <meta
@@ -78,20 +77,22 @@ function Home() {
           >
             <img
               src={slide.image}
-              alt="Professional recording studio"
+              alt={slide.title}
               className="hero-image"
             />
             <div className="hero-details">
               <h1>{slide.title}</h1>
               <p>{slide.subtitle}</p>
-              <button>{slide.button}</button>
+              <Link to={slide.buttonLink} className="hero-btn">
+                {slide.buttonText}
+              </Link>
             </div>
           </div>
         ))}
       </section>
 
-      {/* Services Section */}
-      <section className="services">
+        {/* Services Section */}
+        <section className="services">
         <h2>Our Services</h2>
         <div className="service-list">
           <div className="service-item">
@@ -177,7 +178,6 @@ function Home() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
