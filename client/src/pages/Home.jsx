@@ -138,7 +138,7 @@ function Home() {
           </div>
           <div className="service-item">
             <img
-              src="https://media.istockphoto.com/photos/cloud-computing-picture-id914345178"
+              src="https://www.technology-innovators.com/wp-content/uploads/2020/09/Empowerment-of-IT-industry-with-Cloud-Computing.jpg"
               alt="Cloud Solutions & Automation"
             />
             <div>
@@ -152,7 +152,7 @@ function Home() {
           </div>
           <div className="service-item">
             <img
-              src="https://www.apple.com/newsroom/images/product/mac/lifestyle/mac_hero_04_200806.jpg.large.jpg"
+              src="https://www.digitalauthority.me/wp-content/uploads/2023/05/shutterstock_629901719-1.jpg"
               alt="Branding & Digital Marketing"
             />
             <div>

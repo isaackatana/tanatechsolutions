@@ -460,28 +460,36 @@
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      padding: 1rem;
+      position: relative;
+      height: 300px;
 
       @include mobile(){
-        padding: 0.5rem;
       }
 
       img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
         border-radius: 8px;
       }
 
-      h3 {
-        font-size: 1.75rem;
-        margin-top: 1rem;
-        font-weight: bold;
-      }
+      div {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        height: 233px;
 
-      p {
-        margin-top: 1rem;
-        font-size: 1.125rem;
+        h3 {
+          font-size: 1.75rem;
+          margin-top: 1rem;
+          font-weight: bold;
+        }
+  
+        p {
+          margin-top: 1rem;
+          font-size: 1.125rem;
+        }
       }
     }
   }
@@ -493,6 +501,10 @@
   padding: 4rem 2rem;
   text-align: center;
   background-color: #f8f8f8;
+
+  @include mobile(){
+    padding: 4rem 1rem;
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -510,6 +522,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+
+    @include mobile(){
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     .portfolio-item {
       background-color: white;
@@ -567,6 +583,10 @@
   color: #333;
   text-align: center;
 
+  @include mobile(){
+    padding: 1rem;    
+  }
+
   .blog-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -574,6 +594,11 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
+
+      @include mobile(){
+        margin-bottom: 1rem;    
+      }
+      
     }
 
     .blog-list {
@@ -581,12 +606,20 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
 
+      @include mobile(){
+        grid-template-columns: repeat(1, 1fr);
+      }
+
       .blog-post {
         background-color: #fff;
         border-radius: 10px;
         padding: 1.5rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: left;
+
+        @include mobile(){
+          padding: 1rem;    
+        }
 
         h2 {
           font-size: 1.8rem;
@@ -627,6 +660,10 @@
   background-color: #f5f5f5;
   color: #333;
 
+  @include mobile(){
+    padding: 1rem;
+  }
+
   .contact-container {
     display: flex;
     justify-content: space-between;
@@ -638,6 +675,8 @@
     .contact-info {
       flex: 1;
       max-width: 500px;
+
+      
 
       h1 {
         font-size: 2.5rem;
@@ -675,6 +714,10 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
+      @include mobile(){
+        padding: 1rem;
+      }
+
       h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
@@ -682,7 +725,9 @@
 
       .form-group {
         margin-bottom: 1.5rem;
-
+        display: flex;
+        flex-direction: column;
+        
         label {
           font-size: 1.1rem;
           display: block;
@@ -691,7 +736,6 @@
 
         input,
         textarea {
-          width: 100%;
           padding: 1rem;
           font-size: 1rem;
           border: 1px solid #ddd;
@@ -767,22 +811,23 @@
 }
 
 .cta {
-  background-color: #2563eb;
-  color: white;
-  padding: 3rem 2rem;
   text-align: center;
+  background: url('https://assets.entrepreneur.com/content/3x2/2000/20190319092017-9-Ways-To-Elevate-Your-Small-Business-To-The-Next-Level-4000pxW-X-2670pxH.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 5rem;
 
   @include mobile(){
     padding: 1rem;
   }
 
   .cta-content {
-    max-width: 1200px;
     margin: 0 auto;
 
     h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: white;
     }
 
     p {
@@ -790,12 +835,20 @@
       margin-bottom: 2rem;
       color: #d1d5db;
       /* Light text for description */
+
+      @include mobile(){
+        margin-bottom: 1rem;
+      }
     }
 
     .cta-buttons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
+
+      @include mobile(){
+        gap: 0.5rem;
+      }
 
       .cta-btn {
         padding: 0.75rem 2rem;
@@ -803,6 +856,10 @@
         text-decoration: none;
         border-radius: 5px;
         transition: all 0.3s ease;
+
+        @include mobile(){
+          padding: 0.75rem 1rem;
+        }
 
         &:hover {
           transform: scale(1.05);
