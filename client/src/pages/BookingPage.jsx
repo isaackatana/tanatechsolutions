@@ -1,119 +1,63 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-function BookingPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    date: "",
-    time: "",
-    notes: ""
-  });
+function Book() {
+  const [hours, setHours] = useState(1); // Minimum 3 hours
+  const pricePerHour = 2000; // Ksh 2,000 per hour
+  const totalPrice = hours * pricePerHour;
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add booking logic here (e.g., send to backend or email)
-    alert("Session booked successfully! We will contact you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      date: "",
-      time: "",
-      notes: ""
-    });
+  const handleHoursChange = (event) => {
+    const value = Math.max(1, event.target.value); // Ensures minimum 3 hours
+    setHours(value);
   };
 
   return (
-    <section className="booking-page">
-      <h1 className="text-3xl font-bold mb-6">Book a Session</h1>
-      <form onSubmit={handleSubmit} className="grid gap-4 max-w-xl mx-auto">
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
-        />
+    <section className="book-session">
+      <h2>Book Your Recording Session</h2>
+      <p>Secure your spot at Tana Tech Studios. Our recording sessions are professional, creative, and affordable.</p>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
-        />
+      <div className="booking-form">
+        <form>
+          <div className="form-group">
+            <label htmlFor="hours">Select Session Duration (Minimum 3 hours):</label>
+            <input
+              type="number"
+              id="hours"
+              value={hours}
+              min="1"
+              onChange={handleHoursChange}
+            />
+          </div>
 
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
-        />
+          <div className="form-group">
+            <p>
+              <strong>Price:</strong> Ksh {totalPrice.toLocaleString()} (Ksh 2,000 per hour)
+            </p>
+          </div>
 
-        <select
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
-        >
-          <option value="">Select Service</option>
-          <option value="Recording Session">Recording Session</option>
-          <option value="Mixing & Mastering">Mixing & Mastering</option>
-          <option value="Video Production">Video Production</option>
-          <option value="Tech Consultation">Tech Consultation</option>
-        </select>
+          <div className="form-group">
+            <label htmlFor="date">Select a Date:</label>
+            <input type="date" id="date" required />
+          </div>
 
-        <input
-          type="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
-        />
+          <div className="form-group">
+            <label htmlFor="time">Select a Time:</label>
+            <input type="time" id="time" required />
+          </div>
 
-        <input
-          type="time"
-          name="time"
-          value={formData.time}
-          onChange={handleChange}
-          required
-          className="p-2 border rounded"
-        />
+          <div className="form-group">
+            <button type="submit" className="btn primary-btn">
+              Confirm Booking
+            </button>
+          </div>
+        </form>
+      </div>
 
-        <textarea
-          name="notes"
-          placeholder="Additional Notes (Optional)"
-          value={formData.notes}
-          onChange={handleChange}
-          className="p-2 border rounded"
-        ></textarea>
-
-        <button
-          type="submit"
-          className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-        >
-          Book Now
-        </button>
-      </form>
+      <div className="back-to-home">
+        <Link to="/" className="btn secondary-btn">Back to Home</Link>
+      </div>
     </section>
   );
 }
 
-export default BookingPage;
+export default Book;

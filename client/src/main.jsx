@@ -9,11 +9,14 @@ import Contact from './pages/Contact.jsx'
 import Register from './components/auth/Register.jsx'
 import Login from './components/auth/Login.jsx'
 import Courses from './pages/Courses.jsx'
-import Portfolio from './pages/Projects.jsx'
 import CourseDetails from './pages/CourseDetails.jsx'
 import EnrollmentPage from './pages/EnrollmentPage.jsx'
 import PaymentConfirmation from './pages/PaymentConfirmation.jsx'
-import Projects from './pages/Projects.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import ServicesPage from './pages/ServicesPage.jsx'
+import PortfolioPage from './pages/PortfolioPage.jsx'
+import BlogPage from './pages/BlogPage.jsx'
+import ContactPage from './pages/ContactPage.jsx'
 import BookingPage from './pages/BookingPage.jsx'
 
 const router = createBrowserRouter([
@@ -22,14 +25,17 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       { path: '', element: <Home /> }, 
-      { path: '/projects', element: <Projects /> },
-      { path: '/contact', element: <Contact /> },
       { path: '/courses', element: <Courses /> },
       { path: '/course/:courseId', element: <CourseDetails /> },
       { path: '/enroll/:courseId', element: <EnrollmentPage /> },
       {path:"/payment-confirmation", element: <PaymentConfirmation />},
       
-  { path: '/book', element: <BookingPage/> },    
+      { path: '/book', element: <BookingPage/> },
+      { path: '/about', element: <AboutPage/> },     
+      { path: '/services', element: <ServicesPage/> },    
+      { path: '/portfolio', element: <PortfolioPage/> },
+      { path: '/blog', element: <BlogPage/> },
+      { path: '/contact', element: <ContactPage/> },
     ],
   },
   { path: '/register', element: <Register /> },
