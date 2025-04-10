@@ -42,6 +42,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .header .logo img {
   width: 150px;
@@ -701,25 +704,48 @@
 }
 
 .cta {
-  padding: 20px;
-}
-@media (max-width: 768px) {
-  .cta {
-    padding: 10px;
-  }
-}
-.cta h2 {
-  margin-bottom: 5px;
-}
-.cta button {
-  padding: 10px;
-  width: 125px;
-  cursor: pointer;
-  border-radius: 30px;
-  border: none;
-  background-color: #00b7ff;
+  background-color: #2563eb;
   color: white;
-  margin-top: 5px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.cta .cta-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cta .cta-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.cta .cta-content p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: #d1d5db; /* Light text for description */
+}
+.cta .cta-content .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.cta .cta-content .cta-buttons .cta-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.cta .cta-content .cta-buttons .cta-btn:hover {
+  transform: scale(1.05);
+}
+.cta .cta-content .cta-buttons .cta-btn.primary-btn {
+  background-color: #f59e0b; /* Orange button */
+  color: white;
+  border: none;
+}
+.cta .cta-content .cta-buttons .cta-btn.secondary-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
 }
 
 .footer {

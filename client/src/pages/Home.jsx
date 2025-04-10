@@ -166,12 +166,18 @@ function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* Call to Action Section */}
       <section className="cta">
-        <h2>Ready to Transform Your Business?</h2>
-        <p>Contact us today to get started with our tech and production services.</p>
-        <button>Get in Touch</button>
+        <div className="cta-content">
+          <h2>Ready to Elevate Your Business?</h2>
+          <p>Transform your digital presence with cutting-edge tech solutions and high-quality content production. Let’s work together to bring your vision to life.</p>
+          <div className="cta-buttons">
+            <Link to="/contact" className="cta-btn primary-btn">Get in Touch</Link>
+            <Link to="/services" className="cta-btn secondary-btn">Explore Our Services</Link>
+          </div>
+        </div>
       </section>
+
     </>
   );
 }
