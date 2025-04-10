@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/TTS-logo-white.png";
-import { FaUserCircle } from "react-icons/fa";
+import { FaBars, FaUserCircle } from "react-icons/fa";
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,8 +50,10 @@ function Header() {
             <li><Link to="/portfolio">Portfolio</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-
-            {!isLoggedIn ? (
+          </ul>
+        </nav>
+        <div className="user-auth">
+        {!isLoggedIn ? (
               <>
                 <li>
                   <button className="auth-btn" onClick={() => setShowLoginForm(true)}>Login</button>
@@ -64,7 +66,7 @@ function Header() {
               <>
                 <li className="user-icon">
                   <Link to="/dashboard" title="Dashboard">
-                    <FaUserCircle size={24} />
+                    <FaUserCircle />
                   </Link>
                 </li>
                 <li>
@@ -72,8 +74,10 @@ function Header() {
                 </li>
               </>
             )}
-          </ul>
-        </nav>
+        </div>
+        <div className="burger">
+          <FaBars/>
+        </div>
       </header>
 
       {/* Login Modal */}
