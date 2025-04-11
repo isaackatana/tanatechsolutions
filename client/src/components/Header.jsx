@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/TTS-logo-white.png";
-import { FaBars, FaUserCircle } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -77,6 +77,7 @@ function Header() {
         </div>
         <div className="burger">
           <FaBars/>
+          <FaTimes/>
         </div>
       </header>
 

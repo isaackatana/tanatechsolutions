@@ -364,6 +364,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+@media (max-width: 450px) {
+  .about .about-content .about-team .team-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .about .about-content .about-team .team-list .team-member {
   background-color: #fff;
   border-radius: 10px;
@@ -723,7 +728,7 @@
   background: url("https://assets.entrepreneur.com/content/3x2/2000/20190319092017-9-Ways-To-Elevate-Your-Small-Business-To-The-Next-Level-4000pxW-X-2670pxH.jpeg");
   background-size: cover;
   background-position: center;
-  padding: 5rem;
+  padding: 1rem;
 }
 @media (max-width: 450px) {
   .cta {
