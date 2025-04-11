@@ -73,7 +73,7 @@
         @include mobile() {
           position: fixed;
           top: 79px;
-          right: 0;
+          left : 0;
           width: 50%;
           background-color: #2563eb;
           flex-direction: column;
@@ -89,9 +89,10 @@
             font-size: 1rem;
             transition: color 0.3s ease;
             width: 100%;
-            padding: 10px;
   
             @include mobile() {
+              padding: 20px;
+
               &:hover {
                 background-color: #007bff;
                 color: white;
