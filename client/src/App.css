@@ -48,8 +48,6 @@
 }
 @media (max-width: 450px) {
   .header {
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem;
   }
 }
@@ -64,16 +62,26 @@
 .header nav .nav-list {
   display: flex;
   gap: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 @media (max-width: 450px) {
   .header nav .nav-list {
     position: fixed;
     top: 79px;
     left: 0;
-    width: 50%;
+    width: 60%;
     background-color: #555;
     flex-direction: column;
-    gap: 0px;
+    gap: 0;
+    padding: 1rem;
+    height: 100vh;
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 9;
+  }
+  .header nav .nav-list.open {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 .header nav .nav-list li {
@@ -99,9 +107,6 @@
     color: white;
   }
 }
-.header .user-icon {
-  gap: 1rem;
-}
 .header .user-auth {
   display: flex;
   align-items: center;
@@ -123,7 +128,64 @@
 @media (max-width: 450px) {
   .header .burger {
     display: block;
+    font-size: 1.5rem;
   }
+}
+
+/* Modal Styles */
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.auth-modal .auth-form {
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 10px;
+  min-width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.auth-modal .auth-form h2 {
+  margin-bottom: 1rem;
+}
+.auth-modal .auth-form form {
+  display: flex;
+  flex-direction: column;
+}
+.auth-modal .auth-form form input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.auth-modal .auth-form form button {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.auth-modal .auth-form form button:hover {
+  background-color: #0097a7;
+}
+.auth-modal .auth-form form .forgot-password {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #00bcd4;
+  text-align: right;
+}
+.auth-modal .auth-form form .forgot-password:hover {
+  text-decoration: underline;
 }
 
 .auth-btn {

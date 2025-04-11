@@ -43,103 +43,174 @@
 
 .header {
   padding: 1rem 2rem;
-    background-color: #555;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
+  background-color: #555;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mobile() {
+    padding: 1rem;
+  }
+
+  .logo img {
+    width: 125px;
+
     @include mobile() {
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
+      width: 100px;
     }
-  
-    .logo img {
-      width: 125px;
-  
-      @include mobile() {
-        width: 100px;
-      }
-    }
-  
-    nav {
-      .nav-list {
-        display: flex;
-        gap: 20px;
-  
-        @include mobile() {
-          position: fixed;
-          top: 79px;
-          left : 0;
-          width: 50%;
-          background-color: #555;
-          flex-direction: column;
-          gap: 0px;
-  
-        }
-  
-        li {
-          list-style: none;
-          display: flex;
-  
-          a {
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-            width: 100%;
+  }
 
-            &:hover {
-              color: #00bcd4;
-            }
-  
-            @include mobile() {
-              padding: 20px;
-
-              &:hover {
-                background-color: #00bcd4;
-                color: white;
-              }
-            }
-          }
-        }
-      }
-    }
-  
-    .user-icon {
-      gap: 1rem;
-  
-    }
-
-    .user-auth {
+  nav {
+    .nav-list {
       display: flex;
-      align-items: center;
+      gap: 20px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
 
-      .user-icon {
-        display: flex;
-        font-size: 25px;
-        a {
-          display: flex;
+      @include mobile() {
+        position: fixed;
+        top: 79px;
+        left: 0;
+        width: 60%;
+        background-color: #555;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem;
+        height: 100vh;
+        transform: translateX(-100%);
+        opacity: 0;
+        z-index: 9;
+
+        &.open {
+          transform: translateX(0);
+          opacity: 1;
         }
       }
 
       li {
         list-style: none;
+        display: flex;
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 1rem;
+          transition: color 0.3s ease;
+          width: 100%;
+
+          &:hover {
+            color: #00bcd4;
+          }
+
+          @include mobile() {
+            padding: 20px;
+
+            &:hover {
+              background-color: #00bcd4;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .user-auth {
+    display: flex;
+    align-items: center;
+
+    .user-icon {
+      display: flex;
+      font-size: 25px;
+
+      a {
+        display: flex;
       }
     }
 
-    .burger {
-      display: none;
-      cursor: pointer;
-      @include mobile() {
-        display: block;
+    li {
+      list-style: none;
+    }
+  }
+
+  .burger {
+    display: none;
+    cursor: pointer;
+
+    @include mobile() {
+      display: block;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* Modal Styles */
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  .auth-form {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    min-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        margin-top: 0.5rem;
+        padding: 0.75rem;
+        background-color: #00bcd4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0097a7;
+        }
+      }
+
+      .forgot-password {
+        cursor: pointer;
+        margin-top: 0.5rem;
+        color: #00bcd4;
+        text-align: right;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
+  }
 }
+
 
 .auth-btn {
   background: transparent;

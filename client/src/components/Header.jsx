@@ -8,30 +8,32 @@ function Header() {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSignupForm, setShowSignupForm] = useState(false);
   const [showResetForm, setShowResetForm] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Add actual auth logic here
     setIsLoggedIn(true);
     setShowLoginForm(false);
   };
 
   const handleSignup = (e) => {
     e.preventDefault();
-    // Add actual sign-up logic here
     setIsLoggedIn(true);
     setShowSignupForm(false);
   };
 
   const handleResetPassword = (e) => {
     e.preventDefault();
-    // Add actual password reset logic here
     alert("Password reset link sent to your email.");
     setShowResetForm(false);
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -42,46 +44,48 @@ function Header() {
             <img src={Logo} alt="Tana Tech Studios Logo" />
           </Link>
         </div>
-        <nav>
-          <ul className="nav-list">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+
+        <nav className={menuOpen ? "nav-open" : ""}>
+          <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
+            <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+            <li><Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
+            <li><Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link></li>
+            <li><Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
+            <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           </ul>
         </nav>
+
         <div className="user-auth">
-        {!isLoggedIn ? (
-              <>
-                <li>
-                  <button className="auth-btn" onClick={() => setShowLoginForm(true)}>Login</button>
-                </li>
-                <li>
-                  <button className="auth-btn signup" onClick={() => setShowSignupForm(true)}>Sign Up</button>
-                </li>
-              </>
-            ) : (
-              <>
-                <li className="user-icon">
-                  <Link to="/dashboard" title="Dashboard">
-                    <FaUserCircle />
-                  </Link>
-                </li>
-                <li>
-                  <button className="auth-btn logout" onClick={handleLogout}>Logout</button>
-                </li>
-              </>
-            )}
+          {!isLoggedIn ? (
+            <>
+              <li>
+                <button className="auth-btn" onClick={() => setShowLoginForm(true)}>Login</button>
+              </li>
+              <li>
+                <button className="auth-btn signup" onClick={() => setShowSignupForm(true)}>Sign Up</button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="user-icon">
+                <Link to="/dashboard" title="Dashboard" aria-label="Dashboard">
+                  <FaUserCircle />
+                </Link>
+              </li>
+              <li>
+                <button className="auth-btn logout" onClick={handleLogout}>Logout</button>
+              </li>
+            </>
+          )}
         </div>
-        <div className="burger">
-          <FaBars/>
-          <FaTimes/>
+
+        <div className="burger" onClick={toggleMenu} aria-label="Toggle navigation menu">
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </header>
 
-      {/* Login Modal */}
+      {/* Modals */}
       {showLoginForm && (
         <div className="auth-modal">
           <div className="auth-form">
@@ -105,7 +109,6 @@ function Header() {
         </div>
       )}
 
-      {/* Signup Modal */}
       {showSignupForm && (
         <div className="auth-modal">
           <div className="auth-form">
@@ -121,7 +124,6 @@ function Header() {
         </div>
       )}
 
-      {/* Reset Password Modal */}
       {showResetForm && (
         <div className="auth-modal">
           <div className="auth-form">
