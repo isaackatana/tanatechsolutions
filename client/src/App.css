@@ -37,7 +37,7 @@
 
 .header {
   padding: 1rem 2rem;
-  background-color: #2563eb;
+  background-color: #555;
   color: white;
   position: sticky;
   top: 0;
@@ -63,6 +63,7 @@
 }
 .header nav .nav-list {
   display: flex;
+  gap: 20px;
 }
 @media (max-width: 450px) {
   .header nav .nav-list {
@@ -70,8 +71,9 @@
     top: 79px;
     left: 0;
     width: 50%;
-    background-color: #2563eb;
+    background-color: #555;
     flex-direction: column;
+    gap: 0px;
   }
 }
 .header nav .nav-list li {
@@ -85,12 +87,15 @@
   transition: color 0.3s ease;
   width: 100%;
 }
+.header nav .nav-list li a:hover {
+  color: #00bcd4;
+}
 @media (max-width: 450px) {
   .header nav .nav-list li a {
     padding: 20px;
   }
   .header nav .nav-list li a:hover {
-    background-color: #007bff;
+    background-color: #00bcd4;
     color: white;
   }
 }
@@ -248,7 +253,7 @@
   cursor: pointer;
 }
 .auth-modal .auth-form form button:first-of-type {
-  background-color: #2563eb;
+  background-color: #555;
   color: white;
 }
 .auth-modal .auth-form form button:last-of-type {
@@ -302,7 +307,7 @@
 }
 .hero .slide .hero-details a {
   margin-top: 1.5rem;
-  background-color: #2563eb;
+  background-color: #00bcd4;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 9999px;
@@ -314,7 +319,7 @@
   text-decoration: none;
 }
 .hero .slide .hero-details a:hover {
-  background-color: #1d4ed8;
+  background-color: #00e1ff;
 }
 
 .about {
@@ -432,9 +437,10 @@
 .services .service-list .service-item div {
   position: absolute;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
   height: 233px;
+  color: white;
 }
 .services .service-list .service-item div h3 {
   font-size: 1.75rem;
@@ -724,19 +730,27 @@
 }
 
 .cta {
+  position: relative;
   text-align: center;
   background: url("https://assets.entrepreneur.com/content/3x2/2000/20190319092017-9-Ways-To-Elevate-Your-Small-Business-To-The-Next-Level-4000pxW-X-2670pxH.jpeg");
   background-size: cover;
   background-position: center;
   padding: 1rem;
+  overflow: hidden;
 }
-@media (max-width: 450px) {
-  .cta {
-    padding: 1rem;
-  }
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .cta .cta-content {
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 .cta .cta-content h2 {
   font-size: 2rem;
@@ -747,7 +761,6 @@
   font-size: 1.125rem;
   margin-bottom: 2rem;
   color: #d1d5db;
-  /* Light text for description */
 }
 @media (max-width: 450px) {
   .cta .cta-content p {
@@ -780,8 +793,7 @@
   transform: scale(1.05);
 }
 .cta .cta-content .cta-buttons .cta-btn.primary-btn {
-  background-color: #f59e0b;
-  /* Orange button */
+  background-color: #00bcd4;
   color: white;
   border: none;
 }
@@ -792,7 +804,7 @@
 }
 
 .footer {
-  background-color: #2563eb;
+  background-color: #555;
   color: white;
   font-size: 1rem;
   /* Copyright Section */
@@ -800,8 +812,7 @@
 .footer .footer-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 2rem;
-  max-width: 1200px;
+  padding: 2rem;
   margin: 0 auto;
   /* Contact Section */
   /* Quick Links Section */
@@ -850,7 +861,7 @@
   transition: color 0.3s;
 }
 .footer .footer-container .quick-links a:hover {
-  color: #2563eb;
+  color: #555;
   /* Blue color on hover */
 }
 .footer .copyright {
