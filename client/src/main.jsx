@@ -20,11 +20,6 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       { path: '', element: <Home /> }, 
-      { path: '/courses', element: <Courses /> },
-      { path: '/course/:courseId', element: <CourseDetails /> },
-      { path: '/enroll/:courseId', element: <EnrollmentPage /> },
-      {path:"/payment-confirmation", element: <PaymentConfirmation />},
-      
       { path: '/book', element: <BookingPage/> },
       { path: '/about', element: <AboutPage/> },     
       { path: '/services', element: <ServicesPage/> },    
