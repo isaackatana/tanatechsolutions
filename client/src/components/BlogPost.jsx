@@ -12,7 +12,7 @@ function BlogPost() {
   useEffect(() => {
     const fetchBlogPost = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/blogs/${slug}`); // Update with your backend API URL
+        const response = await fetch(`https://tana-tech-studios.onrender.com/blogs/${slug}`); // Update with your backend API URL
         if (!response.ok) {
           throw new Error('Failed to fetch the blog post');
         }
