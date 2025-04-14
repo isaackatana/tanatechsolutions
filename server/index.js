@@ -19,6 +19,10 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.log('Error connecting to MongoDB:', err));
 
 app.use(cors());
+app.use(cors({
+  origin: 'https://tana-tech-studios.onrender.com' // or your actual frontend domain
+}));
+
 app.use(express.json());
 
 // Use blogRoutes
