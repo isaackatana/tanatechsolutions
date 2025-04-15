@@ -44,7 +44,7 @@ function Blog() {
 
       <section className="blog">
         <div className="blog-content">
-          <h1>Our Latest Posts</h1>
+          <h1>Latest Posts</h1>
 
           {loading ? (
             <p>Loading...</p>

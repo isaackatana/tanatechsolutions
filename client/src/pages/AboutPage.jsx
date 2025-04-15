@@ -11,7 +11,7 @@ function About() {
 
       <section className="about">
         <div className="about-content">
-          <h1>About Tana Tech Studios</h1>
+          <h1>About Us</h1>
           <p>
             At Tana Tech Studios, we provide innovative digital solutions to help businesses grow and succeed in the digital era.
             We specialize in custom web and app development, AI-driven services, content production, and much more.
