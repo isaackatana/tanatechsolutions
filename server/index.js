@@ -20,7 +20,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(cors());
 app.use(cors({
-  origin: 'https://tana-tech-studios.onrender.com' // or your actual frontend domain
+  origin: 'https://tana-tech-studios.vercel.app' // or your actual frontend domain
 }));
 
 app.use(express.json());
