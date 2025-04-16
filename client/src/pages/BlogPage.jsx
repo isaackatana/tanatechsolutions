@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch blog posts from the backend API
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/blogs'); // Update with your backend API URL
-        if (!response.ok) {
-          throw new Error('Failed to fetch blog posts');
-        }
-        const data = await response.json();
-        setBlogPosts(data);
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
+        const res = await axios.get('/api/blogs'); // Uses Vite proxy
+        setBlogPosts(res.data);
+      } catch (err) {
+        setError(err.message || "An error occurred");
+      } finally {
         setLoading(false);
       }
     };
@@ -46,25 +42,26 @@ function Blog() {
         <div className="blog-content">
           <h1>Latest Posts</h1>
 
-          {loading ? (
-            <p>Loading...</p>
-          ) : error ? (
-            <p>Error: {error}</p>
-          ) : (
-            <div className="blog-list">
-              {blogPosts.map((post) => {
-                return (
+          {loading && <p>Loading blog posts...</p>}
+          {error && <p className="error">Error: {error}</p>}
+
+          {!loading && !error && (
+            blogPosts.length > 0 ? (
+              <div className="blog-list">
+                {blogPosts.map((post) => (
                   <div key={post._id} className="blog-post">
                     <h2>{post.title}</h2>
-                    <p className="blog-date">{post.date}</p>
-                    <p>{post.summary}</p>
+                    <p className="blog-date">{new Date(post.date).toDateString()}</p>
+                    <p>{post.summary || "No summary available."}</p>
                     <Link to={`/blog/${post.slug}`} className="read-more">
                       Read More →
                     </Link>
                   </div>
-                );
-              })}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <p>No blog posts found.</p>
+            )
           )}
         </div>
       </section>

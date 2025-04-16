@@ -4,30 +4,30 @@ import mongoose from 'mongoose';
 import blogRoutes from './routes/blogRoutes.js';
 import dotenv from 'dotenv';
 
-// Load environment variables from a .env file
+// Load environment variables from .env
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// MongoDB connection string
-const mongoURI = process.env.MONGO_URI;
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('✅ Connected to MongoDB Atlas'))
+.catch((err) => console.error('❌ MongoDB connection error:', err));
 
-// Connect to MongoDB
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB Atlas'))
-  .catch((err) => console.log('Error connecting to MongoDB:', err));
-
-app.use(cors());
+// Middleware
 app.use(cors({
-  origin: 'http://localhost:5173' // or your actual frontend domain
+  origin: 'http://localhost:5173', // Frontend domain
 }));
-
 app.use(express.json());
 
-// Use blogRoutes
+// Routes
 app.use('/blogs', blogRoutes);
 
+// Server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
