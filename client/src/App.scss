@@ -24,15 +24,6 @@
   z-index: 1000;
 }
 
-.auth-modal {
-  background: white;
-  padding: 20px;
-  width: 300px;
-  border-radius: 5px;
-  position: relative;
-  text-align: center;
-}
-
 .close-btn {
   position: absolute;
   top: 10px;
@@ -251,51 +242,51 @@
 //   z-index: 999;
 // }
 
-.auth-form {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+// .auth-form {
+//   background: #fff;
+//   padding: 2rem;
+//   border-radius: 0.5rem;
+//   width: 90%;
+//   max-width: 400px;
+//   text-align: center;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+//   }
 
-  input {
-    padding: 0.7rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.3rem;
-  }
+//   input {
+//     padding: 0.7rem;
+//     font-size: 1rem;
+//     border: 1px solid #ccc;
+//     border-radius: 0.3rem;
+//   }
 
-  button {
-    padding: 0.7rem;
-    background: #00bcd4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.3rem;
+//   button {
+//     padding: 0.7rem;
+//     background: #00bcd4;
+//     color: #fff;
+//     border: none;
+//     cursor: pointer;
+//     border-radius: 0.3rem;
 
-    &:hover {
-      background: #009cb3;
-    }
-  }
+//     &:hover {
+//       background: #009cb3;
+//     }
+//   }
 
-  .forgot-password {
-    color: #0077cc;
-    cursor: pointer;
-    font-size: 0.9rem;
-    text-align: right;
+//   .forgot-password {
+//     color: #0077cc;
+//     cursor: pointer;
+//     font-size: 0.9rem;
+//     text-align: right;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+// }
 
 .user-icon a {
   display: flex;
