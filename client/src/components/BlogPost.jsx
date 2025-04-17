@@ -10,20 +10,23 @@ function BlogPost() {
   const [error, setError] = useState(null);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-  const [user, setUser] = useState(null); // Track the logged-in user
+  const [user, setUser] = useState(null);
+  const [reactions, setReactions] = useState({});
+  const [userReaction, setUserReaction] = useState(null);
 
   useEffect(() => {
-    // Check if the user is logged in (e.g., check local storage for JWT token)
     const token = localStorage.getItem("token");
     if (token) {
-      const decoded = JSON.parse(atob(token.split(".")[1])); // Decode JWT token
-      setUser(decoded.user); // Set user state from token
+      const decoded = JSON.parse(atob(token.split(".")[1]));
+      setUser(decoded.user);
     }
 
     const fetchBlogPost = async () => {
       try {
         const res = await axios.get(`/api/blogs/${slug}`);
         setPost(res.data);
+        setReactions(res.data.reactions || {});
+        setUserReaction(res.data.userReaction || null);
       } catch (err) {
         setError(err.response?.data?.message || "Failed to load blog post.");
       } finally {
@@ -44,13 +47,11 @@ function BlogPost() {
     fetchComments();
   }, [slug]);
 
-  const handleCommentChange = (event) => {
-    setNewComment(event.target.value);
-  };
+  const handleCommentChange = (event) => setNewComment(event.target.value);
 
   const handleCommentSubmit = async (event) => {
     event.preventDefault();
-    if (!newComment || !user) return; // Ensure the user is logged in
+    if (!newComment || !user) return;
 
     try {
       const token = localStorage.getItem("token");
@@ -60,22 +61,35 @@ function BlogPost() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setComments([...comments, res.data]);
-      setNewComment(""); // Clear the comment input after submission
+      setNewComment("");
     } catch (err) {
       console.error("Error submitting comment", err);
     }
   };
 
+  const handleReaction = async (type) => {
+    if (!user) return;
+    const token = localStorage.getItem("token");
+    try {
+      const res = await axios.post(
+        `/api/reactions/${slug}`,
+        { type },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setReactions(res.data.reactions);
+      setUserReaction(type);
+    } catch (err) {
+      console.error("Error reacting to post", err);
+    }
+  };
+
+  const shareUrl = `${window.location.origin}/blog/${slug}`;
+
   return (
     <>
       <Helmet>
-        <title>
-          {post ? `${post.title} | Tana Tech Studios` : "Loading..."}
-        </title>
-        <meta
-          name="description"
-          content={post?.summary || "Read a blog post from Tana Tech Studios."}
-        />
+        <title>{post ? `${post.title} | Tana Tech Studios` : "Loading..."}</title>
+        <meta name="description" content={post?.summary || "Read a blog post from Tana Tech Studios."} />
       </Helmet>
 
       <section className="blog-post-detail">
@@ -87,20 +101,44 @@ function BlogPost() {
             <article>
               <h1>{post.title}</h1>
               <p className="post-date">
-                {post.date
-                  ? new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })
-                  : "Unknown date"}
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </p>
               <div className="post-content">
                 {(post.content || "No content available.")
                   .split("\n")
-                  .map((line, index) => (
-                    <p key={index}>{line.trim()}</p>
-                  ))}
+                  .map((line, index) => <p key={index}>{line.trim()}</p>)}
+              </div>
+
+              {/* Reactions */}
+              <div className="reactions">
+                <h3>React to this post:</h3>
+                {user ? (
+                  <div className="reaction-buttons">
+                    {["like", "love", "wow"].map((type) => (
+                      <button
+                        key={type}
+                        onClick={() => handleReaction(type)}
+                        className={userReaction === type ? "active" : ""}
+                      >
+                        {type} ({reactions[type] || 0})
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <p>You must be logged in to react.</p>
+                )}
+              </div>
+
+              {/* Share buttons */}
+              <div className="share-post">
+                <h3>Share this post:</h3>
+                <a href={`https://twitter.com/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer">Twitter</a>{" | "}
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer">Facebook</a>{" | "}
+                <a href={`https://wa.me/?text=${encodeURIComponent(post.title + " " + shareUrl)}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
               </div>
             </article>
           ) : (

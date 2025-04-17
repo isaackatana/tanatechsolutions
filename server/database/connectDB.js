@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const dbURI = process.env.MONGO_URI || 'mongodb+srv://mrisaackatana:DWqGxmpZjqGVo7sh@tts-db.h6gojew.mongodb.net/?retryWrites=true&w=majority&appName=TTS-DB'
+const dbURI = process.env.MONGO_URI
 
 export const connectDB = async () => {
     try {

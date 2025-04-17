@@ -604,7 +604,7 @@
 
 // Portfolio Section
 .portfolio {
-  padding: 4rem 2rem;
+  padding: 2rem;
   text-align: center;
   background-color: #f8f8f8;
 
@@ -627,7 +627,7 @@
   .portfolio-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1rem;
 
     @include mobile(){
       grid-template-columns: repeat(1, 1fr);
@@ -705,7 +705,7 @@
     .blog-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      gap: 1rem;
     }
 
     .blog-post {

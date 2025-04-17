@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/TTS-logo-white.png";
 import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
-import axios from "axios"; // Import axios for API requests
+import api from "./api"; // Axios instance
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -10,60 +10,75 @@ function Header() {
   const [showSignupForm, setShowSignupForm] = useState(false);
   const [showResetForm, setShowResetForm] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
-      // Optionally, check if the token is valid by sending a request to an endpoint
-      axios.get('/api/auth/user', {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-      .then((response) => {
-        setIsLoggedIn(true);
-        setUsername(response.data.username);
-      })
-      .catch(() => {
-        localStorage.removeItem('token');
-        setIsLoggedIn(false);
-      });
+      api
+        .get("/user", {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          setIsLoggedIn(true);
+          setUsername(res.data.username);
+        })
+        .catch(() => {
+          localStorage.removeItem("token");
+          setIsLoggedIn(false);
+        });
     }
   }, []);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const { username, password } = e.target.elements;
-    axios.post('/api/auth/login', { username: username.value, password: password.value })
-      .then((response) => {
-        localStorage.setItem('token', response.data.token); // Save token in localStorage
-        setIsLoggedIn(true);
-        setUsername(username.value); // Set username
-        setShowLoginForm(false);
-      })
-      .catch((err) => alert('Invalid credentials.'));
+    try {
+      const res = await api.post("/login", {
+        username: username.value,
+        password: password.value,
+      });
+      localStorage.setItem("token", res.data.token);
+      setIsLoggedIn(true);
+      setUsername(username.value);
+      setShowLoginForm(false);
+      navigate("/dashboard");
+    } catch (err) {
+      alert(err.response?.data?.message || "Invalid credentials.");
+    }
   };
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     const { username, email, password } = e.target.elements;
-    axios.post('/api/auth/register', { username: username.value, email: email.value, password: password.value })
-      .then((response) => {
-        localStorage.setItem('token', response.data.token); // Save token in localStorage
-        setIsLoggedIn(true);
-        setUsername(username.value); // Set username
-        setShowSignupForm(false);
-      })
-      .catch((err) => alert('Registration failed.'));
+    try {
+      const res = await api.post("/register", {
+        username: username.value,
+        email: email.value,
+        password: password.value,
+      });
+      localStorage.setItem("token", res.data.token);
+      setIsLoggedIn(true);
+      setUsername(username.value);
+      setShowSignupForm(false);
+      navigate("/dashboard");
+    } catch (err) {
+      alert(err.response?.data?.message || "Registration failed.");
+    }
+  };
+
+  const handleResetPassword = (e) => {
+    e.preventDefault();
+    alert("Reset password feature coming soon.");
+    setShowResetForm(false);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setIsLoggedIn(false);
-    setUsername('');
-  };
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setUsername("");
+    navigate("/");
   };
 
   return (
@@ -89,34 +104,26 @@ function Header() {
         <div className="user-auth">
           {!isLoggedIn ? (
             <>
-              <li>
-                <button className="auth-btn" onClick={() => setShowLoginForm(true)}>Login</button>
-              </li>
-              <li>
-                <button className="auth-btn signup" onClick={() => setShowSignupForm(true)}>Sign Up</button>
-              </li>
+              <button className="auth-btn" onClick={() => setShowLoginForm(true)}>Login</button>
+              <button className="auth-btn signup" onClick={() => setShowSignupForm(true)}>Sign Up</button>
             </>
           ) : (
             <>
-              <li className="user-icon">
-                <Link to="/dashboard" title="Dashboard" aria-label="Dashboard">
-                  <FaUserCircle />
-                </Link>
+              <div className="user-icon">
+                <Link to="/dashboard" title="Dashboard"><FaUserCircle /></Link>
                 <span>{username}</span>
-              </li>
-              <li>
-                <button className="auth-btn logout" onClick={handleLogout}>Logout</button>
-              </li>
+              </div>
+              <button className="auth-btn logout" onClick={handleLogout}>Logout</button>
             </>
           )}
         </div>
 
-        <div className="burger" onClick={toggleMenu} aria-label="Toggle navigation menu">
+        <div className="burger" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </header>
 
-      {/* Modals */}
+      {/* Login Modal */}
       {showLoginForm && (
         <div className="auth-modal">
           <div className="auth-form">
@@ -125,21 +132,17 @@ function Header() {
               <input name="username" type="text" placeholder="Username" required />
               <input name="password" type="password" placeholder="Password" required />
               <button type="submit">Login</button>
-              <p
-                className="forgot-password"
-                onClick={() => {
-                  setShowLoginForm(false);
-                  setShowResetForm(true);
-                }}
-              >
-                Forgot your password?
-              </p>
+              <p className="forgot-password" onClick={() => {
+                setShowLoginForm(false);
+                setShowResetForm(true);
+              }}>Forgot your password?</p>
               <button type="button" onClick={() => setShowLoginForm(false)}>Cancel</button>
             </form>
           </div>
         </div>
       )}
 
+      {/* Signup Modal */}
       {showSignupForm && (
         <div className="auth-modal">
           <div className="auth-form">
@@ -155,6 +158,7 @@ function Header() {
         </div>
       )}
 
+      {/* Reset Password Modal */}
       {showResetForm && (
         <div className="auth-modal">
           <div className="auth-form">
