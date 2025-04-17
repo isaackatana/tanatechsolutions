@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/TTS-logo-white.png";
 import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
+import axios from "axios"; // Import axios for API requests
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -9,27 +10,56 @@ function Header() {
   const [showSignupForm, setShowSignupForm] = useState(false);
   const [showResetForm, setShowResetForm] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Optionally, check if the token is valid by sending a request to an endpoint
+      axios.get('/api/auth/user', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then((response) => {
+        setIsLoggedIn(true);
+        setUsername(response.data.username);
+      })
+      .catch(() => {
+        localStorage.removeItem('token');
+        setIsLoggedIn(false);
+      });
+    }
+  }, []);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    setIsLoggedIn(true);
-    setShowLoginForm(false);
+    const { username, password } = e.target.elements;
+    axios.post('/api/auth/login', { username: username.value, password: password.value })
+      .then((response) => {
+        localStorage.setItem('token', response.data.token); // Save token in localStorage
+        setIsLoggedIn(true);
+        setUsername(username.value); // Set username
+        setShowLoginForm(false);
+      })
+      .catch((err) => alert('Invalid credentials.'));
   };
 
   const handleSignup = (e) => {
     e.preventDefault();
-    setIsLoggedIn(true);
-    setShowSignupForm(false);
-  };
-
-  const handleResetPassword = (e) => {
-    e.preventDefault();
-    alert("Password reset link sent to your email.");
-    setShowResetForm(false);
+    const { username, email, password } = e.target.elements;
+    axios.post('/api/auth/register', { username: username.value, email: email.value, password: password.value })
+      .then((response) => {
+        localStorage.setItem('token', response.data.token); // Save token in localStorage
+        setIsLoggedIn(true);
+        setUsername(username.value); // Set username
+        setShowSignupForm(false);
+      })
+      .catch((err) => alert('Registration failed.'));
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('token');
     setIsLoggedIn(false);
+    setUsername('');
   };
 
   const toggleMenu = () => {
@@ -72,6 +102,7 @@ function Header() {
                 <Link to="/dashboard" title="Dashboard" aria-label="Dashboard">
                   <FaUserCircle />
                 </Link>
+                <span>{username}</span>
               </li>
               <li>
                 <button className="auth-btn logout" onClick={handleLogout}>Logout</button>
@@ -91,8 +122,8 @@ function Header() {
           <div className="auth-form">
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
-              <input type="email" placeholder="Email" required />
-              <input type="password" placeholder="Password" required />
+              <input name="username" type="text" placeholder="Username" required />
+              <input name="password" type="password" placeholder="Password" required />
               <button type="submit">Login</button>
               <p
                 className="forgot-password"
@@ -114,9 +145,9 @@ function Header() {
           <div className="auth-form">
             <h2>Sign Up</h2>
             <form onSubmit={handleSignup}>
-              <input type="text" placeholder="Full Name" required />
-              <input type="email" placeholder="Email" required />
-              <input type="password" placeholder="Password" required />
+              <input name="username" type="text" placeholder="Username" required />
+              <input name="email" type="email" placeholder="Email" required />
+              <input name="password" type="password" placeholder="Password" required />
               <button type="submit">Sign Up</button>
               <button type="button" onClick={() => setShowSignupForm(false)}>Cancel</button>
             </form>

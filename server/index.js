@@ -1,16 +1,17 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import blogRoutes from './routes/blogRoutes.js';
 import dotenv from 'dotenv';
+import blogRoutes from './routes/blogRoutes.js';
+import authRoutes from './routes/authRoutes.js'; // If you have or plan to add auth
+import commentRoutes from './routes/commentRoutes.js'; // For comments if modular
 
-// Load environment variables from .env
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// MongoDB connection
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -20,14 +21,22 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Frontend domain
+  origin: 'http://localhost:5173', // Frontend URL
+  credentials: true,
 }));
 app.use(express.json());
 
 // Routes
 app.use('/blogs', blogRoutes);
+app.use('/auth', authRoutes);         // Auth (login/signup)
+app.use('/comments', commentRoutes);  // Comments
 
-// Server
+// Root route (optional)
+app.get('/', (req, res) => {
+  res.send('🌐 Tana Tech Studios API is running...');
+});
+
+// Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

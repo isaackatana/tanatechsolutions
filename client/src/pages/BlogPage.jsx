@@ -7,20 +7,28 @@ function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
-        const res = await axios.get('/api/blogs'); // Uses Vite proxy
+        const res = await axios.get("/api/blogs"); // Fetches blog posts
         setBlogPosts(res.data);
       } catch (err) {
-        setError(err.message || "An error occurred");
+        setError(err.response?.data?.message || "An error occurred while fetching posts.");
       } finally {
         setLoading(false);
       }
     };
 
+    // Check if the user is logged in by checking for a JWT token in localStorage
+    const checkUserLoginStatus = () => {
+      const token = localStorage.getItem("authToken"); // Replace with your token storage method
+      setUserLoggedIn(!!token);
+    };
+
     fetchBlogPosts();
+    checkUserLoginStatus();
   }, []);
 
   return (
@@ -56,6 +64,11 @@ function Blog() {
                     <Link to={`/blog/${post.slug}`} className="read-more">
                       Read More →
                     </Link>
+                    {userLoggedIn && (
+                      <Link to={`/blog/${post.slug}/comment`} className="comment-link">
+                        Add Comment
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
