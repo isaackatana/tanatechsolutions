@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Frontend URL
+  origin: 'https://tana-tech-studios.vercel.app/', // Frontend URL
   credentials: true,
 }));
 app.use(express.json());
