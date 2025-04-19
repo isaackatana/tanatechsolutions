@@ -58,6 +58,7 @@ function Blog() {
               <div className="blog-list">
                 {blogPosts.map((post) => (
                   <div key={post._id} className="blog-post">
+                    <img src={post.thumbnail} alt="" />
                     <h2>{post.title}</h2>
                     <p className="blog-date">{new Date(post.date).toDateString()}</p>
                     <p>{post.summary || "No summary available."}</p>

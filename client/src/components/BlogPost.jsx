@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
+import {
+  FaThumbsUp,
+  FaThumbsDown,
+  FaTwitter,
+  FaFacebook,
+  FaWhatsapp,
+  FaShareAlt,
+} from "react-icons/fa";
 
 function BlogPost() {
   const { slug } = useParams();
@@ -47,10 +55,10 @@ function BlogPost() {
     fetchComments();
   }, [slug]);
 
-  const handleCommentChange = (event) => setNewComment(event.target.value);
+  const handleCommentChange = (e) => setNewComment(e.target.value);
 
-  const handleCommentSubmit = async (event) => {
-    event.preventDefault();
+  const handleCommentSubmit = async (e) => {
+    e.preventDefault();
     if (!newComment || !user) return;
 
     try {
@@ -89,7 +97,10 @@ function BlogPost() {
     <>
       <Helmet>
         <title>{post ? `${post.title} | Tana Tech Studios` : "Loading..."}</title>
-        <meta name="description" content={post?.summary || "Read a blog post from Tana Tech Studios."} />
+        <meta
+          name="description"
+          content={post?.summary || "Read a blog post from Tana Tech Studios."}
+        />
       </Helmet>
 
       <section className="blog-post-detail">
@@ -110,23 +121,32 @@ function BlogPost() {
               <div className="post-content">
                 {(post.content || "No content available.")
                   .split("\n")
-                  .map((line, index) => <p key={index}>{line.trim()}</p>)}
+                  .map((line, index) => (
+                    <p key={index}>{line.trim()}</p>
+                  ))}
               </div>
 
               {/* Reactions */}
-              <div className="reactions">
-                <h3>React to this post:</h3>
+              <div className="reactions mt-8">
+                <h3 className="mb-2">React to this post:</h3>
                 {user ? (
-                  <div className="reaction-buttons">
-                    {["like", "love", "wow"].map((type) => (
-                      <button
-                        key={type}
-                        onClick={() => handleReaction(type)}
-                        className={userReaction === type ? "active" : ""}
-                      >
-                        {type} ({reactions[type] || 0})
-                      </button>
-                    ))}
+                  <div className="reaction-buttons flex gap-4">
+                    <button
+                      onClick={() => handleReaction("like")}
+                      className={`flex items-center gap-1 ${
+                        userReaction === "like" ? "text-blue-600 font-semibold" : ""
+                      }`}
+                    >
+                      <FaThumbsUp className="w-5 h-5" /> ({reactions.like || 0})
+                    </button>
+                    <button
+                      onClick={() => handleReaction("dislike")}
+                      className={`flex items-center gap-1 ${
+                        userReaction === "dislike" ? "text-red-600 font-semibold" : ""
+                      }`}
+                    >
+                      <FaThumbsDown className="w-5 h-5" /> ({reactions.dislike || 0})
+                    </button>
                   </div>
                 ) : (
                   <p>You must be logged in to react.</p>
@@ -134,11 +154,42 @@ function BlogPost() {
               </div>
 
               {/* Share buttons */}
-              <div className="share-post">
-                <h3>Share this post:</h3>
-                <a href={`https://twitter.com/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer">Twitter</a>{" | "}
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer">Facebook</a>{" | "}
-                <a href={`https://wa.me/?text=${encodeURIComponent(post.title + " " + shareUrl)}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <div className="share-post mt-10">
+                <h3 className="flex items-center gap-2 mb-2">
+                  <FaShareAlt className="w-5 h-5" /> Share this post:
+                </h3>
+                <div className="flex gap-4">
+                  <a
+                    href={`https://twitter.com/share?url=${encodeURIComponent(
+                      shareUrl
+                    )}&text=${encodeURIComponent(post.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Share on Twitter"
+                  >
+                    <FaTwitter className="w-5 h-5 text-blue-500 hover:scale-110 transition-transform" />
+                  </a>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                      shareUrl
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Share on Facebook"
+                  >
+                    <FaFacebook className="w-5 h-5 text-blue-700 hover:scale-110 transition-transform" />
+                  </a>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(
+                      post.title + " " + shareUrl
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Share on WhatsApp"
+                  >
+                    <FaWhatsapp className="w-5 h-5 text-green-500 hover:scale-110 transition-transform" />
+                  </a>
+                </div>
               </div>
             </article>
           ) : (
@@ -146,7 +197,7 @@ function BlogPost() {
           )}
 
           {/* Comment Section */}
-          <div className="comments-section">
+          <div className="comments-section mt-12">
             <h2>Comments</h2>
             {user ? (
               <form onSubmit={handleCommentSubmit}>
@@ -162,14 +213,14 @@ function BlogPost() {
               <p>You must be logged in to comment.</p>
             )}
 
-            <div className="comments-list">
+            <div className="comments-list mt-4">
               {comments.length === 0 ? (
                 <p>No comments yet.</p>
               ) : (
                 comments.map((comment, index) => (
-                  <div key={index} className="comment">
+                  <div key={index} className="comment mt-2">
                     <p>{comment.content}</p>
-                    <p className="comment-date">
+                    <p className="comment-date text-sm text-gray-500">
                       {new Date(comment.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
