@@ -214,67 +214,120 @@
 
 .hero {
   position: relative;
-  height: 80vh;
-  overflow: hidden;
 }
 .hero .slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transition: opacity 1s ease-in-out;
-  opacity: 0;
-  z-index: 0;
+  display: none;
 }
 .hero .slide.active {
-  opacity: 1;
-  z-index: 1;
+  display: block;
 }
 .hero .slide .hero-image {
   width: 100%;
-  height: 100%;
+  height: 90vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .hero .slide .hero-details {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  border-radius: 12px;
+  max-width: 500px;
 }
 .hero .slide .hero-details h1 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 .hero .slide .hero-details p {
-  margin-top: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
-.hero .slide .hero-details a {
-  margin-top: 1.5rem;
-  background-color: #00bcd4;
+.hero .slide .hero-details .hero-btn {
+  background: #00bcd4;
+  color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 9999px;
-  color: white;
-  font-weight: 500;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s;
 }
-.hero .slide .hero-details a:hover {
-  background-color: #00e1ff;
+.hero .slide .hero-details .hero-btn:hover {
+  background: #e43e52;
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.modal h2 {
+  margin-bottom: 1.5rem;
+}
+.modal .modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.modal .booking-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+.modal .booking-form label input,
+.modal .booking-form label textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.modal .booking-form .submit-btn {
+  background: #2c3e50;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+.modal .booking-form .submit-btn:hover {
+  background: #1f2e3a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .about {
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
   background-color: #f5f5f5;
   color: #333;
   text-align: center;
@@ -355,7 +408,7 @@
 }
 
 .services {
-  padding: 2rem;
+  padding: 1rem 2rem;
   background-color: #f9fafb;
 }
 @media (max-width: 450px) {
@@ -363,7 +416,7 @@
     padding: 1rem;
   }
 }
-.services h1 {
+.services h1, .services h2 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
@@ -426,7 +479,7 @@
 }
 
 .portfolio {
-  padding: 2rem;
+  padding: 1rem 2rem;
   text-align: center;
   background-color: #f8f8f8;
 }
@@ -498,7 +551,7 @@
 }
 
 .blog {
-  padding: 3rem 1rem;
+  padding: 1rem 2rem;
   background-color: #f9f9f9;
 }
 @media (max-width: 450px) {
@@ -557,30 +610,125 @@
 }
 
 .blog-post-detail {
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
 }
 .blog-post-detail .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-.blog-post-detail .container h1 {
-  font-size: 2.5rem;
+.blog-post-detail h1 {
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
+  margin-bottom: 0.5rem;
 }
-.blog-post-detail .container .post-date {
-  font-size: 1rem;
+.blog-post-detail .post-date {
+  font-size: 0.9rem;
   color: #777;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-.blog-post-detail .container .post-content {
-  font-size: 1.1rem;
+.blog-post-detail .post-content {
   line-height: 1.8;
+  font-size: 1.1rem;
   color: #333;
 }
-.blog-post-detail .container .post-content p {
-  margin-bottom: 1.5rem;
+.blog-post-detail .post-content p {
+  margin-bottom: 1rem;
+}
+.blog-post-detail .reactions {
+  margin-top: 2rem;
+}
+.blog-post-detail .reactions h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.blog-post-detail .reactions .reaction-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: transform 0.2s ease;
+}
+.blog-post-detail .reactions .reaction-buttons button:hover {
+  transform: scale(1.05);
+}
+.blog-post-detail .reactions .reaction-buttons button.text-blue-600 {
+  color: #2563eb;
+}
+.blog-post-detail .reactions .reaction-buttons button.text-red-600 {
+  color: #dc2626;
+}
+.blog-post-detail .share-post {
+  margin-top: 3rem;
+}
+.blog-post-detail .share-post h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.blog-post-detail .share-post .flex a {
+  transition: transform 0.2s ease;
+}
+.blog-post-detail .share-post .flex a:hover {
+  transform: scale(1.1);
+}
+.blog-post-detail .comments-section {
+  margin-top: 3rem;
+}
+.blog-post-detail .comments-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.blog-post-detail .comments-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.blog-post-detail .comments-section form textarea {
+  resize: vertical;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  min-height: 100px;
+}
+.blog-post-detail .comments-section form button {
+  align-self: flex-start;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.blog-post-detail .comments-section form button:hover {
+  background-color: #1d4ed8;
+}
+.blog-post-detail .comments-section .comments-list {
+  margin-top: 1rem;
+}
+.blog-post-detail .comments-section .comments-list .comment {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+.blog-post-detail .comments-section .comments-list .comment p:first-child {
+  margin-bottom: 0.3rem;
+}
+.blog-post-detail .comments-section .comments-list .comment .comment-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+.blog-post-detail .error {
+  color: #dc2626;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .not-found {
@@ -591,7 +739,7 @@
 }
 
 .contact {
-  padding: 3rem 2rem;
+  padding: 1rem 2rem;
   background-color: #f5f5f5;
   color: #333;
 }
