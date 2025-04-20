@@ -39,7 +39,7 @@
 }
 @media (max-width: 450px) {
   .header {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
 }
 .header .logo img {
@@ -962,7 +962,7 @@
 @media (max-width: 450px) {
   .footer .footer-container {
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
 }
 .footer .footer-container .contact-container {

@@ -44,7 +44,7 @@
   align-items: center;
 
   @include mobile() {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .logo img {
@@ -1215,7 +1215,7 @@
 
     @include mobile(){
       flex-direction: column;
-      padding: 1rem;
+      padding: 0.5rem 1rem;
     }
 
     /* Contact Section */
