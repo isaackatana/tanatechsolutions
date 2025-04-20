@@ -379,6 +379,11 @@
       border-radius: 12px;
       max-width: 500px;
 
+      @include mobile() {
+        left: 5%;
+        right: 5%;
+      }
+
       h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;

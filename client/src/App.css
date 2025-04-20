@@ -236,6 +236,12 @@
   border-radius: 12px;
   max-width: 500px;
 }
+@media (max-width: 450px) {
+  .hero .slide .hero-details {
+    left: 5%;
+    right: 5%;
+  }
+}
 .hero .slide .hero-details h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
