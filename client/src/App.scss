@@ -63,13 +63,12 @@
 
       @include mobile() {
         position: fixed;
-        top: 79px;
+        top: 63px;
         left: 0;
         width: 60%;
         background-color: #555;
         flex-direction: column;
         gap: 0;
-        padding: 1rem;
         height: 100vh;
         transform: translateX(-100%);
         opacity: 0;
@@ -359,9 +358,10 @@
 
   .slide {
     display: none;
+    align-items: center;
 
     &.active {
-      display: block;
+      display: flex;
     }
 
     .hero-image {
@@ -1215,7 +1215,7 @@
   .footer-container {
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1rem 2rem;
     margin: 0 auto;
 
     @include mobile(){

@@ -5,7 +5,7 @@ function ServicesList() {
   const services = [
     {
       title: "Web & App Development",
-      image: "https://via.placeholder.com/300",
+      image: "",
       description:
         "Tailored full-stack web and app solutions to bring your ideas to life. We specialize in building scalable, robust, and user-friendly applications.",
       link: "/services/web-app-development",
