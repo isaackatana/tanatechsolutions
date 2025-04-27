@@ -5,11 +5,11 @@ function ServicesList() {
   const services = [
     {
       title: "Web & App Development",
-      image: "",
+      image: "https://bimitbetter.com/wp-content/uploads/2024/09/custom-web-application-development.webp",
       description:
         "Tailored full-stack web and app solutions to bring your ideas to life. We specialize in building scalable, robust, and user-friendly applications.",
       link: "/services/web-app-development",
-    },
+    }, 
     {
       title: "AI & Tech Consultancy",
       image: "https://via.placeholder.com/300",

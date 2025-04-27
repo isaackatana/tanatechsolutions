@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://tana-tech-studios-v09u.onrender.com', // Backend server
+        target: 'http://localhost:5000', // Backend server
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''), // Optional, if you want to rewrite the path
       },

@@ -10,9 +10,10 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://mrisaackatana:PwCCnbqinh30ZsnK@tts-db.ozfppo7.mongodb.net/?retryWrites=true&w=majority&appName=TTS-DB'
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(MONGO_URI)
 .then(() => console.log('✅ Connected to MongoDB Atlas'))
 .catch((err) => console.error('❌ MongoDB connection error:', err));
 
