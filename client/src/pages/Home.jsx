@@ -10,7 +10,7 @@ function Home() {
   const slides = [
     {
       image:
-        "https://images.stockcake.com/public/9/a/5/9a5b33df-e8ca-48c5-bc08-789789b47e7f_large/recording-studio-tech-stockcake.jpg",
+        "https://www.ldsystems.com/wp-content/uploads/2021/02/LDSystems-HES-Green-Screen-1-2.jpg",
       title: "Innovative Digital Solutions",
       subtitle:
         "We provide cutting-edge web, app, and AI solutions that transform your business.",
