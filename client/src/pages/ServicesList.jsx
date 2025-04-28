@@ -5,7 +5,7 @@ function ServicesList() {
   const services = [
     {
       title: "Web & App Development",
-      image: "https://bimitbetter.com/wp-content/uploads/2024/09/custom-web-application-development.webp",
+      image: "https://unvired.com/wp-content/uploads/2021/02/app-development-frameworks.png",
       description:
         "Tailored full-stack web and app solutions to bring your ideas to life. We specialize in building scalable, robust, and user-friendly applications.",
       link: "/services/web-app-development",
@@ -26,7 +26,7 @@ function ServicesList() {
     },
     {
       title: "Cloud Solutions & Automation",
-      image: "https://www.automation.com/getmedia/0e2de8c8-4e23-4890-b95b-f598f74f0df1/cloud",
+      image: "https://testgrid.io/blog/wp-content/uploads/2024/02/Top-Cloud-Automation-Testing-Tools.jpg",
       description:
         "Cloud computing services to scale your business effortlessly. We offer cloud storage, management, and automation tools to enhance productivity.",
       link: "/services/cloud-solutions",
