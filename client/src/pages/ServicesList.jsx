@@ -12,21 +12,21 @@ function ServicesList() {
     }, 
     {
       title: "AI & Tech Consultancy",
-      image: "https://via.placeholder.com/300",
+      image: "https://redresscompliance.com/wp-content/uploads/2024/02/what-is-AI-consulting-1024x585.webp",
       description:
         "Leverage artificial intelligence and the latest tech to automate processes, enhance decision-making, and increase your operational efficiency.",
       link: "/services/ai-tech-consultancy",
     },
     {
       title: "Audio & Video Production",
-      image: "https://via.placeholder.com/300",
+      image: "https://www.casualfilms.com/hubfs/Audio%20mix.png",
       description:
         "High-quality audio and video production services that help bring your creative projects to life. We offer everything from recording to post-production.",
       link: "/services/audio-video-production",
     },
     {
       title: "Cloud Solutions & Automation",
-      image: "https://via.placeholder.com/300",
+      image: "https://www.automation.com/getmedia/0e2de8c8-4e23-4890-b95b-f598f74f0df1/cloud",
       description:
         "Cloud computing services to scale your business effortlessly. We offer cloud storage, management, and automation tools to enhance productivity.",
       link: "/services/cloud-solutions",

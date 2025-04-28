@@ -5,7 +5,7 @@ function Portfolio() {
   const projects = [
     {
       title: "Web Development",
-      image: "https://via.placeholder.com/300",
+      image: "https://bimitbetter.com/wp-content/uploads/2024/09/custom-web-application-development.webp",
       description: "A modern responsive web application built using React and Node.js.",
       link: "/projects/web-development"
     },
