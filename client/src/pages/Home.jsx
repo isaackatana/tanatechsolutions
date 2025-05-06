@@ -44,7 +44,7 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Tana Tech Studios | Tech & Production Solutions</title>
+        <title>Tana Tech Solutions | Tech & Production Solutions</title>
         {/* Meta tags remain unchanged */}
       </Helmet>
 
