@@ -72,6 +72,7 @@
   .header nav .nav-list.open {
     transform: translateX(0);
     opacity: 1;
+    top: 53.1px;
   }
 }
 .header nav .nav-list li {

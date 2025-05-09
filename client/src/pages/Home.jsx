@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import ServicesList from "./ServicesList";
+import ServicesList from "../components/ServicesList";
+import AboutUs from "../components/AboutUs";
+import PortfolioList from "../components/PortfolioList";
+import BlogList from "../components/BlogList";
+import ContactUs from "../components/ContactUs";
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -70,7 +74,11 @@ function Home() {
         ))}
       </section>
 
+      <AboutUs/>
       <ServicesList/>
+      <PortfolioList/>
+      <BlogList/>
+      <ContactUs/>
 
       {/* Modal Popup Form */}
       {isModalOpen && (
