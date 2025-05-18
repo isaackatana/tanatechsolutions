@@ -5,7 +5,7 @@ type Props = {
   params: { slug: string };
 };
 
-// Static paths
+// Generate static paths for all blog posts
 export async function generateStaticParams() {
   const slugs = await getPostSlugs();
   return slugs.map((slug: string) => ({
@@ -13,11 +13,10 @@ export async function generateStaticParams() {
   }));
 }
 
-// Dynamic blog post page
-export default async function BlogPost(props: Props) {
-  const { slug } = props.params; // ✅ Use props.params instead of destructuring `params` directly
+export default async function BlogPost({ params }: Props) {
+  const { slug } = params;
 
-  const post = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug); // ✅ Await this
   if (!post) return <p>Post not found.</p>;
 
   const content = await markdownToHtml(post.content);
