@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="bg-primary text-white py-4 px-6 flex justify-between items-center">
+    <nav className="bg-primary text-black py-4 px-6 flex justify-between items-center">
       <Link href="/" className="text-2xl font-bold">
         Tana Tech Africa
       </Link>
